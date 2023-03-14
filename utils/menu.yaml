@@ -1,0 +1,49 @@
+trainer:
+    name: null
+    print_freq: null
+    resume: null
+    checkpoint: null
+    mode: null  # training or validation
+    seed: null
+    num_epochs: 200
+
+dataset:
+    name: null
+    args:
+        num_workers: null
+        batch_size: null
+        total_batch_size: null
+        data_path: null
+        num_classes: null
+
+model:
+    name: null
+    args:
+        input_channels: null
+
+
+optimizer:
+    name: 'SGD'
+    args:
+        lr: 0.1
+        weight_decay: 0.0001
+        momentum: 0.9
+        nesterov: null
+
+lr_scheduler:
+    name: 'linear'
+    args:
+        warmup: True
+
+loss:
+    name: 'CrossEntropyLoss'
+    args:
+
+ddp:
+    world_size: null  # the total number of GPUs available, will be updated later in the program.
+    node_rank: null  # rank of the node (machine), will be updated later in the program
+    num_nodes: null
+    num_gpus_per_node: null
+    dist_url: 'env://'
+    dist_backend: 'nccl'
+    on: False  # whether using distributed parallel package for training

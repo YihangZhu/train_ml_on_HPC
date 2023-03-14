@@ -1,0 +1,9 @@
+torch
+numpy
+torchvision
+yacs
+matplotlib
+pandas
+PCA
+ruamel.yaml
+seaborn # for visualization

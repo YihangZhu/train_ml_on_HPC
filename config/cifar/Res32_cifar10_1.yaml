@@ -1,0 +1,22 @@
+
+trainer:
+  num_epochs: 200
+
+dataset:
+  name: 'cifar10'
+  args:
+    total_batch_size: 128
+
+model:
+  name: 'resnet32'
+
+optimizer:
+  name: 'SGD'
+  args:
+    lr: 0.1
+    weight_decay: 2e-4
+    momentum: 0.9
+
+
+
+
