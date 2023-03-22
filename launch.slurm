@@ -25,7 +25,7 @@ for i in {0..0}; do # change it to {0..1} will execute for i=0 and i=1
   echo "source /gpfs/home/y/yz681/code/py3_10_4/bin/activate" >> script.slurm
   echo "python --version" >> script.slurm
 
-  echo "cd /gpfs/home/y/yz681/code/ic/" >> script.slurm
+  echo "cd /gpfs/home/y/yz681/code/test/" >> script.slurm
 
   echo "port=\$(expr 10000 + \$(echo -n \$SLURM_JOBID | tail -c 4))" >> script.slurm # get a free port for running distributed training
   echo "ip1=\`hostname -I | awk '{print \$1}'\`" >> script.slurm # get the ip addres for running distributed training

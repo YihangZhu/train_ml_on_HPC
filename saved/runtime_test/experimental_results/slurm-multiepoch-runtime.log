@@ -1,0 +1,2311 @@
+Python 3.10.4
+10.1.34.232
+===========Using multiepoch dataloader
+=====================12 GPUs 10 workers 64 batch size\n
+Node 3: 3 GPUs
+trainer:
+	name: Res50_iNaturalist2018_0_batch64
+	print_freq: 40
+	resume: False
+	mode: test
+	seed: 0
+	num_epochs: 2
+dataset:
+	name: iNaturalist2018
+	args:
+		num_workers: 10
+		batch_size: 64
+model:
+	name: resnet50
+	args:
+optimizer:
+	name: SGD
+	args:
+		lr: 0.1
+		weight_decay: 0.0001
+		momentum: 0.9
+lr_scheduler:
+	name: cosine
+	args:
+		warmup: False
+ddp:
+	world_size: 12
+	node_rank: 0
+	num_nodes: 4
+	num_gpus_per_node: 3
+	dist_url: tcp://10.1.34.232:14262
+	dist_backend: nccl
+	on: True
+
+Node 0: 3 GPUs
+Node 1: 3 GPUs
+Node 2: 3 GPUs
+Initializing distributed package for GPU 5 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 5
+Initializing distributed package for GPU 10 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 10
+Initializing distributed package for GPU 3 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 3
+Initializing distributed package for GPU 4 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 4
+Initializing distributed package for GPU 2 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 2
+Initializing distributed package for GPU 1 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 1
+Initializing distributed package for GPU 0 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 0
+Initializing distributed package for GPU 11 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 11
+Initializing distributed package for GPU 9 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 9
+Initializing distributed package for GPU 7 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 7
+Initializing distributed package for GPU 6 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 6
+Initializing distributed package for GPU 8 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 8
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x14b9bdf7b1c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x14f5c3c331c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x154fab9931c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x147a196171c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x1479ed8c31c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    self._shutdown_workers()
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    if not wait([self.sentinel], timeout):
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+terminate called without an active exception
+terminate called without an active exception
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    ready = selector.select(timeout)
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+    _error_if_any_worker_fails()
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 1510568) is killed by signal: Aborted. 
+    _error_if_any_worker_fails()
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 2448246) is killed by signal: Aborted. 
+RuntimeError: DataLoader worker (pid 2448183) is killed by signal: Aborted. 
+RuntimeError: DataLoader worker (pid 1510770) is killed by signal: Aborted. 
+RuntimeError: DataLoader worker (pid 1510819) is killed by signal: Aborted. 
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+* Train Acc@best: 1.189% Error@best: 98.811%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.837	acc@aveclass: nan	r_acc: nan	Runtime: 387.339	lr: 0.1
+* Train Acc@best: 3.037% Error@best: 96.963%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.877	acc@aveclass: nan	r_acc: nan	Runtime: 800.231	lr: 0.1
+* Train Acc@best: 1.057% Error@best: 98.943%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.761	acc@aveclass: nan	r_acc: nan	Runtime: 387.606	lr: 0.1
+* Train Acc@best: 2.927% Error@best: 97.073%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.715	acc@aveclass: nan	r_acc: nan	Runtime: 800.499	lr: 0.1
+* Train Acc@best: 1.022% Error@best: 98.978%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.692	acc@aveclass: nan	r_acc: nan	Runtime: 387.667	lr: 0.1
+* Train Acc@best: 2.905% Error@best: 97.095%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.701	acc@aveclass: nan	r_acc: nan	Runtime: 800.560	lr: 0.1
+* Train Acc@best: 1.085% Error@best: 98.915%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.798	acc@aveclass: nan	r_acc: nan	Runtime: 387.267	lr: 0.1
+* Train Acc@best: 2.859% Error@best: 97.141%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.685	acc@aveclass: nan	r_acc: nan	Runtime: 800.159	lr: 0.1
+terminate called without an active exception
+* Train Acc@best: 1.030% Error@best: 98.970%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.736	acc@aveclass: nan	r_acc: nan	Runtime: 387.258	lr: 0.1
+* Train Acc@best: 2.922% Error@best: 97.078%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.813	acc@aveclass: nan	r_acc: nan	Runtime: 800.150	lr: 0.1
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x14b12332b1c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x151ff2bf71c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+    self._shutdown_workers()
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    ready = selector.select(timeout)
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 10122) is killed by signal: Aborted. 
+RuntimeError: DataLoader worker (pid 9976) is killed by signal: Aborted. 
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x14989bb8b1c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 8930) is killed by signal: Aborted. 
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x148166baf1c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x1528864f71c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+    self._shutdown_workers()
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+* Train Acc@best: 1.109% Error@best: 98.891%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.801	acc@aveclass: nan	r_acc: nan	Runtime: 376.090	lr: 0.1
+* Train Acc@best: 3.078% Error@best: 96.922%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.938	acc@aveclass: nan	r_acc: nan	Runtime: 788.983	lr: 0.1
+    res = self._popen.wait(timeout)
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+* Train Acc@best: 1.153% Error@best: 98.847%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.785	acc@aveclass: nan	r_acc: nan	Runtime: 376.087	lr: 0.1
+* Train Acc@best: 2.916% Error@best: 97.084%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.712	acc@aveclass: nan	r_acc: nan	Runtime: 788.979	lr: 0.1
+* Train Acc@best: 1.156% Error@best: 98.844%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.785	acc@aveclass: nan	r_acc: nan	Runtime: 376.136	lr: 0.1
+* Train Acc@best: 3.128% Error@best: 96.872%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.982	acc@aveclass: nan	r_acc: nan	Runtime: 789.028	lr: 0.1
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 2508920) is killed by signal: Aborted. 
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 2508732) is killed by signal: Aborted. 
+* Train Acc@best: 1.200% Error@best: 98.800%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.835	acc@aveclass: nan	r_acc: nan	Runtime: 400.916	lr: 0.1
+* Train Acc@best: 2.908% Error@best: 97.092%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.633	acc@aveclass: nan	r_acc: nan	Runtime: 813.808	lr: 0.1
+* Train Acc@best: 1.200% Error@best: 98.800%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.838	acc@aveclass: nan	r_acc: nan	Runtime: 400.904	lr: 0.1
+* Train Acc@best: 3.037% Error@best: 96.963%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.776	acc@aveclass: nan	r_acc: nan	Runtime: 813.797	lr: 0.1
+terminate called without an active exception
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x150a58fdb1c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 2506031) is killed by signal: Aborted. 
+* Train Acc@best: 1.131% Error@best: 98.869%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.774	acc@aveclass: nan	r_acc: nan	Runtime: 400.890	lr: 0.1
+* Train Acc@best: 2.977% Error@best: 97.023%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.680	acc@aveclass: nan	r_acc: nan	Runtime: 813.783	lr: 0.1
+terminate called without an active exception
+terminate called without an active exception
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x1484788a31c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 2450187) is killed by signal: Aborted. 
+Data prepared.
+total_class_num: 8142, total_data: 437513, sample_per_class: 2-1000
+total_class_num: 8142, total_data: 24426, sample_per_class: 3-3
+====> training started	runtime: 65.686
+Train epoch: [0][  0/569]	Batch_time  9.782 ( 9.782)	Data_time  0.000 ( 0.000)	Loss 9.115 (9.115)	Acc@1  0.000 ( 0.000)	Acc@5  0.000 ( 0.000)
+Train epoch: [0][ 40/569]	Batch_time  0.127 ( 0.506)	Data_time  0.000 ( 0.102)	Loss 8.523 (8.627)	Acc@1  0.000 ( 0.305)	Acc@5  4.688 ( 1.448)
+Train epoch: [0][ 80/569]	Batch_time  0.113 ( 0.523)	Data_time  0.000 ( 0.076)	Loss 7.654 (8.352)	Acc@1  1.562 ( 0.347)	Acc@5  3.125 ( 1.678)
+Train epoch: [0][120/569]	Batch_time  0.121 ( 0.484)	Data_time  0.000 ( 0.051)	Loss 7.802 (8.212)	Acc@1  1.562 ( 0.452)	Acc@5  7.812 ( 1.937)
+Train epoch: [0][160/569]	Batch_time  0.124 ( 0.477)	Data_time  0.000 ( 0.039)	Loss 7.613 (8.131)	Acc@1  1.562 ( 0.524)	Acc@5  4.688 ( 2.184)
+Train epoch: [0][200/569]	Batch_time  0.127 ( 0.474)	Data_time  0.000 ( 0.031)	Loss 8.134 (8.070)	Acc@1  0.000 ( 0.583)	Acc@5  4.688 ( 2.464)
+Train epoch: [0][240/569]	Batch_time  0.123 ( 0.510)	Data_time  0.000 ( 0.026)	Loss 7.506 (8.018)	Acc@1  1.562 ( 0.668)	Acc@5  6.250 ( 2.652)
+Train epoch: [0][280/569]	Batch_time  0.126 ( 0.534)	Data_time  0.000 ( 0.023)	Loss 7.711 (7.967)	Acc@1  3.125 ( 0.756)	Acc@5  7.812 ( 2.914)
+Train epoch: [0][320/569]	Batch_time  0.691 ( 0.550)	Data_time  0.000 ( 0.023)	Loss 7.381 (7.922)	Acc@1  4.688 ( 0.837)	Acc@5  7.812 ( 3.052)
+Train epoch: [0][360/569]	Batch_time  0.123 ( 0.551)	Data_time  0.000 ( 0.024)	Loss 7.468 (7.881)	Acc@1  1.562 ( 0.935)	Acc@5  4.688 ( 3.307)
+Train epoch: [0][400/569]	Batch_time  1.143 ( 0.546)	Data_time  0.000 ( 0.022)	Loss 7.609 (7.844)	Acc@1  0.000 ( 0.943)	Acc@5  3.125 ( 3.460)
+Train epoch: [0][440/569]	Batch_time  0.097 ( 0.542)	Data_time  0.000 ( 0.025)	Loss 7.334 (7.809)	Acc@1  4.688 ( 1.013)	Acc@5  9.375 ( 3.674)
+Train epoch: [0][480/569]	Batch_time  0.098 ( 0.551)	Data_time  0.000 ( 0.031)	Loss 7.584 (7.773)	Acc@1  1.562 ( 1.085)	Acc@5  4.688 ( 3.823)
+Train epoch: [0][520/569]	Batch_time  0.096 ( 0.555)	Data_time  0.000 ( 0.035)	Loss 7.609 (7.741)	Acc@1  0.000 ( 1.107)	Acc@5  0.000 ( 4.019)
+Train epoch: [0][560/569]	Batch_time  0.099 ( 0.564)	Data_time  0.000 ( 0.041)	Loss 7.414 (7.712)	Acc@1  0.000 ( 1.159)	Acc@5  4.688 ( 4.200)
+Train:  acc@head: nan	acc@med: nan	acc@tail: 0.810	acc@aveclass: nan	r_acc: nan	
+* Train Acc@best: 1.164% Error@best: 98.836%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.810	acc@aveclass: nan	r_acc: nan	Runtime: 387.655	lr: 0.1
+Eval: [  0/382]	Batch_time  0.026 ( 0.026)	Data_time  0.000 ( 0.000)	Loss 9.145 (9.145)	Acc@1  0.000 ( 0.000)	Acc@5  0.000 ( 0.000)
+Eval: [ 40/382]	Batch_time  2.059 ( 0.267)	Data_time  2.025 ( 0.239)	Loss 9.260 (9.061)	Acc@1  0.000 ( 0.038)	Acc@5  0.000 ( 0.610)
+Eval: [ 80/382]	Batch_time  1.509 ( 0.259)	Data_time  1.483 ( 0.230)	Loss 8.957 (9.058)	Acc@1  0.000 ( 0.096)	Acc@5  0.000 ( 0.598)
+Eval: [120/382]	Batch_time  1.066 ( 0.273)	Data_time  1.039 ( 0.244)	Loss 9.131 (9.053)	Acc@1  0.000 ( 0.077)	Acc@5  0.000 ( 0.568)
+Eval: [160/382]	Batch_time  0.276 ( 0.280)	Data_time  0.241 ( 0.251)	Loss 8.918 (9.040)	Acc@1  0.000 ( 0.116)	Acc@5  1.562 ( 0.563)
+Eval: [200/382]	Batch_time  1.204 ( 0.285)	Data_time  1.169 ( 0.256)	Loss 9.312 (9.039)	Acc@1  0.000 ( 0.140)	Acc@5  0.000 ( 0.575)
+Eval: [240/382]	Batch_time  1.409 ( 0.283)	Data_time  1.382 ( 0.254)	Loss 8.899 (9.036)	Acc@1  0.000 ( 0.156)	Acc@5  0.000 ( 0.564)
+Eval: [280/382]	Batch_time  0.922 ( 0.275)	Data_time  0.889 ( 0.247)	Loss 9.000 (9.031)	Acc@1  0.000 ( 0.167)	Acc@5  0.000 ( 0.617)
+Eval: [320/382]	Batch_time  0.864 ( 0.270)	Data_time  0.830 ( 0.241)	Loss 8.879 (9.037)	Acc@1  1.562 ( 0.185)	Acc@5  3.125 ( 0.633)
+Eval: [360/382]	Batch_time  0.853 ( 0.267)	Data_time  0.823 ( 0.238)	Loss 8.933 (9.040)	Acc@1  0.000 ( 0.169)	Acc@5  1.562 ( 0.615)
+Eval:  acc@head: 0.000	acc@med: 0.000	acc@tail: 1.584	acc@aveclass: 0.164	r_acc: 0.000	
+* Eval Acc@best: 0.164% Error@best: 99.836%	Eval:  acc@head: 0.000	acc@med: 0.000	acc@tail: 1.584	acc@aveclass: 0.164	r_acc: 0.000		Runtime: 489.020	lr: 0.1	Epoch_time: 423.334
+Train epoch: [1][  0/569]	Batch_time  0.090 ( 0.090)	Data_time  0.000 ( 0.000)	Loss 7.534 (7.534)	Acc@1  3.125 ( 3.125)	Acc@5  4.688 ( 4.688)
+Train epoch: [1][ 40/569]	Batch_time  1.213 ( 0.291)	Data_time  1.126 ( 0.115)	Loss 7.400 (7.331)	Acc@1  0.000 ( 1.944)	Acc@5  9.375 ( 6.669)
+Train epoch: [1][ 80/569]	Batch_time  2.620 ( 0.395)	Data_time  2.514 ( 0.154)	Loss 7.079 (7.275)	Acc@1  0.000 ( 1.948)	Acc@5  3.125 ( 6.771)
+Train epoch: [1][120/569]	Batch_time  0.326 ( 0.486)	Data_time  0.000 ( 0.170)	Loss 6.916 (7.214)	Acc@1  3.125 ( 2.014)	Acc@5 14.062 ( 6.999)
+Train epoch: [1][160/569]	Batch_time  0.273 ( 0.510)	Data_time  0.216 ( 0.144)	Loss 6.849 (7.194)	Acc@1  1.562 ( 2.125)	Acc@5  9.375 ( 7.201)
+Train epoch: [1][200/569]	Batch_time  0.095 ( 0.533)	Data_time  0.000 ( 0.150)	Loss 7.344 (7.173)	Acc@1  3.125 ( 2.239)	Acc@5  9.375 ( 7.315)
+Train epoch: [1][240/569]	Batch_time  0.358 ( 0.542)	Data_time  0.301 ( 0.133)	Loss 6.604 (7.144)	Acc@1  3.125 ( 2.328)	Acc@5 10.938 ( 7.475)
+Train epoch: [1][280/569]	Batch_time  0.096 ( 0.548)	Data_time  0.000 ( 0.117)	Loss 6.989 (7.116)	Acc@1  6.250 ( 2.419)	Acc@5 17.188 ( 7.640)
+Train epoch: [1][320/569]	Batch_time  1.656 ( 0.574)	Data_time  0.000 ( 0.111)	Loss 6.823 (7.089)	Acc@1  4.688 ( 2.526)	Acc@5 12.500 ( 7.905)
+Train epoch: [1][360/569]	Batch_time  0.123 ( 0.590)	Data_time  0.000 ( 0.099)	Loss 6.893 (7.059)	Acc@1  4.688 ( 2.666)	Acc@5  4.688 ( 8.271)
+Train epoch: [1][400/569]	Batch_time  0.397 ( 0.582)	Data_time  0.000 ( 0.089)	Loss 6.874 (7.037)	Acc@1  0.000 ( 2.704)	Acc@5  3.125 ( 8.377)
+Train epoch: [1][440/569]	Batch_time  0.139 ( 0.572)	Data_time  0.000 ( 0.082)	Loss 6.289 (7.016)	Acc@1  7.812 ( 2.792)	Acc@5 20.312 ( 8.564)
+Train epoch: [1][480/569]	Batch_time  0.099 ( 0.561)	Data_time  0.000 ( 0.075)	Loss 6.633 (6.986)	Acc@1  3.125 ( 2.888)	Acc@5  7.812 ( 8.748)
+Train epoch: [1][520/569]	Batch_time  0.099 ( 0.551)	Data_time  0.000 ( 0.074)	Loss 6.962 (6.963)	Acc@1  1.562 ( 2.966)	Acc@5  9.375 ( 8.943)
+Train epoch: [1][560/569]	Batch_time  0.097 ( 0.544)	Data_time  0.000 ( 0.074)	Loss 6.685 (6.941)	Acc@1  0.000 ( 3.022)	Acc@5 12.500 ( 9.169)
+Train:  acc@head: nan	acc@med: nan	acc@tail: 2.853	acc@aveclass: nan	r_acc: nan	
+* Train Acc@best: 3.045% Error@best: 96.955%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.853	acc@aveclass: nan	r_acc: nan	Runtime: 800.546	lr: 0.1
+Eval: [  0/382]	Batch_time  0.027 ( 0.027)	Data_time  0.000 ( 0.000)	Loss 8.173 (8.173)	Acc@1  0.000 ( 0.000)	Acc@5  1.562 ( 1.562)
+Eval: [ 40/382]	Batch_time  2.718 ( 0.215)	Data_time  2.684 ( 0.187)	Loss 8.612 (8.494)	Acc@1  0.000 ( 0.305)	Acc@5  0.000 ( 1.715)
+Eval: [ 80/382]	Batch_time  2.227 ( 0.230)	Data_time  2.193 ( 0.202)	Loss 8.055 (8.583)	Acc@1  0.000 ( 0.328)	Acc@5  1.562 ( 1.698)
+Eval: [120/382]	Batch_time  2.444 ( 0.246)	Data_time  2.410 ( 0.218)	Loss 8.034 (8.550)	Acc@1  0.000 ( 0.323)	Acc@5  1.562 ( 1.588)
+Eval: [160/382]	Batch_time  1.664 ( 0.251)	Data_time  1.639 ( 0.222)	Loss 8.265 (8.546)	Acc@1  3.125 ( 0.388)	Acc@5  4.688 ( 1.737)
+Eval: [200/382]	Batch_time  1.980 ( 0.257)	Data_time  1.946 ( 0.229)	Loss 8.395 (8.524)	Acc@1  0.000 ( 0.412)	Acc@5  1.562 ( 1.788)
+Eval: [240/382]	Batch_time  2.154 ( 0.258)	Data_time  2.119 ( 0.229)	Loss 9.239 (8.497)	Acc@1  0.000 ( 0.408)	Acc@5  1.562 ( 1.802)
+Eval: [280/382]	Batch_time  1.648 ( 0.259)	Data_time  1.622 ( 0.230)	Loss 8.988 (8.529)	Acc@1  0.000 ( 0.456)	Acc@5  3.125 ( 1.891)
+Eval: [320/382]	Batch_time  0.874 ( 0.259)	Data_time  0.843 ( 0.231)	Loss 8.362 (8.524)	Acc@1  3.125 ( 0.501)	Acc@5  4.688 ( 1.932)
+Eval: [360/382]	Batch_time  1.134 ( 0.269)	Data_time  1.105 ( 0.240)	Loss 8.009 (8.535)	Acc@1  0.000 ( 0.493)	Acc@5  0.000 ( 1.878)
+Eval:  acc@head: 0.009	acc@med: 0.108	acc@tail: 4.394	acc@aveclass: 0.508	r_acc: 0.002	
+* Eval Acc@best: 0.508% Error@best: 99.492%	Eval:  acc@head: 0.009	acc@med: 0.108	acc@tail: 4.394	acc@aveclass: 0.508	r_acc: 0.002		Runtime: 903.773	lr: 0.1	Epoch_time: 413.972
+training completed, time: 905s
+=====================12 GPUs 20 workers 64 batch size\n
+trainer:
+	name: Res50_iNaturalist2018_0_batch64
+	print_freq: 40
+	resume: False
+	mode: test
+	seed: 0
+	num_epochs: 2
+dataset:
+	name: iNaturalist2018
+	args:
+		num_workers: 20
+		batch_size: 64
+model:
+	name: resnet50
+	args:
+optimizer:
+	name: SGD
+	args:
+		lr: 0.1
+		weight_decay: 0.0001
+		momentum: 0.9
+lr_scheduler:
+	name: cosine
+	args:
+		warmup: False
+ddp:
+	world_size: 12
+	node_rank: 0
+	num_nodes: 4
+	num_gpus_per_node: 3
+	dist_url: tcp://10.1.34.232:14262
+	dist_backend: nccl
+	on: True
+
+Node 0: 3 GPUs
+Node 2: 3 GPUs
+Node 1: 3 GPUs
+Node 3: 3 GPUs
+Initializing distributed package for GPU 1 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 1
+Initializing distributed package for GPU 0 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 0
+Initializing distributed package for GPU 2 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 2
+Initializing distributed package for GPU 11 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 11
+Initializing distributed package for GPU 9 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 9
+Initializing distributed package for GPU 7 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 7
+Initializing distributed package for GPU 8 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 8
+Initializing distributed package for GPU 6 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 6
+Initializing distributed package for GPU 10 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 10
+Initializing distributed package for GPU 4 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 4
+Initializing distributed package for GPU 3 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 3
+Initializing distributed package for GPU 5 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 5
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x14b47be8b1c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+terminate called without an active exception
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 2463325) is killed by signal: Aborted. 
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x14ed393371c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 2468726) is killed by signal: Aborted. 
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+* Train Acc@best: 1.041% Error@best: 98.959%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.720	acc@aveclass: nan	r_acc: nan	Runtime: 396.680	lr: 0.1
+* Train Acc@best: 3.125% Error@best: 96.875%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.915	acc@aveclass: nan	r_acc: nan	Runtime: 745.877	lr: 0.1
+* Train Acc@best: 1.090% Error@best: 98.910%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.760	acc@aveclass: nan	r_acc: nan	Runtime: 396.696	lr: 0.1
+* Train Acc@best: 3.141% Error@best: 96.859%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.978	acc@aveclass: nan	r_acc: nan	Runtime: 745.892	lr: 0.1
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x14549257f1c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+terminate called without an active exception
+terminate called without an active exception
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x1495e71671c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x153073deb1c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 2527462) is killed by signal: Aborted. 
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x1518a7c331c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+terminate called without an active exception
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+terminate called without an active exception
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    fd_event_list = self._selector.poll(timeout)
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 1531201) is killed by signal: Aborted. 
+    _error_if_any_worker_fails()
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 28085) is killed by signal: Aborted. 
+RuntimeError: DataLoader worker (pid 27960) is killed by signal: Aborted. 
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x15335ea1f1c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 1531096) is killed by signal: Aborted. 
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x1487b6b271c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 1530827) is killed by signal: Aborted. 
+* Train Acc@best: 1.063% Error@best: 98.937%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.735	acc@aveclass: nan	r_acc: nan	Runtime: 396.694	lr: 0.1
+* Train Acc@best: 2.853% Error@best: 97.147%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.785	acc@aveclass: nan	r_acc: nan	Runtime: 745.892	lr: 0.1
+* Train Acc@best: 1.219% Error@best: 98.781%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.868	acc@aveclass: nan	r_acc: nan	Runtime: 396.695	lr: 0.1
+* Train Acc@best: 3.111% Error@best: 96.889%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.886	acc@aveclass: nan	r_acc: nan	Runtime: 745.891	lr: 0.1
+terminate called without an active exception
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x14b5630131c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 22706) is killed by signal: Aborted. 
+* Train Acc@best: 1.123% Error@best: 98.877%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.780	acc@aveclass: nan	r_acc: nan	Runtime: 396.660	lr: 0.1
+* Train Acc@best: 3.136% Error@best: 96.864%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.914	acc@aveclass: nan	r_acc: nan	Runtime: 745.857	lr: 0.1
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x14f5f11171c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 2522109) is killed by signal: Aborted. 
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x14f918af71c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 43, in wait
+    return self.poll(os.WNOHANG if timeout == 0.0 else 0)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 27, in poll
+    pid, sts = os.waitpid(self.pid, flag)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 2524247) is killed by signal: Aborted. 
+* Train Acc@best: 1.082% Error@best: 98.918%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.775	acc@aveclass: nan	r_acc: nan	Runtime: 396.615	lr: 0.1
+* Train Acc@best: 2.872% Error@best: 97.128%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.683	acc@aveclass: nan	r_acc: nan	Runtime: 745.812	lr: 0.1
+* Train Acc@best: 1.173% Error@best: 98.827%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.808	acc@aveclass: nan	r_acc: nan	Runtime: 396.672	lr: 0.1
+* Train Acc@best: 3.021% Error@best: 96.979%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.892	acc@aveclass: nan	r_acc: nan	Runtime: 745.869	lr: 0.1
+* Train Acc@best: 1.076% Error@best: 98.924%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.723	acc@aveclass: nan	r_acc: nan	Runtime: 396.673	lr: 0.1
+* Train Acc@best: 3.133% Error@best: 96.867%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.856	acc@aveclass: nan	r_acc: nan	Runtime: 745.870	lr: 0.1
+* Train Acc@best: 1.134% Error@best: 98.866%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.789	acc@aveclass: nan	r_acc: nan	Runtime: 396.646	lr: 0.1
+* Train Acc@best: 3.070% Error@best: 96.930%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.981	acc@aveclass: nan	r_acc: nan	Runtime: 745.844	lr: 0.1
+* Train Acc@best: 1.107% Error@best: 98.893%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.744	acc@aveclass: nan	r_acc: nan	Runtime: 396.644	lr: 0.1
+* Train Acc@best: 3.117% Error@best: 96.883%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.991	acc@aveclass: nan	r_acc: nan	Runtime: 745.841	lr: 0.1
+* Train Acc@best: 1.109% Error@best: 98.891%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.760	acc@aveclass: nan	r_acc: nan	Runtime: 396.644	lr: 0.1
+* Train Acc@best: 3.054% Error@best: 96.946%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.888	acc@aveclass: nan	r_acc: nan	Runtime: 745.841	lr: 0.1
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x1485e6f7b1c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 2464267) is killed by signal: Aborted. 
+Data prepared.
+total_class_num: 8142, total_data: 437513, sample_per_class: 2-1000
+total_class_num: 8142, total_data: 24426, sample_per_class: 3-3
+====> training started	runtime: 118.740
+Train epoch: [0][  0/569]	Batch_time 10.094 (10.094)	Data_time  0.011 ( 0.011)	Loss 9.131 (9.131)	Acc@1  0.000 ( 0.000)	Acc@5  0.000 ( 0.000)
+Train epoch: [0][ 40/569]	Batch_time  0.129 ( 0.389)	Data_time  0.000 ( 0.021)	Loss 8.562 (8.608)	Acc@1  0.000 ( 0.114)	Acc@5  1.562 ( 1.181)
+Train epoch: [0][ 80/569]	Batch_time  0.127 ( 0.414)	Data_time  0.000 ( 0.123)	Loss 7.754 (8.367)	Acc@1  1.562 ( 0.212)	Acc@5  3.125 ( 1.620)
+Train epoch: [0][120/569]	Batch_time  0.118 ( 0.459)	Data_time  0.000 ( 0.192)	Loss 7.884 (8.233)	Acc@1  0.000 ( 0.349)	Acc@5  6.250 ( 1.911)
+Train epoch: [0][160/569]	Batch_time  0.127 ( 0.440)	Data_time  0.000 ( 0.163)	Loss 7.609 (8.155)	Acc@1  1.562 ( 0.417)	Acc@5  6.250 ( 2.145)
+Train epoch: [0][200/569]	Batch_time  0.125 ( 0.421)	Data_time  0.000 ( 0.135)	Loss 8.153 (8.096)	Acc@1  0.000 ( 0.552)	Acc@5  3.125 ( 2.387)
+Train epoch: [0][240/569]	Batch_time  0.129 ( 0.411)	Data_time  0.000 ( 0.113)	Loss 7.571 (8.045)	Acc@1  3.125 ( 0.571)	Acc@5  7.812 ( 2.580)
+Train epoch: [0][280/569]	Batch_time  0.126 ( 0.413)	Data_time  0.000 ( 0.099)	Loss 7.606 (7.994)	Acc@1  0.000 ( 0.695)	Acc@5 10.938 ( 2.864)
+Train epoch: [0][320/569]	Batch_time  0.133 ( 0.422)	Data_time  0.000 ( 0.093)	Loss 7.353 (7.951)	Acc@1  6.250 ( 0.769)	Acc@5 12.500 ( 3.062)
+Train epoch: [0][360/569]	Batch_time  0.117 ( 0.434)	Data_time  0.000 ( 0.083)	Loss 7.441 (7.906)	Acc@1  1.562 ( 0.879)	Acc@5  3.125 ( 3.315)
+Train epoch: [0][400/569]	Batch_time  0.133 ( 0.452)	Data_time  0.000 ( 0.075)	Loss 7.602 (7.869)	Acc@1  0.000 ( 0.908)	Acc@5  3.125 ( 3.425)
+Train epoch: [0][440/569]	Batch_time  0.134 ( 0.459)	Data_time  0.000 ( 0.068)	Loss 7.412 (7.835)	Acc@1  1.562 ( 0.957)	Acc@5  6.250 ( 3.607)
+Train epoch: [0][480/569]	Batch_time  0.137 ( 0.467)	Data_time  0.000 ( 0.067)	Loss 7.477 (7.798)	Acc@1  1.562 ( 1.033)	Acc@5  4.688 ( 3.810)
+Train epoch: [0][520/569]	Batch_time  0.132 ( 0.484)	Data_time  0.000 ( 0.062)	Loss 7.674 (7.766)	Acc@1  0.000 ( 1.089)	Acc@5  4.688 ( 4.007)
+Train epoch: [0][560/569]	Batch_time  0.124 ( 0.494)	Data_time  0.000 ( 0.058)	Loss 7.288 (7.733)	Acc@1  0.000 ( 1.148)	Acc@5  4.688 ( 4.164)
+Train:  acc@head: nan	acc@med: nan	acc@tail: 0.816	acc@aveclass: nan	r_acc: nan	
+* Train Acc@best: 1.175% Error@best: 98.825%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.816	acc@aveclass: nan	r_acc: nan	Runtime: 396.778	lr: 0.1
+Eval: [  0/382]	Batch_time  0.026 ( 0.026)	Data_time  0.000 ( 0.000)	Loss 9.267 (9.267)	Acc@1  0.000 ( 0.000)	Acc@5  0.000 ( 0.000)
+Eval: [ 40/382]	Batch_time 14.884 ( 0.388)	Data_time 14.850 ( 0.363)	Loss 9.390 (9.251)	Acc@1  0.000 ( 0.000)	Acc@5  0.000 ( 0.343)
+Eval: [ 80/382]	Batch_time  4.836 ( 0.381)	Data_time  4.803 ( 0.354)	Loss 9.169 (9.231)	Acc@1  0.000 ( 0.077)	Acc@5  0.000 ( 0.424)
+Eval: [120/382]	Batch_time  5.201 ( 0.379)	Data_time  5.165 ( 0.351)	Loss 9.577 (9.231)	Acc@1  0.000 ( 0.077)	Acc@5  0.000 ( 0.452)
+Eval: [160/382]	Batch_time  2.809 ( 0.344)	Data_time  2.775 ( 0.316)	Loss 9.088 (9.239)	Acc@1  0.000 ( 0.078)	Acc@5  1.562 ( 0.534)
+Eval: [200/382]	Batch_time  3.197 ( 0.323)	Data_time  3.164 ( 0.295)	Loss 9.395 (9.232)	Acc@1  0.000 ( 0.117)	Acc@5  0.000 ( 0.575)
+Eval: [240/382]	Batch_time  2.707 ( 0.302)	Data_time  2.673 ( 0.274)	Loss 8.937 (9.246)	Acc@1  0.000 ( 0.149)	Acc@5  0.000 ( 0.551)
+Eval: [280/382]	Batch_time  2.110 ( 0.287)	Data_time  2.077 ( 0.259)	Loss 9.136 (9.243)	Acc@1  0.000 ( 0.156)	Acc@5  0.000 ( 0.584)
+Eval: [320/382]	Batch_time  1.409 ( 0.279)	Data_time  1.384 ( 0.251)	Loss 8.923 (9.241)	Acc@1  0.000 ( 0.161)	Acc@5  3.125 ( 0.589)
+Eval: [360/382]	Batch_time  2.654 ( 0.273)	Data_time  2.621 ( 0.245)	Loss 9.105 (9.243)	Acc@1  0.000 ( 0.147)	Acc@5  0.000 ( 0.571)
+Eval:  acc@head: 0.000	acc@med: 0.000	acc@tail: 1.465	acc@aveclass: 0.151	r_acc: 0.000	
+* Eval Acc@best: 0.151% Error@best: 99.849%	Eval:  acc@head: 0.000	acc@med: 0.000	acc@tail: 1.465	acc@aveclass: 0.151	r_acc: 0.000		Runtime: 498.482	lr: 0.1	Epoch_time: 379.743
+Train epoch: [1][  0/569]	Batch_time  0.090 ( 0.090)	Data_time  0.000 ( 0.000)	Loss 7.664 (7.664)	Acc@1  1.562 ( 1.562)	Acc@5  4.688 ( 4.688)
+Train epoch: [1][ 40/569]	Batch_time  4.394 ( 0.230)	Data_time  4.290 ( 0.106)	Loss 7.469 (7.354)	Acc@1  3.125 ( 2.287)	Acc@5  6.250 ( 6.174)
+Train epoch: [1][ 80/569]	Batch_time  1.655 ( 0.313)	Data_time  1.588 ( 0.133)	Loss 7.076 (7.290)	Acc@1  1.562 ( 2.064)	Acc@5  6.250 ( 6.269)
+Train epoch: [1][120/569]	Batch_time  2.184 ( 0.390)	Data_time  2.081 ( 0.127)	Loss 6.929 (7.231)	Acc@1  3.125 ( 2.131)	Acc@5 10.938 ( 6.586)
+Train epoch: [1][160/569]	Batch_time  0.125 ( 0.428)	Data_time  0.000 ( 0.098)	Loss 6.749 (7.211)	Acc@1  3.125 ( 2.145)	Acc@5 10.938 ( 6.900)
+Train epoch: [1][200/569]	Batch_time  0.136 ( 0.422)	Data_time  0.000 ( 0.079)	Loss 7.380 (7.194)	Acc@1  1.562 ( 2.130)	Acc@5  1.562 ( 7.175)
+Train epoch: [1][240/569]	Batch_time  0.117 ( 0.417)	Data_time  0.000 ( 0.066)	Loss 6.657 (7.165)	Acc@1  3.125 ( 2.224)	Acc@5 15.625 ( 7.456)
+Train epoch: [1][280/569]	Batch_time  0.125 ( 0.416)	Data_time  0.000 ( 0.057)	Loss 7.101 (7.134)	Acc@1  4.688 ( 2.369)	Acc@5  9.375 ( 7.618)
+Train epoch: [1][320/569]	Batch_time  0.136 ( 0.424)	Data_time  0.000 ( 0.050)	Loss 6.868 (7.105)	Acc@1  6.250 ( 2.570)	Acc@5 14.062 ( 7.944)
+Train epoch: [1][360/569]	Batch_time  0.122 ( 0.419)	Data_time  0.000 ( 0.045)	Loss 6.869 (7.073)	Acc@1  0.000 ( 2.688)	Acc@5  7.812 ( 8.228)
+Train epoch: [1][400/569]	Batch_time  0.125 ( 0.430)	Data_time  0.000 ( 0.040)	Loss 6.780 (7.051)	Acc@1  1.562 ( 2.689)	Acc@5  7.812 ( 8.272)
+Train epoch: [1][440/569]	Batch_time  0.130 ( 0.435)	Data_time  0.000 ( 0.037)	Loss 6.586 (7.029)	Acc@1  3.125 ( 2.764)	Acc@5 12.500 ( 8.486)
+Train epoch: [1][480/569]	Batch_time  0.126 ( 0.434)	Data_time  0.000 ( 0.034)	Loss 6.662 (7.000)	Acc@1  9.375 ( 2.904)	Acc@5 20.312 ( 8.794)
+Train epoch: [1][520/569]	Batch_time  0.126 ( 0.430)	Data_time  0.000 ( 0.031)	Loss 6.847 (6.975)	Acc@1  3.125 ( 2.984)	Acc@5  9.375 ( 9.021)
+Train epoch: [1][560/569]	Batch_time  0.129 ( 0.430)	Data_time  0.000 ( 0.029)	Loss 6.518 (6.952)	Acc@1  3.125 ( 3.030)	Acc@5  7.812 ( 9.230)
+Train:  acc@head: nan	acc@med: nan	acc@tail: 2.871	acc@aveclass: nan	r_acc: nan	
+* Train Acc@best: 3.054% Error@best: 96.946%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.871	acc@aveclass: nan	r_acc: nan	Runtime: 745.973	lr: 0.1
+Eval: [  0/382]	Batch_time  0.026 ( 0.026)	Data_time  0.000 ( 0.000)	Loss 8.446 (8.446)	Acc@1  1.562 ( 1.562)	Acc@5  1.562 ( 1.562)
+Eval: [ 40/382]	Batch_time  5.883 ( 0.169)	Data_time  5.849 ( 0.143)	Loss 8.854 (8.811)	Acc@1  0.000 ( 0.457)	Acc@5  0.000 ( 1.601)
+Eval: [ 80/382]	Batch_time  1.947 ( 0.153)	Data_time  1.914 ( 0.126)	Loss 8.487 (8.762)	Acc@1  0.000 ( 0.424)	Acc@5  0.000 ( 1.659)
+Eval: [120/382]	Batch_time  1.001 ( 0.140)	Data_time  0.975 ( 0.113)	Loss 9.735 (8.751)	Acc@1  0.000 ( 0.374)	Acc@5  1.562 ( 1.550)
+Eval: [160/382]	Batch_time  2.054 ( 0.141)	Data_time  2.019 ( 0.115)	Loss 9.039 (8.849)	Acc@1  0.000 ( 0.378)	Acc@5  3.125 ( 1.611)
+Eval: [200/382]	Batch_time  1.344 ( 0.140)	Data_time  1.318 ( 0.113)	Loss 8.696 (8.808)	Acc@1  1.562 ( 0.396)	Acc@5  3.125 ( 1.671)
+Eval: [240/382]	Batch_time  1.790 ( 0.143)	Data_time  1.765 ( 0.116)	Loss 8.725 (8.881)	Acc@1  1.562 ( 0.383)	Acc@5  1.562 ( 1.634)
+Eval: [280/382]	Batch_time  1.288 ( 0.143)	Data_time  1.254 ( 0.116)	Loss 8.521 (8.863)	Acc@1  0.000 ( 0.373)	Acc@5  3.125 ( 1.685)
+Eval: [320/382]	Batch_time  1.277 ( 0.140)	Data_time  1.252 ( 0.113)	Loss 8.313 (8.841)	Acc@1  1.562 ( 0.404)	Acc@5  3.125 ( 1.670)
+Eval: [360/382]	Batch_time  0.965 ( 0.138)	Data_time  0.940 ( 0.111)	Loss 8.583 (8.833)	Acc@1  0.000 ( 0.416)	Acc@5  0.000 ( 1.640)
+Eval:  acc@head: 0.037	acc@med: 0.072	acc@tail: 3.682	acc@aveclass: 0.430	r_acc: 0.010	
+* Eval Acc@best: 0.430% Error@best: 99.570%	Eval:  acc@head: 0.037	acc@med: 0.072	acc@tail: 3.682	acc@aveclass: 0.430	r_acc: 0.010		Runtime: 798.926	lr: 0.1	Epoch_time: 298.700
+training completed, time: 802s
+=====================12 GPUs 40 workers 64 batch size\n
+trainer:
+	name: Res50_iNaturalist2018_0_batch64
+	print_freq: 40
+	resume: False
+	mode: test
+	seed: 0
+	num_epochs: 2
+dataset:
+	name: iNaturalist2018
+	args:
+		num_workers: 40
+		batch_size: 64
+model:
+	name: resnet50
+	args:
+optimizer:
+	name: SGD
+	args:
+		lr: 0.1
+		weight_decay: 0.0001
+		momentum: 0.9
+lr_scheduler:
+	name: cosine
+	args:
+		warmup: False
+ddp:
+	world_size: 12
+	node_rank: 0
+	num_nodes: 4
+	num_gpus_per_node: 3
+	dist_url: tcp://10.1.34.232:14262
+	dist_backend: nccl
+	on: True
+
+Node 0: 3 GPUs
+Node 3: 3 GPUs
+Node 1: 3 GPUs
+Node 2: 3 GPUs
+Initializing distributed package for GPU 10 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 10
+Initializing distributed package for GPU 9 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 9
+Initializing distributed package for GPU 7 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 7
+Initializing distributed package for GPU 6 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 6
+Initializing distributed package for GPU 8 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 8
+Initializing distributed package for GPU 3 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 3
+Initializing distributed package for GPU 4 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 4
+Initializing distributed package for GPU 5 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 5
+Initializing distributed package for GPU 1 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 1
+Initializing distributed package for GPU 0 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 0
+Initializing distributed package for GPU 2 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 2
+Initializing distributed package for GPU 11 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 11
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x14c8d75ff1c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x1510f789b1c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+terminate called without an active exception
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x154073d871c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x1548cc11f1c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    self._shutdown_workers()
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x151a632771c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+    self._shutdown_workers()
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    self._shutdown_workers()
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    res = self._popen.wait(timeout)
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    res = self._popen.wait(timeout)
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    ready = selector.select(timeout)
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+terminate called without an active exception
+    res = self._popen.wait(timeout)
+    fd_event_list = self._selector.poll(timeout)
+    fd_event_list = self._selector.poll(timeout)
+terminate called without an active exception
+terminate called without an active exception
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    if not wait([self.sentinel], timeout):
+    if not wait([self.sentinel], timeout):
+    _error_if_any_worker_fails()
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x152e7a6ef1c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    _error_if_any_worker_fails()
+terminate called without an active exception
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+RuntimeError: DataLoader worker (pid 2551588) is killed by signal: Aborted. 
+RuntimeError: DataLoader worker (pid 2551651) is killed by signal: Aborted. 
+    ready = selector.select(timeout)
+    ready = selector.select(timeout)
+terminate called without an active exception
+    self._shutdown_workers()
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+    fd_event_list = self._selector.poll(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    res = self._popen.wait(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    fd_event_list = self._selector.poll(timeout)
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    _error_if_any_worker_fails()
+    _error_if_any_worker_fails()
+    fd_event_list = self._selector.poll(timeout)
+* Train Acc@best: 1.022% Error@best: 98.978%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.698	acc@aveclass: nan	r_acc: nan	Runtime: 522.172	lr: 0.1
+* Train Acc@best: 2.947% Error@best: 97.053%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.701	acc@aveclass: nan	r_acc: nan	Runtime: 872.976	lr: 0.1
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 52287) is killed by signal: Aborted. 
+RuntimeError: DataLoader worker (pid 52223) is killed by signal: Aborted. 
+RuntimeError: DataLoader worker (pid 52414) is killed by signal: Aborted. 
+* Train Acc@best: 1.126% Error@best: 98.874%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.780	acc@aveclass: nan	r_acc: nan	Runtime: 522.190	lr: 0.1
+* Train Acc@best: 2.861% Error@best: 97.139%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.660	acc@aveclass: nan	r_acc: nan	Runtime: 872.995	lr: 0.1
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+* Train Acc@best: 0.972% Error@best: 99.028%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.654	acc@aveclass: nan	r_acc: nan	Runtime: 522.153	lr: 0.1
+* Train Acc@best: 2.914% Error@best: 97.086%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.643	acc@aveclass: nan	r_acc: nan	Runtime: 872.956	lr: 0.1
+terminate called without an active exception
+* Train Acc@best: 1.060% Error@best: 98.940%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.698	acc@aveclass: nan	r_acc: nan	Runtime: 522.206	lr: 0.1
+* Train Acc@best: 2.867% Error@best: 97.133%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.547	acc@aveclass: nan	r_acc: nan	Runtime: 873.010	lr: 0.1
+    _error_if_any_worker_fails()
+* Train Acc@best: 1.118% Error@best: 98.882%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.783	acc@aveclass: nan	r_acc: nan	Runtime: 522.180	lr: 0.1
+* Train Acc@best: 2.798% Error@best: 97.202%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.580	acc@aveclass: nan	r_acc: nan	Runtime: 872.983	lr: 0.1
+terminate called without an active exception
+RuntimeError: DataLoader worker (pid 1554978) is killed by signal: Aborted. 
+terminate called without an active exception
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x1502c93671c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+terminate called without an active exception
+terminate called without an active exception
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 1554912) is killed by signal: Aborted. 
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x14eedfcaf1c0>
+terminate called without an active exception
+terminate called without an active exception
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+terminate called without an active exception
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+terminate called without an active exception
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+terminate called without an active exception
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 2551523) is killed by signal: Aborted. 
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x14ce1a8bf1c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+terminate called without an active exception
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 1558044) is killed by signal: Aborted. 
+* Train Acc@best: 0.969% Error@best: 99.031%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.670	acc@aveclass: nan	r_acc: nan	Runtime: 522.224	lr: 0.1
+* Train Acc@best: 2.793% Error@best: 97.207%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.565	acc@aveclass: nan	r_acc: nan	Runtime: 873.029	lr: 0.1
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x151ea88db1c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+* Train Acc@best: 0.887% Error@best: 99.113%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.590	acc@aveclass: nan	r_acc: nan	Runtime: 522.210	lr: 0.1
+* Train Acc@best: 2.741% Error@best: 97.259%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.519	acc@aveclass: nan	r_acc: nan	Runtime: 873.014	lr: 0.1
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 2495605) is killed by signal: Aborted. 
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+* Train Acc@best: 1.052% Error@best: 98.948%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.730	acc@aveclass: nan	r_acc: nan	Runtime: 522.287	lr: 0.1
+* Train Acc@best: 2.793% Error@best: 97.207%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.596	acc@aveclass: nan	r_acc: nan	Runtime: 873.091	lr: 0.1
+terminate called without an active exception
+terminate called without an active exception
+* Train Acc@best: 1.008% Error@best: 98.992%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.690	acc@aveclass: nan	r_acc: nan	Runtime: 522.211	lr: 0.1
+* Train Acc@best: 2.848% Error@best: 97.152%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.648	acc@aveclass: nan	r_acc: nan	Runtime: 873.015	lr: 0.1
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x14d26f7bb1c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 2495436) is killed by signal: Aborted. 
+* Train Acc@best: 1.033% Error@best: 98.967%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.697	acc@aveclass: nan	r_acc: nan	Runtime: 522.178	lr: 0.1
+* Train Acc@best: 3.015% Error@best: 96.985%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.753	acc@aveclass: nan	r_acc: nan	Runtime: 872.982	lr: 0.1
+* Train Acc@best: 0.978% Error@best: 99.022%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.664	acc@aveclass: nan	r_acc: nan	Runtime: 522.181	lr: 0.1
+* Train Acc@best: 2.856% Error@best: 97.144%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.629	acc@aveclass: nan	r_acc: nan	Runtime: 872.986	lr: 0.1
+terminate called without an active exception
+terminate called without an active exception
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x14977b4b31c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 2499468) is killed by signal: Aborted. 
+Data prepared.
+total_class_num: 8142, total_data: 437513, sample_per_class: 2-1000
+total_class_num: 8142, total_data: 24426, sample_per_class: 3-3
+====> training started	runtime: 247.742
+Train epoch: [0][  0/569]	Batch_time 10.478 (10.478)	Data_time  0.000 ( 0.000)	Loss 9.055 (9.055)	Acc@1  0.000 ( 0.000)	Acc@5  0.000 ( 0.000)
+Train epoch: [0][ 40/569]	Batch_time  0.123 ( 0.380)	Data_time  0.000 ( 0.003)	Loss 8.420 (8.674)	Acc@1  0.000 ( 0.267)	Acc@5  3.125 ( 1.143)
+Train epoch: [0][ 80/569]	Batch_time  0.116 ( 0.255)	Data_time  0.000 ( 0.003)	Loss 7.705 (8.406)	Acc@1  1.562 ( 0.231)	Acc@5  1.562 ( 1.427)
+Train epoch: [0][120/569]	Batch_time  0.123 ( 0.314)	Data_time  0.000 ( 0.036)	Loss 7.853 (8.254)	Acc@1  4.688 ( 0.400)	Acc@5  6.250 ( 1.769)
+Train epoch: [0][160/569]	Batch_time  0.141 ( 0.360)	Data_time  0.000 ( 0.067)	Loss 7.657 (8.175)	Acc@1  1.562 ( 0.408)	Acc@5  3.125 ( 1.902)
+Train epoch: [0][200/569]	Batch_time  0.130 ( 0.378)	Data_time  0.000 ( 0.065)	Loss 8.130 (8.116)	Acc@1  1.562 ( 0.552)	Acc@5  3.125 ( 2.169)
+Train epoch: [0][240/569]	Batch_time  0.122 ( 0.397)	Data_time  0.000 ( 0.064)	Loss 7.525 (8.065)	Acc@1  1.562 ( 0.603)	Acc@5  9.375 ( 2.315)
+Train epoch: [0][280/569]	Batch_time  0.126 ( 0.410)	Data_time  0.000 ( 0.056)	Loss 7.727 (8.015)	Acc@1  3.125 ( 0.728)	Acc@5 10.938 ( 2.575)
+Train epoch: [0][320/569]	Batch_time  0.126 ( 0.436)	Data_time  0.000 ( 0.052)	Loss 7.529 (7.975)	Acc@1  4.688 ( 0.798)	Acc@5  7.812 ( 2.726)
+Train epoch: [0][360/569]	Batch_time  0.127 ( 0.448)	Data_time  0.000 ( 0.047)	Loss 7.567 (7.935)	Acc@1  1.562 ( 0.883)	Acc@5  4.688 ( 2.956)
+Train epoch: [0][400/569]	Batch_time  0.132 ( 0.451)	Data_time  0.000 ( 0.042)	Loss 7.612 (7.898)	Acc@1  0.000 ( 0.908)	Acc@5  1.562 ( 3.070)
+Train epoch: [0][440/569]	Batch_time  0.127 ( 0.460)	Data_time  0.000 ( 0.039)	Loss 7.460 (7.866)	Acc@1  1.562 ( 0.967)	Acc@5  9.375 ( 3.249)
+Train epoch: [0][480/569]	Batch_time  0.132 ( 0.466)	Data_time  0.000 ( 0.036)	Loss 7.541 (7.831)	Acc@1  1.562 ( 1.004)	Acc@5  7.812 ( 3.411)
+Train epoch: [0][520/569]	Batch_time  0.119 ( 0.468)	Data_time  0.000 ( 0.034)	Loss 7.651 (7.800)	Acc@1  0.000 ( 1.038)	Acc@5  4.688 ( 3.584)
+Train epoch: [0][560/569]	Batch_time  0.129 ( 0.478)	Data_time  0.000 ( 0.032)	Loss 7.369 (7.772)	Acc@1  0.000 ( 1.075)	Acc@5  4.688 ( 3.729)
+Train:  acc@head: nan	acc@med: nan	acc@tail: 0.726	acc@aveclass: nan	r_acc: nan	
+* Train Acc@best: 1.087% Error@best: 98.913%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.726	acc@aveclass: nan	r_acc: nan	Runtime: 522.298	lr: 0.1
+Eval: [  0/382]	Batch_time  0.026 ( 0.026)	Data_time  0.000 ( 0.000)	Loss 9.384 (9.384)	Acc@1  0.000 ( 0.000)	Acc@5  0.000 ( 0.000)
+Eval: [ 40/382]	Batch_time  0.026 ( 0.027)	Data_time  0.000 ( 0.002)	Loss 9.248 (9.132)	Acc@1  0.000 ( 0.038)	Acc@5  0.000 ( 0.457)
+Eval: [ 80/382]	Batch_time 20.987 ( 0.287)	Data_time 20.953 ( 0.261)	Loss 9.088 (9.140)	Acc@1  0.000 ( 0.096)	Acc@5  0.000 ( 0.424)
+Eval: [120/382]	Batch_time  8.859 ( 0.284)	Data_time  8.825 ( 0.258)	Loss 9.107 (9.142)	Acc@1  0.000 ( 0.077)	Acc@5  0.000 ( 0.439)
+Eval: [160/382]	Batch_time  4.915 ( 0.257)	Data_time  4.881 ( 0.230)	Loss 9.006 (9.128)	Acc@1  0.000 ( 0.087)	Acc@5  1.562 ( 0.456)
+Eval: [200/382]	Batch_time  2.402 ( 0.229)	Data_time  2.367 ( 0.202)	Loss 9.432 (9.124)	Acc@1  0.000 ( 0.124)	Acc@5  0.000 ( 0.466)
+Eval: [240/382]	Batch_time  1.363 ( 0.208)	Data_time  1.338 ( 0.181)	Loss 9.226 (9.120)	Acc@1  0.000 ( 0.136)	Acc@5  0.000 ( 0.460)
+Eval: [280/382]	Batch_time  2.205 ( 0.195)	Data_time  2.167 ( 0.168)	Loss 9.072 (9.114)	Acc@1  0.000 ( 0.150)	Acc@5  0.000 ( 0.500)
+Eval: [320/382]	Batch_time  1.309 ( 0.184)	Data_time  1.284 ( 0.157)	Loss 8.968 (9.118)	Acc@1  0.000 ( 0.146)	Acc@5  3.125 ( 0.496)
+Eval: [360/382]	Batch_time  1.277 ( 0.177)	Data_time  1.252 ( 0.150)	Loss 9.032 (9.122)	Acc@1  0.000 ( 0.134)	Acc@5  0.000 ( 0.480)
+Eval:  acc@head: 0.000	acc@med: 0.000	acc@tail: 1.346	acc@aveclass: 0.139	r_acc: 0.000	
+* Eval Acc@best: 0.139% Error@best: 99.861%	Eval:  acc@head: 0.000	acc@med: 0.000	acc@tail: 1.346	acc@aveclass: 0.139	r_acc: 0.000		Runtime: 589.802	lr: 0.1	Epoch_time: 342.060
+Train epoch: [1][  0/569]	Batch_time  0.104 ( 0.104)	Data_time  0.000 ( 0.000)	Loss 7.745 (7.745)	Acc@1  1.562 ( 1.562)	Acc@5  1.562 ( 1.562)
+Train epoch: [1][ 40/569]	Batch_time  0.117 ( 0.126)	Data_time  0.000 ( 0.002)	Loss 7.600 (7.404)	Acc@1  1.562 ( 2.058)	Acc@5  1.562 ( 6.021)
+Train epoch: [1][ 80/569]	Batch_time  0.121 ( 0.127)	Data_time  0.000 ( 0.002)	Loss 6.958 (7.344)	Acc@1  1.562 ( 1.813)	Acc@5  6.250 ( 5.941)
+Train epoch: [1][120/569]	Batch_time  2.002 ( 0.215)	Data_time  1.898 ( 0.035)	Loss 7.005 (7.273)	Acc@1  1.562 ( 1.872)	Acc@5 12.500 ( 6.508)
+Train epoch: [1][160/569]	Batch_time  1.817 ( 0.282)	Data_time  1.729 ( 0.074)	Loss 6.813 (7.256)	Acc@1  3.125 ( 1.960)	Acc@5 10.938 ( 6.774)
+Train epoch: [1][200/569]	Batch_time  2.381 ( 0.327)	Data_time  2.276 ( 0.089)	Loss 7.382 (7.233)	Acc@1  1.562 ( 2.091)	Acc@5  7.812 ( 6.934)
+Train epoch: [1][240/569]	Batch_time  0.129 ( 0.358)	Data_time  0.000 ( 0.086)	Loss 6.740 (7.202)	Acc@1  6.250 ( 2.191)	Acc@5 14.062 ( 7.197)
+Train epoch: [1][280/569]	Batch_time  0.126 ( 0.384)	Data_time  0.000 ( 0.077)	Loss 7.124 (7.169)	Acc@1  3.125 ( 2.269)	Acc@5 12.500 ( 7.418)
+Train epoch: [1][320/569]	Batch_time  0.126 ( 0.400)	Data_time  0.000 ( 0.072)	Loss 6.925 (7.140)	Acc@1  6.250 ( 2.419)	Acc@5 10.938 ( 7.725)
+Train epoch: [1][360/569]	Batch_time  0.126 ( 0.418)	Data_time  0.000 ( 0.079)	Loss 6.801 (7.112)	Acc@1  3.125 ( 2.510)	Acc@5  4.688 ( 7.908)
+Train epoch: [1][400/569]	Batch_time  0.134 ( 0.439)	Data_time  0.000 ( 0.084)	Loss 7.115 (7.090)	Acc@1  1.562 ( 2.525)	Acc@5  4.688 ( 7.992)
+Train epoch: [1][440/569]	Batch_time  0.128 ( 0.452)	Data_time  0.000 ( 0.088)	Loss 6.562 (7.066)	Acc@1  1.562 ( 2.615)	Acc@5 10.938 ( 8.277)
+Train epoch: [1][480/569]	Batch_time  0.122 ( 0.464)	Data_time  0.000 ( 0.094)	Loss 6.746 (7.034)	Acc@1  9.375 ( 2.758)	Acc@5 14.062 ( 8.543)
+Train epoch: [1][520/569]	Batch_time  0.121 ( 0.469)	Data_time  0.000 ( 0.096)	Loss 6.746 (7.010)	Acc@1  0.000 ( 2.777)	Acc@5 15.625 ( 8.742)
+Train epoch: [1][560/569]	Batch_time  0.127 ( 0.473)	Data_time  0.000 ( 0.094)	Loss 6.560 (6.989)	Acc@1  3.125 ( 2.866)	Acc@5 10.938 ( 8.927)
+Train:  acc@head: nan	acc@med: nan	acc@tail: 2.693	acc@aveclass: nan	r_acc: nan	
+* Train Acc@best: 2.900% Error@best: 97.100%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.693	acc@aveclass: nan	r_acc: nan	Runtime: 873.071	lr: 0.1
+Eval: [  0/382]	Batch_time  0.026 ( 0.026)	Data_time  0.000 ( 0.000)	Loss 8.299 (8.299)	Acc@1  1.562 ( 1.562)	Acc@5  1.562 ( 1.562)
+Eval: [ 40/382]	Batch_time  0.025 ( 0.027)	Data_time  0.000 ( 0.002)	Loss 8.700 (8.723)	Acc@1  0.000 ( 0.343)	Acc@5  0.000 ( 1.410)
+Eval: [ 80/382]	Batch_time 20.331 ( 0.279)	Data_time 20.297 ( 0.253)	Loss 8.175 (8.845)	Acc@1  0.000 ( 0.405)	Acc@5  1.562 ( 1.505)
+Eval: [120/382]	Batch_time  7.358 ( 0.267)	Data_time  7.324 ( 0.241)	Loss 8.392 (8.851)	Acc@1  0.000 ( 0.400)	Acc@5  0.000 ( 1.433)
+Eval: [160/382]	Batch_time  5.958 ( 0.250)	Data_time  5.925 ( 0.224)	Loss 8.443 (8.787)	Acc@1  1.562 ( 0.398)	Acc@5  3.125 ( 1.572)
+Eval: [200/382]	Batch_time  7.025 ( 0.247)	Data_time  6.992 ( 0.221)	Loss 8.540 (8.750)	Acc@1  0.000 ( 0.435)	Acc@5  3.125 ( 1.710)
+Eval: [240/382]	Batch_time  6.233 ( 0.242)	Data_time  6.199 ( 0.216)	Loss 13.925 (8.743)	Acc@1  0.000 ( 0.434)	Acc@5  4.688 ( 1.770)
+Eval: [280/382]	Batch_time  6.685 ( 0.241)	Data_time  6.652 ( 0.214)	Loss 8.598 (8.795)	Acc@1  0.000 ( 0.450)	Acc@5  0.000 ( 1.829)
+Eval: [320/382]	Batch_time  5.106 ( 0.234)	Data_time  5.071 ( 0.208)	Loss 8.294 (8.768)	Acc@1  1.562 ( 0.492)	Acc@5  4.688 ( 1.855)
+Eval: [360/382]	Batch_time  3.922 ( 0.226)	Data_time  3.888 ( 0.199)	Loss 8.112 (8.782)	Acc@1  0.000 ( 0.485)	Acc@5  4.688 ( 1.822)
+Eval:  acc@head: 0.009	acc@med: 0.072	acc@tail: 4.473	acc@aveclass: 0.499	r_acc: 0.002	
+* Eval Acc@best: 0.499% Error@best: 99.501%	Eval:  acc@head: 0.009	acc@med: 0.072	acc@tail: 4.473	acc@aveclass: 0.499	r_acc: 0.002		Runtime: 958.193	lr: 0.1	Epoch_time: 362.356
+training completed, time: 966s
+=====================12 GPUs 10 workers 32 batch size\n
+Node 3: 3 GPUs
+trainer:
+	name: Res50_iNaturalist2018_0_batch32
+	print_freq: 40
+	resume: False
+	mode: test
+	seed: 0
+	num_epochs: 2
+dataset:
+	name: iNaturalist2018
+	args:
+		num_workers: 10
+		batch_size: 32
+model:
+	name: resnet50
+	args:
+optimizer:
+	name: SGD
+	args:
+		lr: 0.1
+		weight_decay: 0.0001
+		momentum: 0.9
+lr_scheduler:
+	name: cosine
+	args:
+		warmup: False
+ddp:
+	world_size: 12
+	node_rank: 0
+	num_nodes: 4
+	num_gpus_per_node: 3
+	dist_url: tcp://10.1.34.232:14262
+	dist_backend: nccl
+	on: True
+
+Node 0: 3 GPUs
+Node 2: 3 GPUs
+Node 1: 3 GPUs
+Initializing distributed package for GPU 8 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 8
+Initializing distributed package for GPU 6 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 6
+Initializing distributed package for GPU 3 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 3
+Initializing distributed package for GPU 7 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 7
+Initializing distributed package for GPU 4 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 4
+Initializing distributed package for GPU 5 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 5
+Initializing distributed package for GPU 9 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 9
+Initializing distributed package for GPU 11 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 11
+Initializing distributed package for GPU 10 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 10
+Initializing distributed package for GPU 2 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 2
+Initializing distributed package for GPU 0 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 0
+Initializing distributed package for GPU 1 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 1
+Data prepared.
+total_class_num: 8142, total_data: 437513, sample_per_class: 2-1000
+total_class_num: 8142, total_data: 24426, sample_per_class: 3-3
+====> training started	runtime: 50.207
+Train epoch: [0][   0/1139]	Batch_time 10.303 (10.303)	Data_time  0.000 ( 0.000)	Loss 9.260 (9.260)	Acc@1  0.000 ( 0.000)	Acc@5  0.000 ( 0.000)
+Train epoch: [0][  40/1139]	Batch_time  0.094 ( 0.460)	Data_time  0.000 ( 0.029)	Loss 8.325 (8.811)	Acc@1  0.000 ( 0.152)	Acc@5  0.000 ( 0.991)
+Train epoch: [0][  80/1139]	Batch_time  0.094 ( 0.378)	Data_time  0.000 ( 0.025)	Loss 8.402 (8.544)	Acc@1  0.000 ( 0.154)	Acc@5  3.125 ( 1.427)
+Train epoch: [0][ 120/1139]	Batch_time  0.096 ( 0.336)	Data_time  0.000 ( 0.019)	Loss 7.659 (8.395)	Acc@1  0.000 ( 0.181)	Acc@5  0.000 ( 1.395)
+Train epoch: [0][ 160/1139]	Batch_time  0.073 ( 0.323)	Data_time  0.000 ( 0.015)	Loss 7.835 (8.307)	Acc@1  0.000 ( 0.311)	Acc@5  6.250 ( 1.630)
+Train epoch: [0][ 200/1139]	Batch_time  0.078 ( 0.313)	Data_time  0.000 ( 0.020)	Loss 8.056 (8.238)	Acc@1  0.000 ( 0.342)	Acc@5  6.250 ( 1.726)
+Train epoch: [0][ 240/1139]	Batch_time  0.072 ( 0.311)	Data_time  0.000 ( 0.028)	Loss 7.685 (8.188)	Acc@1  0.000 ( 0.402)	Acc@5  3.125 ( 1.997)
+Train epoch: [0][ 280/1139]	Batch_time  0.078 ( 0.309)	Data_time  0.000 ( 0.029)	Loss 7.642 (8.154)	Acc@1  3.125 ( 0.434)	Acc@5  3.125 ( 2.135)
+Train epoch: [0][ 320/1139]	Batch_time  0.071 ( 0.313)	Data_time  0.000 ( 0.035)	Loss 7.709 (8.124)	Acc@1  3.125 ( 0.458)	Acc@5  6.250 ( 2.210)
+Train epoch: [0][ 360/1139]	Batch_time  0.163 ( 0.313)	Data_time  0.000 ( 0.036)	Loss 7.719 (8.098)	Acc@1  3.125 ( 0.459)	Acc@5  3.125 ( 2.311)
+Train epoch: [0][ 400/1139]	Batch_time  1.058 ( 0.321)	Data_time  0.000 ( 0.038)	Loss 8.234 (8.071)	Acc@1  0.000 ( 0.507)	Acc@5  3.125 ( 2.424)
+Train epoch: [0][ 440/1139]	Batch_time  1.195 ( 0.320)	Data_time  1.138 ( 0.037)	Loss 7.892 (8.054)	Acc@1  0.000 ( 0.546)	Acc@5  6.250 ( 2.487)
+Train epoch: [0][ 480/1139]	Batch_time  0.888 ( 0.324)	Data_time  0.000 ( 0.037)	Loss 7.294 (8.031)	Acc@1  3.125 ( 0.539)	Acc@5  9.375 ( 2.482)
+Train epoch: [0][ 520/1139]	Batch_time  0.072 ( 0.334)	Data_time  0.000 ( 0.034)	Loss 7.634 (8.008)	Acc@1  0.000 ( 0.606)	Acc@5  3.125 ( 2.627)
+Train epoch: [0][ 560/1139]	Batch_time  3.357 ( 0.347)	Data_time  0.000 ( 0.033)	Loss 8.009 (7.990)	Acc@1  0.000 ( 0.618)	Acc@5  6.250 ( 2.724)
+Train epoch: [0][ 600/1139]	Batch_time  0.586 ( 0.350)	Data_time  0.000 ( 0.031)	Loss 7.941 (7.976)	Acc@1  0.000 ( 0.645)	Acc@5  0.000 ( 2.766)
+Train epoch: [0][ 640/1139]	Batch_time  0.528 ( 0.353)	Data_time  0.000 ( 0.029)	Loss 8.090 (7.956)	Acc@1  0.000 ( 0.648)	Acc@5  3.125 ( 2.857)
+Train epoch: [0][ 680/1139]	Batch_time  0.570 ( 0.352)	Data_time  0.000 ( 0.029)	Loss 7.502 (7.940)	Acc@1  6.250 ( 0.693)	Acc@5  6.250 ( 2.919)
+Train epoch: [0][ 720/1139]	Batch_time  2.120 ( 0.351)	Data_time  0.000 ( 0.029)	Loss 7.774 (7.918)	Acc@1  0.000 ( 0.745)	Acc@5  0.000 ( 3.034)
+Train epoch: [0][ 760/1139]	Batch_time  2.378 ( 0.350)	Data_time  0.000 ( 0.028)	Loss 7.396 (7.902)	Acc@1  3.125 ( 0.764)	Acc@5  3.125 ( 3.084)
+Train epoch: [0][ 800/1139]	Batch_time  1.215 ( 0.348)	Data_time  0.000 ( 0.026)	Loss 7.583 (7.887)	Acc@1  0.000 ( 0.757)	Acc@5  0.000 ( 3.098)
+Train epoch: [0][ 840/1139]	Batch_time  0.753 ( 0.345)	Data_time  0.000 ( 0.025)	Loss 6.938 (7.871)	Acc@1  6.250 ( 0.795)	Acc@5  6.250 ( 3.196)
+Train epoch: [0][ 880/1139]	Batch_time  0.232 ( 0.343)	Data_time  0.000 ( 0.024)	Loss 7.302 (7.855)	Acc@1  0.000 ( 0.816)	Acc@5  3.125 ( 3.274)
+Train epoch: [0][ 920/1139]	Batch_time  0.097 ( 0.344)	Data_time  0.000 ( 0.023)	Loss 7.566 (7.837)	Acc@1  0.000 ( 0.869)	Acc@5  0.000 ( 3.373)
+Train epoch: [0][ 960/1139]	Batch_time  0.094 ( 0.344)	Data_time  0.000 ( 0.022)	Loss 7.490 (7.820)	Acc@1  0.000 ( 0.888)	Acc@5  3.125 ( 3.460)
+Train epoch: [0][1000/1139]	Batch_time  0.091 ( 0.343)	Data_time  0.000 ( 0.021)	Loss 7.050 (7.806)	Acc@1  3.125 ( 0.930)	Acc@5  9.375 ( 3.553)
+Train epoch: [0][1040/1139]	Batch_time  0.094 ( 0.343)	Data_time  0.000 ( 0.021)	Loss 7.659 (7.786)	Acc@1  0.000 ( 0.940)	Acc@5  0.000 ( 3.641)
+Train epoch: [0][1080/1139]	Batch_time  0.094 ( 0.340)	Data_time  0.000 ( 0.020)	Loss 7.189 (7.770)	Acc@1  3.125 ( 0.980)	Acc@5  3.125 ( 3.738)
+Train epoch: [0][1120/1139]	Batch_time  0.639 ( 0.341)	Data_time  0.000 ( 0.020)	Loss 7.227 (7.755)	Acc@1  3.125 ( 1.009)	Acc@5  9.375 ( 3.844)
+Train:  acc@head: nan	acc@med: nan	acc@tail: 0.703	acc@aveclass: nan	r_acc: nan	
+* Train Acc@best: 1.026% Error@best: 98.974%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.703	acc@aveclass: nan	r_acc: nan	Runtime: 439.039	lr: 0.1
+Eval: [  0/764]	Batch_time  0.015 ( 0.015)	Data_time  0.000 ( 0.000)	Loss 10.469 (10.469)	Acc@1  0.000 ( 0.000)	Acc@5  0.000 ( 0.000)
+Eval: [ 40/764]	Batch_time  1.170 ( 0.181)	Data_time  1.150 ( 0.165)	Loss 9.114 (10.362)	Acc@1  0.000 ( 0.152)	Acc@5  0.000 ( 0.610)
+Eval: [ 80/764]	Batch_time  1.643 ( 0.184)	Data_time  1.630 ( 0.168)	Loss 9.165 (10.242)	Acc@1  0.000 ( 0.077)	Acc@5  0.000 ( 0.463)
+Eval: [120/764]	Batch_time  0.844 ( 0.178)	Data_time  0.830 ( 0.163)	Loss 9.222 (10.223)	Acc@1  0.000 ( 0.077)	Acc@5  0.000 ( 0.439)
+Eval: [160/764]	Batch_time  1.060 ( 0.180)	Data_time  1.041 ( 0.164)	Loss 8.850 (10.290)	Acc@1  0.000 ( 0.097)	Acc@5  0.000 ( 0.446)
+Eval: [200/764]	Batch_time  0.152 ( 0.176)	Data_time  0.138 ( 0.160)	Loss 9.082 (10.142)	Acc@1  0.000 ( 0.078)	Acc@5  0.000 ( 0.466)
+Eval: [240/764]	Batch_time  0.535 ( 0.178)	Data_time  0.515 ( 0.162)	Loss 17.793 (10.166)	Acc@1  0.000 ( 0.091)	Acc@5  0.000 ( 0.506)
+Eval: [280/764]	Batch_time  0.017 ( 0.175)	Data_time  0.000 ( 0.159)	Loss 9.204 (10.093)	Acc@1  0.000 ( 0.089)	Acc@5  0.000 ( 0.534)
+Eval: [320/764]	Batch_time  0.474 ( 0.173)	Data_time  0.460 ( 0.158)	Loss 9.651 (10.022)	Acc@1  0.000 ( 0.097)	Acc@5  3.125 ( 0.555)
+Eval: [360/764]	Batch_time  2.010 ( 0.181)	Data_time  1.991 ( 0.164)	Loss 9.047 (10.065)	Acc@1  0.000 ( 0.139)	Acc@5  3.125 ( 0.615)
+Eval: [400/764]	Batch_time  0.942 ( 0.178)	Data_time  0.924 ( 0.162)	Loss 9.597 (10.064)	Acc@1  0.000 ( 0.148)	Acc@5  0.000 ( 0.639)
+Eval: [440/764]	Batch_time  0.015 ( 0.189)	Data_time  0.000 ( 0.173)	Loss 9.835 (10.030)	Acc@1  0.000 ( 0.142)	Acc@5  0.000 ( 0.609)
+Eval: [480/764]	Batch_time  0.014 ( 0.184)	Data_time  0.000 ( 0.168)	Loss 9.551 (10.030)	Acc@1  0.000 ( 0.162)	Acc@5  0.000 ( 0.604)
+Eval: [520/764]	Batch_time  0.014 ( 0.182)	Data_time  0.000 ( 0.166)	Loss 9.230 (10.012)	Acc@1  0.000 ( 0.150)	Acc@5  0.000 ( 0.606)
+Eval: [560/764]	Batch_time  0.014 ( 0.179)	Data_time  0.000 ( 0.163)	Loss 11.177 (10.051)	Acc@1  0.000 ( 0.150)	Acc@5  0.000 ( 0.641)
+Eval: [600/764]	Batch_time  0.014 ( 0.178)	Data_time  0.000 ( 0.162)	Loss 9.051 (10.000)	Acc@1  0.000 ( 0.156)	Acc@5  3.125 ( 0.671)
+Eval: [640/764]	Batch_time  0.018 ( 0.176)	Data_time  0.000 ( 0.160)	Loss 8.868 (10.036)	Acc@1  0.000 ( 0.146)	Acc@5  3.125 ( 0.673)
+Eval: [680/764]	Batch_time  0.014 ( 0.175)	Data_time  0.000 ( 0.159)	Loss 9.287 (10.077)	Acc@1  0.000 ( 0.138)	Acc@5  0.000 ( 0.647)
+Eval: [720/764]	Batch_time  0.016 ( 0.176)	Data_time  0.000 ( 0.160)	Loss 9.158 (10.080)	Acc@1  0.000 ( 0.134)	Acc@5  0.000 ( 0.654)
+Eval: [760/764]	Batch_time  0.016 ( 0.176)	Data_time  0.000 ( 0.160)	Loss 9.088 (10.079)	Acc@1  0.000 ( 0.140)	Acc@5  0.000 ( 0.653)
+Eval:  acc@head: 0.000	acc@med: 0.000	acc@tail: 1.346	acc@aveclass: 0.139	r_acc: 0.000	
+* Eval Acc@best: 0.139% Error@best: 99.861%	Eval:  acc@head: 0.000	acc@med: 0.000	acc@tail: 1.346	acc@aveclass: 0.139	r_acc: 0.000		Runtime: 573.021	lr: 0.1	Epoch_time: 522.813
+Train epoch: [1][   0/1139]	Batch_time  0.068 ( 0.068)	Data_time  0.000 ( 0.000)	Loss 7.332 (7.332)	Acc@1  6.250 ( 6.250)	Acc@5  6.250 ( 6.250)
+Train epoch: [1][  40/1139]	Batch_time  2.008 ( 0.295)	Data_time  1.936 ( 0.147)	Loss 7.778 (7.384)	Acc@1  0.000 ( 2.058)	Acc@5  0.000 ( 6.326)
+Train epoch: [1][  80/1139]	Batch_time  0.091 ( 0.335)	Data_time  0.000 ( 0.084)	Loss 7.411 (7.349)	Acc@1  0.000 ( 2.276)	Acc@5  6.250 ( 6.752)
+Train epoch: [1][ 120/1139]	Batch_time  0.091 ( 0.385)	Data_time  0.000 ( 0.057)	Loss 7.099 (7.323)	Acc@1  0.000 ( 2.273)	Acc@5 15.625 ( 6.715)
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x14a1caf5f1c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x1500ee0771c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x1553b96df1c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x14737c76f1c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+terminate called without an active exception
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    ready = selector.select(timeout)
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    fd_event_list = self._selector.poll(timeout)
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 2514975) is killed by signal: Aborted. 
+    _error_if_any_worker_fails()
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 2574135) is killed by signal: Aborted. 
+RuntimeError: DataLoader worker (pid 1577296) is killed by signal: Aborted. 
+RuntimeError: DataLoader worker (pid 1577401) is killed by signal: Aborted. 
+* Train Acc@best: 0.963% Error@best: 99.037%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.671	acc@aveclass: nan	r_acc: nan	Runtime: 439.060	lr: 0.1
+* Train Acc@best: 3.224% Error@best: 96.776%	Train:  acc@head: nan	acc@med: nan	acc@tail: 3.092	acc@aveclass: nan	r_acc: nan	Runtime: 994.743	lr: 0.1
+* Train Acc@best: 1.034% Error@best: 98.966%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.708	acc@aveclass: nan	r_acc: nan	Runtime: 439.180	lr: 0.1
+* Train Acc@best: 2.952% Error@best: 97.048%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.758	acc@aveclass: nan	r_acc: nan	Runtime: 994.863	lr: 0.1
+* Train Acc@best: 0.941% Error@best: 99.059%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.674	acc@aveclass: nan	r_acc: nan	Runtime: 439.054	lr: 0.1
+* Train Acc@best: 3.073% Error@best: 96.927%	Train:  acc@head: nan	acc@med: nan	acc@tail: 3.004	acc@aveclass: nan	r_acc: nan	Runtime: 994.738	lr: 0.1
+terminate called without an active exception
+terminate called without an active exception
+* Train Acc@best: 0.960% Error@best: 99.040%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.643	acc@aveclass: nan	r_acc: nan	Runtime: 439.038	lr: 0.1
+* Train Acc@best: 2.971% Error@best: 97.029%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.894	acc@aveclass: nan	r_acc: nan	Runtime: 994.721	lr: 0.1
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x149d930071c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x14aa426831c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+    self._shutdown_workers()
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x1471772b31c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 1576035) is killed by signal: Aborted. 
+    fd_event_list = self._selector.poll(timeout)
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 73318) is killed by signal: Aborted. 
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 73187) is killed by signal: Aborted. 
+* Train Acc@best: 1.004% Error@best: 98.996%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.740	acc@aveclass: nan	r_acc: nan	Runtime: 439.068	lr: 0.1
+* Train Acc@best: 3.073% Error@best: 96.927%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.885	acc@aveclass: nan	r_acc: nan	Runtime: 994.752	lr: 0.1
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+* Train Acc@best: 0.947% Error@best: 99.053%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.664	acc@aveclass: nan	r_acc: nan	Runtime: 439.124	lr: 0.1
+* Train Acc@best: 3.205% Error@best: 96.795%	Train:  acc@head: nan	acc@med: nan	acc@tail: 3.153	acc@aveclass: nan	r_acc: nan	Runtime: 994.807	lr: 0.1
+* Train Acc@best: 0.993% Error@best: 99.007%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.663	acc@aveclass: nan	r_acc: nan	Runtime: 439.139	lr: 0.1
+* Train Acc@best: 3.004% Error@best: 96.996%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.871	acc@aveclass: nan	r_acc: nan	Runtime: 994.822	lr: 0.1
+terminate called without an active exception
+terminate called without an active exception
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x1538a4fcf1c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 2574908) is killed by signal: Aborted. 
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x1539238f71c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 2574803) is killed by signal: Aborted. 
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x152f80cb31c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 2515797) is killed by signal: Aborted. 
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x154d2254b1c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 75369) is killed by signal: Aborted. 
+* Train Acc@best: 0.988% Error@best: 99.012%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.665	acc@aveclass: nan	r_acc: nan	Runtime: 439.181	lr: 0.1
+* Train Acc@best: 3.158% Error@best: 96.842%	Train:  acc@head: nan	acc@med: nan	acc@tail: 3.131	acc@aveclass: nan	r_acc: nan	Runtime: 994.864	lr: 0.1
+* Train Acc@best: 1.114% Error@best: 98.886%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.766	acc@aveclass: nan	r_acc: nan	Runtime: 439.128	lr: 0.1
+* Train Acc@best: 3.147% Error@best: 96.853%	Train:  acc@head: nan	acc@med: nan	acc@tail: 3.017	acc@aveclass: nan	r_acc: nan	Runtime: 994.811	lr: 0.1
+* Train Acc@best: 0.963% Error@best: 99.037%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.649	acc@aveclass: nan	r_acc: nan	Runtime: 439.049	lr: 0.1
+* Train Acc@best: 3.100% Error@best: 96.900%	Train:  acc@head: nan	acc@med: nan	acc@tail: 3.047	acc@aveclass: nan	r_acc: nan	Runtime: 994.733	lr: 0.1
+* Train Acc@best: 1.034% Error@best: 98.966%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.699	acc@aveclass: nan	r_acc: nan	Runtime: 439.177	lr: 0.1
+* Train Acc@best: 3.144% Error@best: 96.856%	Train:  acc@head: nan	acc@med: nan	acc@tail: 3.067	acc@aveclass: nan	r_acc: nan	Runtime: 994.860	lr: 0.1
+terminate called without an active exception
+Train epoch: [1][ 160/1139]	Batch_time  0.095 ( 0.414)	Data_time  0.000 ( 0.043)	Loss 7.239 (7.287)	Acc@1  0.000 ( 2.174)	Acc@5  6.250 ( 6.755)
+Train epoch: [1][ 200/1139]	Batch_time  0.074 ( 0.398)	Data_time  0.000 ( 0.035)	Loss 6.960 (7.243)	Acc@1  0.000 ( 2.285)	Acc@5 12.500 ( 6.996)
+Train epoch: [1][ 240/1139]	Batch_time  0.102 ( 0.409)	Data_time  0.000 ( 0.030)	Loss 7.012 (7.220)	Acc@1  6.250 ( 2.204)	Acc@5 12.500 ( 7.119)
+Train epoch: [1][ 280/1139]	Batch_time  0.091 ( 0.415)	Data_time  0.000 ( 0.026)	Loss 7.080 (7.211)	Acc@1  6.250 ( 2.191)	Acc@5  9.375 ( 7.140)
+Train epoch: [1][ 320/1139]	Batch_time  0.094 ( 0.420)	Data_time  0.000 ( 0.023)	Loss 6.581 (7.205)	Acc@1  3.125 ( 2.181)	Acc@5 21.875 ( 7.243)
+Train epoch: [1][ 360/1139]	Batch_time  0.096 ( 0.415)	Data_time  0.000 ( 0.021)	Loss 6.692 (7.196)	Acc@1  9.375 ( 2.216)	Acc@5 12.500 ( 7.220)
+Train epoch: [1][ 400/1139]	Batch_time  0.099 ( 0.419)	Data_time  0.000 ( 0.019)	Loss 7.350 (7.181)	Acc@1  3.125 ( 2.244)	Acc@5  6.250 ( 7.255)
+Train epoch: [1][ 440/1139]	Batch_time  0.096 ( 0.414)	Data_time  0.000 ( 0.019)	Loss 7.121 (7.169)	Acc@1  3.125 ( 2.353)	Acc@5  3.125 ( 7.412)
+Train epoch: [1][ 480/1139]	Batch_time  0.075 ( 0.407)	Data_time  0.000 ( 0.017)	Loss 6.294 (7.151)	Acc@1  6.250 ( 2.352)	Acc@5 28.125 ( 7.484)
+Train epoch: [1][ 520/1139]	Batch_time  0.071 ( 0.401)	Data_time  0.000 ( 0.020)	Loss 6.639 (7.133)	Acc@1  3.125 ( 2.423)	Acc@5 15.625 ( 7.684)
+Train epoch: [1][ 560/1139]	Batch_time  0.156 ( 0.398)	Data_time  0.000 ( 0.019)	Loss 7.219 (7.119)	Acc@1  3.125 ( 2.473)	Acc@5  6.250 ( 7.810)
+Train epoch: [1][ 600/1139]	Batch_time  0.092 ( 0.392)	Data_time  0.000 ( 0.018)	Loss 6.997 (7.108)	Acc@1  6.250 ( 2.532)	Acc@5 15.625 ( 7.940)
+Train epoch: [1][ 640/1139]	Batch_time  0.737 ( 0.386)	Data_time  0.000 ( 0.018)	Loss 7.566 (7.088)	Acc@1  3.125 ( 2.574)	Acc@5  9.375 ( 8.107)
+Train epoch: [1][ 680/1139]	Batch_time  0.478 ( 0.377)	Data_time  0.000 ( 0.018)	Loss 6.699 (7.075)	Acc@1  3.125 ( 2.629)	Acc@5 15.625 ( 8.265)
+Train epoch: [1][ 720/1139]	Batch_time  0.093 ( 0.372)	Data_time  0.000 ( 0.024)	Loss 6.670 (7.055)	Acc@1  3.125 ( 2.718)	Acc@5  6.250 ( 8.417)
+Train epoch: [1][ 760/1139]	Batch_time  0.094 ( 0.369)	Data_time  0.000 ( 0.023)	Loss 6.553 (7.042)	Acc@1  3.125 ( 2.718)	Acc@5  9.375 ( 8.476)
+Train epoch: [1][ 800/1139]	Batch_time  0.383 ( 0.369)	Data_time  0.000 ( 0.022)	Loss 6.922 (7.031)	Acc@1  3.125 ( 2.715)	Acc@5  6.250 ( 8.501)
+Train epoch: [1][ 840/1139]	Batch_time  0.088 ( 0.368)	Data_time  0.000 ( 0.021)	Loss 6.776 (7.018)	Acc@1  0.000 ( 2.724)	Acc@5 15.625 ( 8.636)
+Train epoch: [1][ 880/1139]	Batch_time  0.094 ( 0.369)	Data_time  0.000 ( 0.021)	Loss 6.712 (7.007)	Acc@1  0.000 ( 2.756)	Acc@5  6.250 ( 8.726)
+Train epoch: [1][ 920/1139]	Batch_time  0.092 ( 0.368)	Data_time  0.000 ( 0.020)	Loss 6.497 (6.989)	Acc@1  3.125 ( 2.840)	Acc@5  9.375 ( 8.914)
+Train epoch: [1][ 960/1139]	Batch_time  0.243 ( 0.368)	Data_time  0.000 ( 0.019)	Loss 6.445 (6.975)	Acc@1  6.250 ( 2.888)	Acc@5 12.500 ( 9.027)
+Train epoch: [1][1000/1139]	Batch_time  2.142 ( 0.370)	Data_time  0.000 ( 0.019)	Loss 6.667 (6.966)	Acc@1  3.125 ( 2.922)	Acc@5 12.500 ( 9.107)
+Train epoch: [1][1040/1139]	Batch_time  1.248 ( 0.369)	Data_time  0.000 ( 0.018)	Loss 6.612 (6.949)	Acc@1  3.125 ( 2.966)	Acc@5 12.500 ( 9.231)
+Train epoch: [1][1080/1139]	Batch_time  0.099 ( 0.369)	Data_time  0.000 ( 0.018)	Loss 6.177 (6.935)	Acc@1  6.250 ( 3.012)	Acc@5 12.500 ( 9.343)
+Train epoch: [1][1120/1139]	Batch_time  0.107 ( 0.370)	Data_time  0.000 ( 0.018)	Loss 6.108 (6.923)	Acc@1  3.125 ( 3.092)	Acc@5 21.875 ( 9.512)
+Train:  acc@head: nan	acc@med: nan	acc@tail: 3.069	acc@aveclass: nan	r_acc: nan	
+* Train Acc@best: 3.106% Error@best: 96.894%	Train:  acc@head: nan	acc@med: nan	acc@tail: 3.069	acc@aveclass: nan	r_acc: nan	Runtime: 994.723	lr: 0.1
+Eval: [  0/764]	Batch_time  0.015 ( 0.015)	Data_time  0.000 ( 0.000)	Loss 8.105 (8.105)	Acc@1  3.125 ( 3.125)	Acc@5  3.125 ( 3.125)
+Eval: [ 40/764]	Batch_time  1.883 ( 0.154)	Data_time  1.864 ( 0.139)	Loss 7.830 (8.465)	Acc@1  3.125 ( 0.610)	Acc@5  3.125 ( 2.287)
+Eval: [ 80/764]	Batch_time  1.710 ( 0.162)	Data_time  1.697 ( 0.146)	Loss 8.423 (8.361)	Acc@1  0.000 ( 0.463)	Acc@5  0.000 ( 2.160)
+Eval: [120/764]	Batch_time  0.082 ( 0.153)	Data_time  0.064 ( 0.138)	Loss 8.526 (8.394)	Acc@1  0.000 ( 0.413)	Acc@5  0.000 ( 2.040)
+Eval: [160/764]	Batch_time  0.013 ( 0.156)	Data_time  0.000 ( 0.140)	Loss 7.947 (8.342)	Acc@1  0.000 ( 0.485)	Acc@5  3.125 ( 2.232)
+Eval: [200/764]	Batch_time  0.014 ( 0.157)	Data_time  0.000 ( 0.142)	Loss 8.087 (8.331)	Acc@1  0.000 ( 0.498)	Acc@5  3.125 ( 2.208)
+Eval: [240/764]	Batch_time  0.014 ( 0.152)	Data_time  0.000 ( 0.137)	Loss 9.261 (8.323)	Acc@1  0.000 ( 0.519)	Acc@5  0.000 ( 2.204)
+Eval: [280/764]	Batch_time  0.014 ( 0.149)	Data_time  0.000 ( 0.134)	Loss 8.206 (8.290)	Acc@1  0.000 ( 0.512)	Acc@5  3.125 ( 2.180)
+Eval: [320/764]	Batch_time  0.014 ( 0.147)	Data_time  0.000 ( 0.132)	Loss 8.096 (8.265)	Acc@1  3.125 ( 0.535)	Acc@5  3.125 ( 2.249)
+Eval: [360/764]	Batch_time  0.014 ( 0.146)	Data_time  0.000 ( 0.131)	Loss 7.967 (8.276)	Acc@1  0.000 ( 0.580)	Acc@5  0.000 ( 2.320)
+Eval: [400/764]	Batch_time  0.014 ( 0.145)	Data_time  0.000 ( 0.130)	Loss 8.192 (8.271)	Acc@1  3.125 ( 0.592)	Acc@5  6.250 ( 2.338)
+Eval: [440/764]	Batch_time  0.019 ( 0.145)	Data_time  0.000 ( 0.130)	Loss 8.179 (8.275)	Acc@1  0.000 ( 0.574)	Acc@5  0.000 ( 2.310)
+Eval: [480/764]	Batch_time  0.014 ( 0.145)	Data_time  0.000 ( 0.130)	Loss 7.857 (8.272)	Acc@1  6.250 ( 0.585)	Acc@5  9.375 ( 2.313)
+Eval: [520/764]	Batch_time  0.019 ( 0.146)	Data_time  0.000 ( 0.131)	Loss 7.588 (8.261)	Acc@1  0.000 ( 0.582)	Acc@5  3.125 ( 2.327)
+Eval: [560/764]	Batch_time  0.016 ( 0.148)	Data_time  0.000 ( 0.132)	Loss 7.518 (8.266)	Acc@1  0.000 ( 0.590)	Acc@5  3.125 ( 2.356)
+Eval: [600/764]	Batch_time  0.017 ( 0.148)	Data_time  0.000 ( 0.133)	Loss 8.104 (8.269)	Acc@1  3.125 ( 0.598)	Acc@5  3.125 ( 2.371)
+Eval: [640/764]	Batch_time  0.017 ( 0.151)	Data_time  0.000 ( 0.135)	Loss 7.697 (8.286)	Acc@1  0.000 ( 0.590)	Acc@5  0.000 ( 2.360)
+Eval: [680/764]	Batch_time  0.019 ( 0.149)	Data_time  0.000 ( 0.134)	Loss 8.381 (8.294)	Acc@1  0.000 ( 0.592)	Acc@5  3.125 ( 2.345)
+Eval: [720/764]	Batch_time  0.017 ( 0.149)	Data_time  0.000 ( 0.133)	Loss 8.405 (8.288)	Acc@1  0.000 ( 0.585)	Acc@5  3.125 ( 2.332)
+Eval: [760/764]	Batch_time  0.014 ( 0.149)	Data_time  0.000 ( 0.133)	Loss 8.463 (8.287)	Acc@1  0.000 ( 0.579)	Acc@5  0.000 ( 2.337)
+Eval:  acc@head: 0.019	acc@med: 0.180	acc@tail: 4.711	acc@aveclass: 0.577	r_acc: 0.004	
+* Eval Acc@best: 0.577% Error@best: 99.423%	Eval:  acc@head: 0.019	acc@med: 0.180	acc@tail: 4.711	acc@aveclass: 0.577	r_acc: 0.004		Runtime: 1108.917	lr: 0.1	Epoch_time: 535.017
+training completed, time: 1111s
+=====================12 GPUs 10 workers 128 batch size\n
+trainer:
+	name: Res50_iNaturalist2018_0_batch128
+	print_freq: 40
+	resume: False
+	mode: test
+	seed: 0
+	num_epochs: 2
+dataset:
+	name: iNaturalist2018
+	args:
+		num_workers: 10
+		batch_size: 128
+model:
+	name: resnet50
+	args:
+optimizer:
+	name: SGD
+	args:
+		lr: 0.1
+		weight_decay: 0.0001
+		momentum: 0.9
+lr_scheduler:
+	name: cosine
+	args:
+		warmup: False
+ddp:
+	world_size: 12
+	node_rank: 0
+	num_nodes: 4
+	num_gpus_per_node: 3
+	dist_url: tcp://10.1.34.232:14262
+	dist_backend: nccl
+	on: True
+
+Node 0: 3 GPUs
+Node 3: 3 GPUs
+Node 2: 3 GPUs
+Node 1: 3 GPUs
+Initializing distributed package for GPU 0 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 0
+Initializing distributed package for GPU 1 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 1
+Initializing distributed package for GPU 9 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 9
+Initializing distributed package for GPU 6 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 6
+Initializing distributed package for GPU 2 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 2
+Initializing distributed package for GPU 5 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 5
+Initializing distributed package for GPU 4 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 4
+Initializing distributed package for GPU 3 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 3
+Initializing distributed package for GPU 11 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 11
+Initializing distributed package for GPU 10 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 10
+Initializing distributed package for GPU 7 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 7
+Initializing distributed package for GPU 8 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 8
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x14f4ab71f1c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x14d313e131c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x154c100bb1c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+    self._shutdown_workers()
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x1465bc36f1c0>
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x1477f34c71c0>
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x1546385f31c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x14975f5771c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+    if not wait([self.sentinel], timeout):
+    res = self._popen.wait(timeout)
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x14aabb2a71c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    res = self._popen.wait(timeout)
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x149d9a5cb1c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    ready = selector.select(timeout)
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    fd_event_list = self._selector.poll(timeout)
+    fd_event_list = self._selector.poll(timeout)
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    fd_event_list = self._selector.poll(timeout)
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+    _error_if_any_worker_fails()
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 2586154) is killed by signal: Aborted. 
+RuntimeError: DataLoader worker (pid 2586290) is killed by signal: Aborted. 
+RuntimeError: DataLoader worker (pid 2527243) is killed by signal: Aborted. 
+    _error_if_any_worker_fails()
+    _error_if_any_worker_fails()
+    _error_if_any_worker_fails()
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 1589516) is killed by signal: Aborted. 
+RuntimeError: DataLoader worker (pid 1589511) is killed by signal: Aborted. 
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 86759) is killed by signal: Aborted. 
+RuntimeError: DataLoader worker (pid 86762) is killed by signal: Aborted. 
+RuntimeError: DataLoader worker (pid 86887) is killed by signal: Aborted. 
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x151d1d5871c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 1589510) is killed by signal: Aborted. 
+* Train Acc@best: 0.845% Error@best: 99.155%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.548	acc@aveclass: nan	r_acc: nan	Runtime: 427.739	lr: 0.1
+* Train Acc@best: 2.283% Error@best: 97.717%	Train:  acc@head: nan	acc@med: nan	acc@tail: 1.923	acc@aveclass: nan	r_acc: nan	Runtime: 930.728	lr: 0.1
+* Train Acc@best: 0.883% Error@best: 99.117%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.571	acc@aveclass: nan	r_acc: nan	Runtime: 427.744	lr: 0.1
+* Train Acc@best: 2.404% Error@best: 97.596%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.070	acc@aveclass: nan	r_acc: nan	Runtime: 930.733	lr: 0.1
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 2527115) is killed by signal: Aborted. 
+* Train Acc@best: 0.814% Error@best: 99.186%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.550	acc@aveclass: nan	r_acc: nan	Runtime: 427.901	lr: 0.1
+* Train Acc@best: 2.308% Error@best: 97.692%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.023	acc@aveclass: nan	r_acc: nan	Runtime: 930.890	lr: 0.1
+* Train Acc@best: 0.831% Error@best: 99.169%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.537	acc@aveclass: nan	r_acc: nan	Runtime: 427.906	lr: 0.1
+* Train Acc@best: 2.283% Error@best: 97.717%	Train:  acc@head: nan	acc@med: nan	acc@tail: 1.943	acc@aveclass: nan	r_acc: nan	Runtime: 930.895	lr: 0.1
+* Train Acc@best: 0.886% Error@best: 99.114%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.556	acc@aveclass: nan	r_acc: nan	Runtime: 427.627	lr: 0.1
+* Train Acc@best: 2.352% Error@best: 97.648%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.062	acc@aveclass: nan	r_acc: nan	Runtime: 930.616	lr: 0.1
+* Train Acc@best: 0.952% Error@best: 99.048%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.621	acc@aveclass: nan	r_acc: nan	Runtime: 427.634	lr: 0.1
+* Train Acc@best: 2.324% Error@best: 97.676%	Train:  acc@head: nan	acc@med: nan	acc@tail: 1.926	acc@aveclass: nan	r_acc: nan	Runtime: 930.622	lr: 0.1
+* Train Acc@best: 0.913% Error@best: 99.087%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.580	acc@aveclass: nan	r_acc: nan	Runtime: 427.622	lr: 0.1
+* Train Acc@best: 2.374% Error@best: 97.626%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.040	acc@aveclass: nan	r_acc: nan	Runtime: 930.611	lr: 0.1
+* Train Acc@best: 0.949% Error@best: 99.051%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.624	acc@aveclass: nan	r_acc: nan	Runtime: 427.448	lr: 0.1
+* Train Acc@best: 2.399% Error@best: 97.601%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.107	acc@aveclass: nan	r_acc: nan	Runtime: 930.436	lr: 0.1
+* Train Acc@best: 0.850% Error@best: 99.150%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.571	acc@aveclass: nan	r_acc: nan	Runtime: 427.446	lr: 0.1
+* Train Acc@best: 2.289% Error@best: 97.711%	Train:  acc@head: nan	acc@med: nan	acc@tail: 1.962	acc@aveclass: nan	r_acc: nan	Runtime: 930.435	lr: 0.1
+* Train Acc@best: 0.872% Error@best: 99.128%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.581	acc@aveclass: nan	r_acc: nan	Runtime: 427.446	lr: 0.1
+* Train Acc@best: 2.212% Error@best: 97.788%	Train:  acc@head: nan	acc@med: nan	acc@tail: 1.912	acc@aveclass: nan	r_acc: nan	Runtime: 930.435	lr: 0.1
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x14d6b3d371c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 2585404) is killed by signal: Aborted. 
+* Train Acc@best: 0.999% Error@best: 99.001%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.655	acc@aveclass: nan	r_acc: nan	Runtime: 427.725	lr: 0.1
+* Train Acc@best: 2.371% Error@best: 97.629%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.155	acc@aveclass: nan	r_acc: nan	Runtime: 930.713	lr: 0.1
+terminate called without an active exception
+terminate called without an active exception
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x1473e74031c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 2524819) is killed by signal: Aborted. 
+Data prepared.
+total_class_num: 8142, total_data: 437513, sample_per_class: 2-1000
+total_class_num: 8142, total_data: 24426, sample_per_class: 3-3
+====> training started	runtime: 55.845
+Train epoch: [0][  0/284]	Batch_time 16.932 (16.932)	Data_time  0.000 ( 0.000)	Loss 9.137 (9.137)	Acc@1  0.000 ( 0.000)	Acc@5  0.000 ( 0.000)
+Train epoch: [0][ 40/284]	Batch_time  0.282 ( 1.351)	Data_time  0.000 ( 0.468)	Loss 8.026 (8.448)	Acc@1  0.781 ( 0.133)	Acc@5  1.562 ( 1.124)
+Train epoch: [0][ 80/284]	Batch_time  0.285 ( 1.348)	Data_time  0.000 ( 0.490)	Loss 7.714 (8.236)	Acc@1  1.562 ( 0.347)	Acc@5  3.125 ( 1.649)
+Train epoch: [0][120/284]	Batch_time  0.288 ( 1.298)	Data_time  0.000 ( 0.399)	Loss 7.711 (8.123)	Acc@1  0.781 ( 0.497)	Acc@5  5.469 ( 2.060)
+Train epoch: [0][160/284]	Batch_time  0.290 ( 1.325)	Data_time  0.000 ( 0.313)	Loss 7.486 (8.035)	Acc@1  0.781 ( 0.587)	Acc@5  8.594 ( 2.548)
+Train epoch: [0][200/284]	Batch_time  0.281 ( 1.313)	Data_time  0.000 ( 0.276)	Loss 7.557 (7.963)	Acc@1  0.781 ( 0.704)	Acc@5  3.906 ( 2.884)
+Train epoch: [0][240/284]	Batch_time  0.288 ( 1.314)	Data_time  0.000 ( 0.232)	Loss 7.587 (7.901)	Acc@1  1.562 ( 0.794)	Acc@5  6.250 ( 3.096)
+Train epoch: [0][280/284]	Batch_time  0.275 ( 1.292)	Data_time  0.000 ( 0.200)	Loss 7.610 (7.847)	Acc@1  3.125 ( 0.895)	Acc@5  6.250 ( 3.422)
+Train:  acc@head: nan	acc@med: nan	acc@tail: 0.572	acc@aveclass: nan	r_acc: nan	
+* Train Acc@best: 0.902% Error@best: 99.098%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.572	acc@aveclass: nan	r_acc: nan	Runtime: 427.891	lr: 0.1
+Eval: [  0/191]	Batch_time  0.049 ( 0.049)	Data_time  0.000 ( 0.000)	Loss 9.475 (9.475)	Acc@1  0.781 ( 0.781)	Acc@5  0.781 ( 0.781)
+Eval: [ 40/191]	Batch_time  4.059 ( 0.436)	Data_time  3.997 ( 0.385)	Loss 9.231 (9.946)	Acc@1  0.000 ( 0.133)	Acc@5  0.000 ( 0.514)
+Eval: [ 80/191]	Batch_time  3.105 ( 0.454)	Data_time  3.042 ( 0.402)	Loss 10.013 (9.969)	Acc@1  0.781 ( 0.125)	Acc@5  0.781 ( 0.482)
+Eval: [120/191]	Batch_time  2.200 ( 0.457)	Data_time  2.136 ( 0.403)	Loss 9.382 (9.980)	Acc@1  0.000 ( 0.155)	Acc@5  0.781 ( 0.478)
+Eval: [160/191]	Batch_time  1.550 ( 0.454)	Data_time  1.501 ( 0.400)	Loss 9.404 (9.982)	Acc@1  0.000 ( 0.141)	Acc@5  0.781 ( 0.480)
+Eval:  acc@head: 0.000	acc@med: 0.000	acc@tail: 1.386	acc@aveclass: 0.143	r_acc: 0.000	
+* Eval Acc@best: 0.143% Error@best: 99.857%	Eval:  acc@head: 0.000	acc@med: 0.000	acc@tail: 1.386	acc@aveclass: 0.143	r_acc: 0.000		Runtime: 515.330	lr: 0.1	Epoch_time: 459.485
+Train epoch: [1][  0/284]	Batch_time  0.113 ( 0.113)	Data_time  0.000 ( 0.000)	Loss 7.750 (7.750)	Acc@1  0.781 ( 0.781)	Acc@5  0.781 ( 0.781)
+Train epoch: [1][ 40/284]	Batch_time  2.617 ( 0.961)	Data_time  2.476 ( 0.603)	Loss 7.221 (7.459)	Acc@1  1.562 ( 1.620)	Acc@5  5.469 ( 5.164)
+Train epoch: [1][ 80/284]	Batch_time  3.419 ( 1.051)	Data_time  3.278 ( 0.493)	Loss 6.928 (7.383)	Acc@1  3.906 ( 1.717)	Acc@5 10.156 ( 5.739)
+Train epoch: [1][120/284]	Batch_time  3.322 ( 1.176)	Data_time  3.183 ( 0.433)	Loss 7.008 (7.339)	Acc@1  1.562 ( 1.885)	Acc@5 10.156 ( 6.224)
+Train epoch: [1][160/284]	Batch_time  1.009 ( 1.294)	Data_time  0.902 ( 0.407)	Loss 7.093 (7.289)	Acc@1  3.906 ( 2.082)	Acc@5 10.156 ( 6.604)
+Train epoch: [1][200/284]	Batch_time  0.274 ( 1.392)	Data_time  0.000 ( 0.494)	Loss 7.005 (7.249)	Acc@1  3.125 ( 2.177)	Acc@5 10.938 ( 6.895)
+Train epoch: [1][240/284]	Batch_time  0.281 ( 1.455)	Data_time  0.000 ( 0.527)	Loss 6.923 (7.206)	Acc@1  3.906 ( 2.285)	Acc@5  7.812 ( 7.180)
+Train epoch: [1][280/284]	Batch_time  0.260 ( 1.458)	Data_time  0.000 ( 0.502)	Loss 7.065 (7.167)	Acc@1  3.125 ( 2.438)	Acc@5  8.594 ( 7.501)
+Train:  acc@head: nan	acc@med: nan	acc@tail: 2.025	acc@aveclass: nan	r_acc: nan	
+* Train Acc@best: 2.454% Error@best: 97.546%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.025	acc@aveclass: nan	r_acc: nan	Runtime: 930.880	lr: 0.1
+Eval: [  0/191]	Batch_time  0.050 ( 0.050)	Data_time  0.000 ( 0.000)	Loss 8.456 (8.456)	Acc@1  0.000 ( 0.000)	Acc@5  2.344 ( 2.344)
+Eval: [ 40/191]	Batch_time  5.231 ( 0.611)	Data_time  5.169 ( 0.558)	Loss 8.426 (8.520)	Acc@1  0.000 ( 0.210)	Acc@5  1.562 ( 1.334)
+Eval: [ 80/191]	Batch_time  2.686 ( 0.652)	Data_time  2.624 ( 0.598)	Loss 8.649 (8.518)	Acc@1  0.781 ( 0.222)	Acc@5  0.781 ( 1.148)
+Eval: [120/191]	Batch_time  2.970 ( 0.643)	Data_time  2.907 ( 0.588)	Loss 8.521 (8.511)	Acc@1  0.000 ( 0.252)	Acc@5  0.000 ( 1.130)
+Eval: [160/191]	Batch_time  1.611 ( 0.634)	Data_time  1.563 ( 0.579)	Loss 8.619 (8.515)	Acc@1  1.562 ( 0.311)	Acc@5  2.344 ( 1.228)
+Eval:  acc@head: 0.000	acc@med: 0.036	acc@tail: 3.009	acc@aveclass: 0.328	r_acc: 0.000	
+* Eval Acc@best: 0.328% Error@best: 99.672%	Eval:  acc@head: 0.000	acc@med: 0.036	acc@tail: 3.009	acc@aveclass: 0.328	r_acc: 0.000		Runtime: 1049.480	lr: 0.1	Epoch_time: 533.221
+training completed, time: 1051s
+=====================8 GPUs 10 workers 64 batch size\n
+trainer:
+	name: Res50_iNaturalist2018_0_batch64
+	print_freq: 40
+	resume: False
+	mode: test
+	seed: 0
+	num_epochs: 2
+dataset:
+	name: iNaturalist2018
+	args:
+		num_workers: 10
+		batch_size: 64
+model:
+	name: resnet50
+	args:
+optimizer:
+	name: SGD
+	args:
+		lr: 0.1
+		weight_decay: 0.0001
+		momentum: 0.9
+lr_scheduler:
+	name: cosine
+	args:
+		warmup: False
+ddp:
+	world_size: 8
+	node_rank: 0
+	num_nodes: 4
+	num_gpus_per_node: 2
+	dist_url: tcp://10.1.34.232:14262
+	dist_backend: nccl
+	on: True
+
+Node 0: 3 GPUs
+Node 2: 3 GPUs
+Node 3: 3 GPUs
+Node 1: 3 GPUs
+Initializing distributed package for GPU 4 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 4
+Initializing distributed package for GPU 6 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 6
+Initializing distributed package for GPU 5 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 5
+Initializing distributed package for GPU 0 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 0
+Initializing distributed package for GPU 1 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 1
+Initializing distributed package for GPU 3 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 3
+Initializing distributed package for GPU 2 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 2
+Initializing distributed package for GPU 7 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 7
+Data prepared.
+total_class_num: 8142, total_data: 437513, sample_per_class: 2-1000
+total_class_num: 8142, total_data: 24426, sample_per_class: 3-3
+====> training started	runtime: 46.910
+Train epoch: [0][  0/854]	Batch_time 12.451 (12.451)	Data_time  0.000 ( 0.000)	Loss 9.283 (9.283)	Acc@1  0.000 ( 0.000)	Acc@5  0.000 ( 0.000)
+Train epoch: [0][ 40/854]	Batch_time  0.127 ( 0.727)	Data_time  0.000 ( 0.175)	Loss 8.327 (8.740)	Acc@1  0.000 ( 0.229)	Acc@5  1.562 ( 1.105)
+Train epoch: [0][ 80/854]	Batch_time  0.096 ( 0.676)	Data_time  0.000 ( 0.178)	Loss 7.961 (8.447)	Acc@1  0.000 ( 0.193)	Acc@5  0.000 ( 1.254)
+Train epoch: [0][120/854]	Batch_time  0.130 ( 0.654)	Data_time  0.000 ( 0.131)	Loss 8.207 (8.318)	Acc@1  0.000 ( 0.284)	Acc@5  1.562 ( 1.588)
+Train epoch: [0][160/854]	Batch_time  0.117 ( 0.607)	Data_time  0.000 ( 0.099)	Loss 8.314 (8.234)	Acc@1  0.000 ( 0.349)	Acc@5  1.562 ( 1.834)
+Train epoch: [0][200/854]	Batch_time  0.139 ( 0.600)	Data_time  0.000 ( 0.079)	Loss 7.980 (8.179)	Acc@1  0.000 ( 0.396)	Acc@5  3.125 ( 2.006)
+Train epoch: [0][240/854]	Batch_time  0.142 ( 0.604)	Data_time  0.000 ( 0.066)	Loss 7.684 (8.128)	Acc@1  1.562 ( 0.408)	Acc@5  1.562 ( 2.042)
+Train epoch: [0][280/854]	Batch_time  0.137 ( 0.610)	Data_time  0.000 ( 0.057)	Loss 7.621 (8.080)	Acc@1  0.000 ( 0.467)	Acc@5  1.562 ( 2.202)
+Train epoch: [0][320/854]	Batch_time  0.135 ( 0.612)	Data_time  0.000 ( 0.050)	Loss 7.869 (8.038)	Acc@1  0.000 ( 0.511)	Acc@5  3.125 ( 2.351)
+Train epoch: [0][360/854]	Batch_time  0.095 ( 0.602)	Data_time  0.000 ( 0.046)	Loss 7.751 (8.003)	Acc@1  1.562 ( 0.567)	Acc@5  4.688 ( 2.480)
+Train epoch: [0][400/854]	Batch_time  0.096 ( 0.631)	Data_time  0.000 ( 0.059)	Loss 7.500 (7.968)	Acc@1  1.562 ( 0.662)	Acc@5  7.812 ( 2.661)
+Train epoch: [0][440/854]	Batch_time  0.106 ( 0.628)	Data_time  0.000 ( 0.073)	Loss 7.570 (7.938)	Acc@1  4.688 ( 0.716)	Acc@5 12.500 ( 2.795)
+Train epoch: [0][480/854]	Batch_time  0.096 ( 0.621)	Data_time  0.000 ( 0.077)	Loss 7.325 (7.905)	Acc@1  1.562 ( 0.767)	Acc@5 10.938 ( 2.989)
+Train epoch: [0][520/854]	Batch_time  0.119 ( 0.616)	Data_time  0.000 ( 0.073)	Loss 7.712 (7.881)	Acc@1  4.688 ( 0.804)	Acc@5 10.938 ( 3.095)
+Train epoch: [0][560/854]	Batch_time  0.135 ( 0.609)	Data_time  0.000 ( 0.068)	Loss 7.397 (7.855)	Acc@1  1.562 ( 0.855)	Acc@5  3.125 ( 3.250)
+Train epoch: [0][600/854]	Batch_time  0.139 ( 0.620)	Data_time  0.000 ( 0.073)	Loss 7.170 (7.831)	Acc@1  0.000 ( 0.876)	Acc@5  3.125 ( 3.320)
+Train epoch: [0][640/854]	Batch_time  0.125 ( 0.614)	Data_time  0.000 ( 0.072)	Loss 7.424 (7.809)	Acc@1  1.562 ( 0.926)	Acc@5  4.688 ( 3.427)
+Train epoch: [0][680/854]	Batch_time  0.126 ( 0.612)	Data_time  0.000 ( 0.070)	Loss 7.439 (7.790)	Acc@1  1.562 ( 0.966)	Acc@5  3.125 ( 3.568)
+Train epoch: [0][720/854]	Batch_time  0.131 ( 0.616)	Data_time  0.000 ( 0.066)	Loss 8.253 (7.769)	Acc@1  0.000 ( 1.025)	Acc@5  1.562 ( 3.673)
+Train epoch: [0][760/854]	Batch_time  0.143 ( 0.621)	Data_time  0.000 ( 0.064)	Loss 7.219 (7.747)	Acc@1  1.562 ( 1.086)	Acc@5  6.250 ( 3.811)
+Train epoch: [0][800/854]	Batch_time  0.140 ( 0.624)	Data_time  0.000 ( 0.061)	Loss 7.726 (7.728)	Acc@1  1.562 ( 1.114)	Acc@5  6.250 ( 3.905)
+Train epoch: [0][840/854]	Batch_time  5.545 ( 0.630)	Data_time  0.000 ( 0.058)	Loss 7.237 (7.710)	Acc@1  3.125 ( 1.135)	Acc@5  6.250 ( 4.004)
+Train:  acc@head: nan	acc@med: nan	acc@tail: 0.812	acc@aveclass: nan	r_acc: nan	
+* Train Acc@best: 1.138% Error@best: 98.862%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.812	acc@aveclass: nan	r_acc: nan	Runtime: 583.365	lr: 0.1
+Eval: [  0/382]	Batch_time  0.026 ( 0.026)	Data_time  0.000 ( 0.000)	Loss 10.687 (10.687)	Acc@1  0.000 ( 0.000)	Acc@5  0.000 ( 0.000)
+Eval: [ 40/382]	Batch_time  2.609 ( 0.332)	Data_time  2.576 ( 0.303)	Loss 12.496 (13.062)	Acc@1  0.000 ( 0.076)	Acc@5  0.000 ( 0.495)
+Eval: [ 80/382]	Batch_time  0.569 ( 0.326)	Data_time  0.544 ( 0.296)	Loss 9.540 (12.943)	Acc@1  0.000 ( 0.058)	Acc@5  0.000 ( 0.444)
+Eval: [120/382]	Batch_time  0.033 ( 0.337)	Data_time  0.000 ( 0.306)	Loss 16.353 (12.551)	Acc@1  0.000 ( 0.065)	Acc@5  0.000 ( 0.491)
+Eval: [160/382]	Batch_time  0.110 ( 0.342)	Data_time  0.080 ( 0.312)	Loss 15.452 (12.628)	Acc@1  0.000 ( 0.078)	Acc@5  1.562 ( 0.534)
+Eval: [200/382]	Batch_time  0.027 ( 0.341)	Data_time  0.000 ( 0.311)	Loss 9.521 (12.533)	Acc@1  0.000 ( 0.093)	Acc@5  0.000 ( 0.599)
+Eval: [240/382]	Batch_time  0.033 ( 0.335)	Data_time  0.000 ( 0.305)	Loss 11.132 (12.643)	Acc@1  0.000 ( 0.091)	Acc@5  0.000 ( 0.577)
+Eval: [280/382]	Batch_time  0.813 ( 0.336)	Data_time  0.788 ( 0.305)	Loss 8.954 (12.684)	Acc@1  0.000 ( 0.100)	Acc@5  1.562 ( 0.617)
+Eval: [320/382]	Batch_time  2.770 ( 0.345)	Data_time  2.737 ( 0.315)	Loss 9.018 (12.618)	Acc@1  0.000 ( 0.117)	Acc@5  3.125 ( 0.647)
+Eval: [360/382]	Batch_time  0.030 ( 0.355)	Data_time  0.000 ( 0.324)	Loss 15.357 (12.610)	Acc@1  0.000 ( 0.113)	Acc@5  1.562 ( 0.628)
+Eval:  acc@head: 0.000	acc@med: 0.000	acc@tail: 1.108	acc@aveclass: 0.115	r_acc: 0.000	
+* Eval Acc@best: 0.115% Error@best: 99.885%	Eval:  acc@head: 0.000	acc@med: 0.000	acc@tail: 1.108	acc@aveclass: 0.115	r_acc: 0.000		Runtime: 718.703	lr: 0.1	Epoch_time: 671.793
+Train epoch: [1][  0/854]	Batch_time  0.106 ( 0.106)	Data_time  0.000 ( 0.000)	Loss 7.858 (7.858)	Acc@1  0.000 ( 0.000)	Acc@5  1.562 ( 1.562)
+Train epoch: [1][ 40/854]	Batch_time  2.171 ( 0.485)	Data_time  2.093 ( 0.318)	Loss 7.224 (7.317)	Acc@1  0.000 ( 2.058)	Acc@5  6.250 ( 6.707)
+Train epoch: [1][ 80/854]	Batch_time  0.118 ( 0.563)	Data_time  0.000 ( 0.232)	Loss 6.846 (7.259)	Acc@1  3.125 ( 1.775)	Acc@5  7.812 ( 6.597)
+Train epoch: [1][120/854]	Batch_time  0.138 ( 0.515)	Data_time  0.081 ( 0.180)	Loss 7.418 (7.251)	Acc@1  1.562 ( 1.743)	Acc@5  1.562 ( 6.728)
+Train epoch: [1][160/854]	Batch_time  0.098 ( 0.534)	Data_time  0.000 ( 0.159)	Loss 7.443 (7.223)	Acc@1  4.688 ( 1.757)	Acc@5  6.250 ( 6.774)
+Train epoch: [1][200/854]	Batch_time  0.100 ( 0.549)	Data_time  0.000 ( 0.139)	Loss 7.404 (7.200)	Acc@1  3.125 ( 1.772)	Acc@5 14.062 ( 6.817)
+Train epoch: [1][240/854]	Batch_time  0.097 ( 0.549)	Data_time  0.000 ( 0.139)	Loss 7.222 (7.185)	Acc@1  3.125 ( 1.854)	Acc@5  9.375 ( 7.034)
+Train epoch: [1][280/854]	Batch_time  0.126 ( 0.541)	Data_time  0.000 ( 0.148)	Loss 6.770 (7.168)	Acc@1  0.000 ( 1.896)	Acc@5  7.812 ( 7.212)
+Train epoch: [1][320/854]	Batch_time  0.123 ( 0.539)	Data_time  0.000 ( 0.180)	Loss 7.077 (7.144)	Acc@1  0.000 ( 2.025)	Acc@5  4.688 ( 7.423)
+Train epoch: [1][360/854]	Batch_time  0.122 ( 0.542)	Data_time  0.000 ( 0.210)	Loss 6.753 (7.123)	Acc@1  7.812 ( 2.073)	Acc@5 12.500 ( 7.484)
+Train epoch: [1][400/854]	Batch_time  0.124 ( 0.548)	Data_time  0.000 ( 0.236)	Loss 6.877 (7.105)	Acc@1  4.688 ( 2.174)	Acc@5 10.938 ( 7.672)
+Train epoch: [1][440/854]	Batch_time  0.132 ( 0.556)	Data_time  0.000 ( 0.262)	Loss 6.795 (7.088)	Acc@1  6.250 ( 2.239)	Acc@5 17.188 ( 7.887)
+Train epoch: [1][480/854]	Batch_time  0.124 ( 0.574)	Data_time  0.000 ( 0.288)	Loss 6.895 (7.065)	Acc@1  6.250 ( 2.313)	Acc@5 10.938 ( 8.063)
+Train epoch: [1][520/854]	Batch_time  0.142 ( 0.589)	Data_time  0.000 ( 0.300)	Loss 7.096 (7.052)	Acc@1  4.688 ( 2.357)	Acc@5 14.062 ( 8.199)
+Train epoch: [1][560/854]	Batch_time  0.142 ( 0.601)	Data_time  0.000 ( 0.314)	Loss 6.766 (7.035)	Acc@1  1.562 ( 2.423)	Acc@5  9.375 ( 8.344)
+Train epoch: [1][600/854]	Batch_time  0.094 ( 0.613)	Data_time  0.000 ( 0.322)	Loss 6.573 (7.015)	Acc@1  3.125 ( 2.470)	Acc@5 12.500 ( 8.452)
+Train epoch: [1][640/854]	Batch_time  0.096 ( 0.615)	Data_time  0.000 ( 0.309)	Loss 6.269 (7.000)	Acc@1  6.250 ( 2.525)	Acc@5 14.062 ( 8.602)
+Train epoch: [1][680/854]	Batch_time  0.107 ( 0.619)	Data_time  0.000 ( 0.296)	Loss 6.884 (6.985)	Acc@1  1.562 ( 2.618)	Acc@5 10.938 ( 8.785)
+Train epoch: [1][720/854]	Batch_time  0.099 ( 0.615)	Data_time  0.000 ( 0.280)	Loss 7.272 (6.964)	Acc@1  1.562 ( 2.718)	Acc@5  6.250 ( 8.998)
+Train epoch: [1][760/854]	Batch_time  0.099 ( 0.613)	Data_time  0.000 ( 0.268)	Loss 6.438 (6.945)	Acc@1  4.688 ( 2.833)	Acc@5 14.062 ( 9.221)
+Train epoch: [1][800/854]	Batch_time  0.097 ( 0.609)	Data_time  0.000 ( 0.264)	Loss 6.681 (6.928)	Acc@1  4.688 ( 2.879)	Acc@5 15.625 ( 9.389)
+terminate called without an active exception
+terminate called without an active exception
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x1538cf0431c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+terminate called without an active exception
+terminate called without an active exception
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x145a058231c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x14bd41b631c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 2533225) is killed by signal: Aborted. 
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+* Train Acc@best: 1.133% Error@best: 98.867%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.783	acc@aveclass: nan	r_acc: nan	Runtime: 583.365	lr: 0.1
+* Train Acc@best: 3.129% Error@best: 96.871%	Train:  acc@head: nan	acc@med: nan	acc@tail: 3.097	acc@aveclass: nan	r_acc: nan	Runtime: 1227.633	lr: 0.1
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    ready = selector.select(timeout)
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 92828) is killed by signal: Aborted. 
+RuntimeError: DataLoader worker (pid 92902) is killed by signal: Aborted. 
+* Train Acc@best: 1.078% Error@best: 98.922%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.763	acc@aveclass: nan	r_acc: nan	Runtime: 583.415	lr: 0.1
+* Train Acc@best: 3.065% Error@best: 96.935%	Train:  acc@head: nan	acc@med: nan	acc@tail: 3.012	acc@aveclass: nan	r_acc: nan	Runtime: 1227.682	lr: 0.1
+* Train Acc@best: 1.182% Error@best: 98.818%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.813	acc@aveclass: nan	r_acc: nan	Runtime: 583.394	lr: 0.1
+* Train Acc@best: 3.304% Error@best: 96.696%	Train:  acc@head: nan	acc@med: nan	acc@tail: 3.134	acc@aveclass: nan	r_acc: nan	Runtime: 1227.661	lr: 0.1
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x153a6b4e31c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x154c2716f1c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    ready = selector.select(timeout)
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 1597064) is killed by signal: Aborted. 
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 1597182) is killed by signal: Aborted. 
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x14bc488d31c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+* Train Acc@best: 1.134% Error@best: 98.866%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.787	acc@aveclass: nan	r_acc: nan	Runtime: 583.535	lr: 0.1
+* Train Acc@best: 3.081% Error@best: 96.919%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.896	acc@aveclass: nan	r_acc: nan	Runtime: 1227.803	lr: 0.1
+* Train Acc@best: 1.176% Error@best: 98.824%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.854	acc@aveclass: nan	r_acc: nan	Runtime: 583.528	lr: 0.1
+* Train Acc@best: 3.268% Error@best: 96.732%	Train:  acc@head: nan	acc@med: nan	acc@tail: 3.215	acc@aveclass: nan	r_acc: nan	Runtime: 1227.796	lr: 0.1
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 2593729) is killed by signal: Aborted. 
+* Train Acc@best: 1.034% Error@best: 98.966%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.737	acc@aveclass: nan	r_acc: nan	Runtime: 583.393	lr: 0.1
+* Train Acc@best: 3.079% Error@best: 96.921%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.960	acc@aveclass: nan	r_acc: nan	Runtime: 1227.661	lr: 0.1
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+terminate called without an active exception
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x145fcbdc31c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 2533815) is killed by signal: Aborted. 
+Train epoch: [1][840/854]	Batch_time  0.099 ( 0.598)	Data_time  0.000 ( 0.252)	Loss 6.514 (6.912)	Acc@1  4.688 ( 2.969)	Acc@5 12.500 ( 9.548)
+Train:  acc@head: nan	acc@med: nan	acc@tail: 2.973	acc@aveclass: nan	r_acc: nan	
+* Train Acc@best: 2.982% Error@best: 97.018%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.973	acc@aveclass: nan	r_acc: nan	Runtime: 1227.633	lr: 0.1
+Eval: [  0/382]	Batch_time  0.026 ( 0.026)	Data_time  0.000 ( 0.000)	Loss 8.563 (8.563)	Acc@1  1.562 ( 1.562)	Acc@5  3.125 ( 3.125)
+Eval: [ 40/382]	Batch_time  1.814 ( 0.190)	Data_time  1.780 ( 0.162)	Loss 8.589 (10.279)	Acc@1  0.000 ( 0.381)	Acc@5  0.000 ( 1.905)
+Eval: [ 80/382]	Batch_time  1.488 ( 0.216)	Data_time  1.462 ( 0.187)	Loss 8.387 (9.772)	Acc@1  0.000 ( 0.405)	Acc@5  1.562 ( 1.910)
+Eval: [120/382]	Batch_time  1.067 ( 0.223)	Data_time  1.034 ( 0.195)	Loss 8.131 (9.779)	Acc@1  0.000 ( 0.439)	Acc@5  1.562 ( 1.821)
+Eval: [160/382]	Batch_time  1.173 ( 0.235)	Data_time  1.146 ( 0.207)	Loss 12.687 (10.017)	Acc@1  1.562 ( 0.427)	Acc@5  1.562 ( 1.786)
+Eval: [200/382]	Batch_time  1.711 ( 0.244)	Data_time  1.678 ( 0.216)	Loss 8.452 (9.951)	Acc@1  1.562 ( 0.505)	Acc@5  3.125 ( 1.873)
+Eval: [240/382]	Batch_time  1.993 ( 0.250)	Data_time  1.959 ( 0.221)	Loss 17.154 (9.852)	Acc@1  1.562 ( 0.499)	Acc@5  3.125 ( 1.828)
+Eval: [280/382]	Batch_time  1.951 ( 0.252)	Data_time  1.918 ( 0.223)	Loss 8.414 (9.941)	Acc@1  0.000 ( 0.523)	Acc@5  1.562 ( 1.929)
+Eval: [320/382]	Batch_time  4.263 ( 0.267)	Data_time  4.230 ( 0.237)	Loss 8.150 (10.092)	Acc@1  1.562 ( 0.570)	Acc@5  3.125 ( 1.942)
+Eval: [360/382]	Batch_time  2.395 ( 0.274)	Data_time  2.361 ( 0.244)	Loss 8.535 (10.131)	Acc@1  0.000 ( 0.545)	Acc@5  0.000 ( 1.887)
+Eval:  acc@head: 0.009	acc@med: 0.144	acc@tail: 4.632	acc@aveclass: 0.549	r_acc: 0.002	
+* Eval Acc@best: 0.549% Error@best: 99.451%	Eval:  acc@head: 0.009	acc@med: 0.144	acc@tail: 4.632	acc@aveclass: 0.549	r_acc: 0.002		Runtime: 1332.449	lr: 0.1	Epoch_time: 612.699
+training completed, time: 1334s
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x148e3031f1c0>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1466, in __del__
+    self._shutdown_workers()
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1430, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/multiprocessing/connection.py", line 936, in wait
+    ready = selector.select(timeout)
+  File "/sulis/easybuild/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 2592853) is killed by signal: Aborted. 
+* Train Acc@best: 1.165% Error@best: 98.835%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.801	acc@aveclass: nan	r_acc: nan	Runtime: 583.306	lr: 0.1
+* Train Acc@best: 3.094% Error@best: 96.906%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.977	acc@aveclass: nan	r_acc: nan	Runtime: 1227.574	lr: 0.1
+=====================4 GPUs 10 workers 64 batch size\n
+Node 3: 3 GPUs
+trainer:
+	name: Res50_iNaturalist2018_0_batch64
+	print_freq: 40
+	resume: False
+	mode: test
+	seed: 0
+	num_epochs: 2
+dataset:
+	name: iNaturalist2018
+	args:
+		num_workers: 10
+		batch_size: 64
+model:
+	name: resnet50
+	args:
+optimizer:
+	name: SGD
+	args:
+		lr: 0.1
+		weight_decay: 0.0001
+		momentum: 0.9
+lr_scheduler:
+	name: cosine
+	args:
+		warmup: False
+ddp:
+	world_size: 4
+	node_rank: 0
+	num_nodes: 2
+	num_gpus_per_node: 2
+	dist_url: tcp://10.1.34.232:14262
+	dist_backend: nccl
+	on: True
+
+Node 0: 3 GPUs
+Node 2: 3 GPUs
+Node 1: 3 GPUs
+Initializing distributed package for GPU 6 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 6
+Initializing distributed package for GPU 5 with tcp://10.1.34.232:14262.....
+Distributed package is initialize for GPU 5
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/ic/train.py", line 353, in <module>
+    main()
+  File "/gpfs/home/y/yz681/code/ic/train.py", line 20, in main
+    mp.spawn(main_worker, nprocs=config.config['ddp']['num_gpus_per_node'], args=(config,))
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/multiprocessing/spawn.py", line 240, in spawn
+    return start_processes(fn, args, nprocs, join, daemon, start_method='spawn')
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/multiprocessing/spawn.py", line 198, in start_processes
+    while not context.join():
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/multiprocessing/spawn.py", line 160, in join
+    raise ProcessRaisedException(msg, error_index, failed_process.pid)
+torch.multiprocessing.spawn.ProcessRaisedException: 
+
+-- Process 0 terminated with the following error:
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/multiprocessing/spawn.py", line 69, in _wrap
+    fn(i, *args)
+  File "/gpfs/home/y/yz681/code/ic/train.py", line 41, in main_worker
+    dataset = config.init_obj('dataset', datasets, logger=config.logger, data_loader_func=data_loader_func,
+  File "/gpfs/home/y/yz681/code/ic/utils/configurate.py", line 118, in init_obj
+    module = getattr(module, module_name)(*args, **module_args)
+  File "/gpfs/home/y/yz681/code/ic/datasets/inaturalist2018.py", line 137, in __init__
+    self.dist_sampler = torch.utils.data.distributed.DistributedSampler(
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/distributed.py", line 74, in __init__
+    raise ValueError(
+ValueError: Invalid rank 6, rank should be in the interval [0, 3]
+
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/ic/train.py", line 353, in <module>
+    main()
+  File "/gpfs/home/y/yz681/code/ic/train.py", line 20, in main
+    mp.spawn(main_worker, nprocs=config.config['ddp']['num_gpus_per_node'], args=(config,))
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/multiprocessing/spawn.py", line 240, in spawn
+    return start_processes(fn, args, nprocs, join, daemon, start_method='spawn')
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/multiprocessing/spawn.py", line 198, in start_processes
+    while not context.join():
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/multiprocessing/spawn.py", line 160, in join
+    raise ProcessRaisedException(msg, error_index, failed_process.pid)
+torch.multiprocessing.spawn.ProcessRaisedException: 
+
+-- Process 1 terminated with the following error:
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/multiprocessing/spawn.py", line 69, in _wrap
+    fn(i, *args)
+  File "/gpfs/home/y/yz681/code/ic/train.py", line 41, in main_worker
+    dataset = config.init_obj('dataset', datasets, logger=config.logger, data_loader_func=data_loader_func,
+  File "/gpfs/home/y/yz681/code/ic/utils/configurate.py", line 118, in init_obj
+    module = getattr(module, module_name)(*args, **module_args)
+  File "/gpfs/home/y/yz681/code/ic/datasets/inaturalist2018.py", line 137, in __init__
+    self.dist_sampler = torch.utils.data.distributed.DistributedSampler(
+  File "/gpfs/home/y/yz681/code/py3_10_4/lib/python3.10/site-packages/torch/utils/data/distributed.py", line 74, in __init__
+    raise ValueError(
+ValueError: Invalid rank 5, rank should be in the interval [0, 3]
+
+srun: error: gpu028: task 3: Exited with exit code 1
+srun: launch/slurm: _step_signal: Terminating StepId=2424262.6
+slurmstepd: error: *** STEP 2424262.6 ON gpu012 CANCELLED AT 2023-02-18T09:43:07 ***
+Initializing distributed package for GPU 2 with tcp://10.1.34.232:14262.....
+Initializing distributed package for GPU 3 with tcp://10.1.34.232:14262.....
+Initializing distributed package for GPU 1 with tcp://10.1.34.232:14262.....
+Initializing distributed package for GPU 0 with tcp://10.1.34.232:14262.....
+srun: error: gpu027: task 2: Exited with exit code 1
+srun: error: gpu013: task 1: Terminated
+srun: error: gpu012: task 0: Terminated
+srun: Force Terminated StepId=2424262.6

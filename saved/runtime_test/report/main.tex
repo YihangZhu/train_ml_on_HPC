@@ -1,0 +1,124 @@
+\documentclass[11pt]{article}
+\usepackage{subfigure}
+
+\usepackage[footnotesize,labelfont=bf]{caption} % setup font and style for table figure captions 
+
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\RequirePackage{geometry}
+\geometry{
+left={30mm},
+right={25mm},
+top={30mm},
+bottom={30mm},
+}
+
+
+\usepackage[inline]{enumitem}
+\setlistdepth{9}
+
+\setlist[enumerate,1]{label={(\arabic*)}}
+\setlist[enumerate,2]{label=$\bullet$}
+\setlist[enumerate,3]{label=$\bullet$}
+\setlist[enumerate,4]{label=$\bullet$}
+\setlist[enumerate,5]{label=$\bullet$}
+\setlist[enumerate,6]{label=$\bullet$}
+\setlist[enumerate,7]{label=$\bullet$}
+\setlist[enumerate,8]{label=$\bullet$}
+\setlist[enumerate,9]{label=$\bullet$}
+
+\renewlist{enumerate}{enumerate}{9}
+
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage[authoryear]{natbib}
+\usepackage{array,booktabs,multirow}
+\usepackage{url}
+\usepackage{makecell}
+
+\usepackage{color}
+\definecolor{dblue}{RGB}{0,0,100}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=black,  anchorcolor=black, citecolor=dblue, filecolor=dblue, menucolor=dblue, urlcolor=dblue} 
+
+
+\begin{document}
+% \maketitle
+
+\section{Impact of batch size, number of work, and dataloader}
+%Please add the following packages if necessary:
+%\usepackage{booktabs, multirow} % for borders and merged ranges
+%\usepackage{soul}% for underlines
+%\usepackage[table]{xcolor} % for cell colors
+%\usepackage{changepage,threeparttable} % for wide tables
+%If the table is too wide, replace \begin{table}[!htp]...\end{table} with
+%\begin{adjustwidth}{-2.5 cm}{-2.5 cm}\centering\begin{threeparttable}[!htb]...\end{threeparttable}\end{adjustwidth}
+\begin{table}[!htp]\centering
+\caption{Using iNaturalist2018 dataset, standard Resnet50, running for 2 epochs, using multi-epoch dataloader}\label{tab:int_multiepoch_dataloader}
+\scriptsize
+\begin{tabular}{lrrrrrr}\toprule
+num\_workers &num\_gpus &batch\_size per GPU &time\_per\_epoch &time prepare(s) &total time(s) \\\midrule
+10 &12 &64 &420 &66 &905 \\
+20 &12 &64 &300 &119 &802 \\
+40 &12 &64 &350 &248 &966 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+%Please add the following packages if necessary:
+%\usepackage{booktabs, multirow} % for borders and merged ranges
+%\usepackage{soul}% for underlines
+%\usepackage[table]{xcolor} % for cell colors
+%\usepackage{changepage,threeparttable} % for wide tables
+%If the table is too wide, replace \begin{table}[!htp]...\end{table} with
+%\begin{adjustwidth}{-2.5 cm}{-2.5 cm}\centering\begin{threeparttable}[!htb]...\end{threeparttable}\end{adjustwidth}
+\begin{table}[!htp]\centering
+\caption{Using iNaturalist2018 dataset, standard Resnet50, running for 2 epochs, using the standard dataloader}\label{tab:int_regular_dataloader}
+\scriptsize
+\begin{tabular}{lrrrrrr}\toprule
+num\_workers &num\_gpus &batch\_size per GPU &time\_per\_epoch &time prepare(s) &total time(s) \\\midrule
+10 &12 &64 &650 &5 &1338 \\
+20 &12 &64 &650 &5 &1263 \\
+40 &12 &64 &650 &4 &1308 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+%Please add the following packages if necessary:
+%\usepackage{booktabs, multirow} % for borders and merged ranges
+%\usepackage{soul}% for underlines
+%\usepackage[table]{xcolor} % for cell colors
+%\usepackage{changepage,threeparttable} % for wide tables
+%If the table is too wide, replace \begin{table}[!htp]...\end{table} with
+%\begin{adjustwidth}{-2.5 cm}{-2.5 cm}\centering\begin{threeparttable}[!htb]...\end{threeparttable}\end{adjustwidth}
+\begin{table}[!htp]\centering
+\caption{Using CIFAR10 dataset, standard Resnet32, running for 200 epochs, using the multiepoch dataloader}\label{tab:cifar10_multiepoch_dataloader}
+\scriptsize
+\begin{tabular}{lrrrrrrrr}\toprule
+num\_workers &num\_gpus &batch size per GPU &total batch size &time prepare &total time &runtime &best acc \\\midrule
+10 &12 &64 &768 &58 &544 &486 &91.92 \\
+15 &12 &64 &768 &84 &564 &480 &91.44 \\
+20 &12 &64 &768 &110 &592 &482 &91.65 \\
+40 &12 &64 &768 &214 &703 &489 &91.83 \\\midrule
+10 &12 &32 &384 &57 &993 &936 &92.11 \\
+10 &12 &128 &1536 &57 &322 &265 &89.78 \\\midrule
+15 &6 &128 &768 &91 &518 &427 &91.77 \\
+15 &3 &256 &768 &91 &509 &418 &91.31 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Results suggest that
+\begin{itemize}
+	\item Tables~\ref{tab:int_multiepoch_dataloader} and~\ref{tab:int_regular_dataloader} show that multi dataloader require much less computational time than the regular dataloader. Using less worker saves time for multi-epoch dataloader. 
+	\item Number of workers should not be too large or too small, maybe 15 is fine. 
+	\item Batch size has an impact on the performance and the runtime. The smaller batch size, the longer runtime is required. 	
+	\item When GPU memory is enough regarding the target batch size, the fewer GPUs to use the better, probably due to that fact that the communication between GPUs for gradients takes time. 
+\end{itemize}
+
+\newpage
+\bibliographystyle{apalike}
+\bibliography{literature} 
+\end{document}

@@ -1,0 +1,997 @@
+Python 3.10.4
+10.1.34.231
+===========Using regular dataloader
+=====================12 GPUs 10 workers 64 batch size\n
+Node 3: 3 GPUs
+trainer:
+	name: Res50_iNaturalist2018_0_batch64
+	print_freq: 40
+	resume: False
+	mode: test
+	seed: 0
+	num_epochs: 2
+dataset:
+	name: iNaturalist2018
+	args:
+		num_workers: 10
+		batch_size: 64
+model:
+	name: resnet50
+	args:
+optimizer:
+	name: SGD
+	args:
+		lr: 0.1
+		weight_decay: 0.0001
+		momentum: 0.9
+lr_scheduler:
+	name: cosine
+	args:
+		warmup: False
+ddp:
+	world_size: 12
+	node_rank: 0
+	num_nodes: 4
+	num_gpus_per_node: 3
+	dist_url: tcp://10.1.34.231:12322
+	dist_backend: nccl
+	on: True
+
+Node 0: 3 GPUs
+Node 2: 3 GPUs
+Node 1: 3 GPUs
+Initializing distributed package for GPU 0 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 0
+Data prepared.
+total_class_num: 8142, total_data: 437513, sample_per_class: 2-1000
+total_class_num: 8142, total_data: 24426, sample_per_class: 3-3
+====> training started	runtime: 5.210
+Initializing distributed package for GPU 1 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 1
+Initializing distributed package for GPU 3 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 3
+Initializing distributed package for GPU 6 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 6
+Initializing distributed package for GPU 10 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 10
+Initializing distributed package for GPU 9 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 9
+Initializing distributed package for GPU 5 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 5
+Initializing distributed package for GPU 8 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 8
+Initializing distributed package for GPU 7 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 7
+Initializing distributed package for GPU 4 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 4
+Initializing distributed package for GPU 2 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 2
+Initializing distributed package for GPU 11 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 11
+* Train Acc@best: 1.206% Error@best: 98.794%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.883	acc@aveclass: nan	r_acc: nan	Runtime: 471.532	lr: 0.1
+* Train Acc@best: 1.241% Error@best: 98.759%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.914	acc@aveclass: nan	r_acc: nan	Runtime: 471.320	lr: 0.1
+* Train Acc@best: 1.107% Error@best: 98.893%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.824	acc@aveclass: nan	r_acc: nan	Runtime: 471.317	lr: 0.1
+* Train Acc@best: 1.211% Error@best: 98.789%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.881	acc@aveclass: nan	r_acc: nan	Runtime: 471.281	lr: 0.1
+* Train Acc@best: 1.203% Error@best: 98.797%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.892	acc@aveclass: nan	r_acc: nan	Runtime: 471.551	lr: 0.1
+* Train Acc@best: 1.186% Error@best: 98.814%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.835	acc@aveclass: nan	r_acc: nan	Runtime: 471.535	lr: 0.1
+Train epoch: [0][  0/569]	Batch_time 44.617 (44.617)	Data_time 31.179 (31.179)	Loss 9.131 (9.131)	Acc@1  0.000 ( 0.000)	Acc@5  0.000 ( 0.000)
+Train epoch: [0][ 40/569]	Batch_time  0.202 ( 1.713)	Data_time  0.000 ( 1.067)	Loss 8.634 (8.683)	Acc@1  0.000 ( 0.267)	Acc@5  1.562 ( 1.220)
+Train epoch: [0][ 80/569]	Batch_time  0.207 ( 1.282)	Data_time  0.000 ( 0.699)	Loss 7.661 (8.403)	Acc@1  0.000 ( 0.289)	Acc@5  3.125 ( 1.505)
+Train epoch: [0][120/569]	Batch_time  0.192 ( 1.174)	Data_time  0.000 ( 0.519)	Loss 7.818 (8.245)	Acc@1  3.125 ( 0.400)	Acc@5  7.812 ( 1.898)
+Train epoch: [0][160/569]	Batch_time  0.224 ( 1.071)	Data_time  0.000 ( 0.398)	Loss 7.509 (8.150)	Acc@1  1.562 ( 0.495)	Acc@5  4.688 ( 2.213)
+Train epoch: [0][200/569]	Batch_time  0.214 ( 1.026)	Data_time  0.000 ( 0.332)	Loss 8.194 (8.082)	Acc@1  0.000 ( 0.622)	Acc@5  3.125 ( 2.488)
+Train epoch: [0][240/569]	Batch_time  0.199 ( 0.972)	Data_time  0.000 ( 0.277)	Loss 7.562 (8.023)	Acc@1  1.562 ( 0.681)	Acc@5  6.250 ( 2.678)
+Train epoch: [0][280/569]	Batch_time  0.204 ( 0.936)	Data_time  0.000 ( 0.238)	Loss 7.567 (7.967)	Acc@1  3.125 ( 0.851)	Acc@5 12.500 ( 3.058)
+Train epoch: [0][320/569]	Batch_time  0.208 ( 0.901)	Data_time  0.000 ( 0.215)	Loss 7.434 (7.917)	Acc@1  4.688 ( 0.939)	Acc@5 15.625 ( 3.290)
+Train epoch: [0][360/569]	Batch_time  0.206 ( 0.885)	Data_time  0.000 ( 0.206)	Loss 7.416 (7.869)	Acc@1  1.562 ( 1.017)	Acc@5  3.125 ( 3.549)
+Train epoch: [0][400/569]	Batch_time  3.859 ( 0.878)	Data_time  0.548 ( 0.194)	Loss 7.500 (7.829)	Acc@1  0.000 ( 1.036)	Acc@5  3.125 ( 3.686)
+Train epoch: [0][440/569]	Batch_time  1.623 ( 0.874)	Data_time  0.000 ( 0.178)	Loss 7.632 (7.793)	Acc@1  3.125 ( 1.084)	Acc@5  7.812 ( 3.880)
+Train epoch: [0][480/569]	Batch_time  0.195 ( 0.855)	Data_time  0.000 ( 0.164)	Loss 7.551 (7.754)	Acc@1  0.000 ( 1.166)	Acc@5  1.562 ( 4.103)
+Train epoch: [0][520/569]	Batch_time  0.192 ( 0.842)	Data_time  0.000 ( 0.152)	Loss 7.542 (7.719)	Acc@1  1.562 ( 1.236)	Acc@5  1.562 ( 4.352)
+Train epoch: [0][560/569]	Batch_time  0.604 ( 0.825)	Data_time  0.000 ( 0.145)	Loss 7.262 (7.688)	Acc@1  0.000 ( 1.295)	Acc@5  7.812 ( 4.509)
+Train:  acc@head: nan	acc@med: nan	acc@tail: 0.937	acc@aveclass: nan	r_acc: nan	
+* Train Acc@best: 1.304% Error@best: 98.696%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.937	acc@aveclass: nan	r_acc: nan	Runtime: 471.553	lr: 0.1
+* Train Acc@best: 1.173% Error@best: 98.827%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.880	acc@aveclass: nan	r_acc: nan	Runtime: 471.566	lr: 0.1
+* Train Acc@best: 1.263% Error@best: 98.737%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.904	acc@aveclass: nan	r_acc: nan	Runtime: 471.589	lr: 0.1
+* Train Acc@best: 1.263% Error@best: 98.737%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.934	acc@aveclass: nan	r_acc: nan	Runtime: 471.588	lr: 0.1
+* Train Acc@best: 1.151% Error@best: 98.849%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.819	acc@aveclass: nan	r_acc: nan	Runtime: 471.507	lr: 0.1
+* Train Acc@best: 1.140% Error@best: 98.860%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.816	acc@aveclass: nan	r_acc: nan	Runtime: 471.533	lr: 0.1
+Eval: [  0/382]	Batch_time 58.782 (58.782)	Data_time 58.747 (58.747)	Loss 9.185 (9.185)	Acc@1  0.000 ( 0.000)	Acc@5  0.000 ( 0.000)
+Eval: [ 40/382]	Batch_time  2.969 ( 1.763)	Data_time  2.935 ( 1.731)	Loss 9.255 (9.477)	Acc@1  0.000 ( 0.076)	Acc@5  0.000 ( 0.610)
+Eval: [ 80/382]	Batch_time  2.578 ( 1.044)	Data_time  2.544 ( 1.012)	Loss 9.008 (9.446)	Acc@1  0.000 ( 0.154)	Acc@5  0.000 ( 0.540)
+Eval: [120/382]	Batch_time  3.036 ( 0.801)	Data_time  3.001 ( 0.770)	Loss 11.439 (9.569)	Acc@1  0.000 ( 0.155)	Acc@5  0.000 ( 0.633)
+Eval: [160/382]	Batch_time  2.234 ( 0.671)	Data_time  2.200 ( 0.639)	Loss 8.987 (9.483)	Acc@1  0.000 ( 0.155)	Acc@5  1.562 ( 0.641)
+Eval: [200/382]	Batch_time  1.686 ( 0.592)	Data_time  1.652 ( 0.560)	Loss 9.482 (9.449)	Acc@1  0.000 ( 0.187)	Acc@5  0.000 ( 0.653)
+Eval: [240/382]	Batch_time  2.756 ( 0.545)	Data_time  2.720 ( 0.513)	Loss 8.860 (9.419)	Acc@1  0.000 ( 0.182)	Acc@5  0.000 ( 0.681)
+Eval: [280/382]	Batch_time  2.122 ( 0.509)	Data_time  2.088 ( 0.477)	Loss 9.023 (9.387)	Acc@1  0.000 ( 0.183)	Acc@5  0.000 ( 0.706)
+Eval: [320/382]	Batch_time  2.287 ( 0.485)	Data_time  2.253 ( 0.453)	Loss 10.680 (9.413)	Acc@1  1.562 ( 0.200)	Acc@5  3.125 ( 0.725)
+Eval: [360/382]	Batch_time  2.227 ( 0.465)	Data_time  2.192 ( 0.434)	Loss 9.035 (9.440)	Acc@1  0.000 ( 0.190)	Acc@5  0.000 ( 0.706)
+Eval:  acc@head: 0.000	acc@med: 0.000	acc@tail: 1.821	acc@aveclass: 0.188	r_acc: 0.000	
+* Eval Acc@best: 0.188% Error@best: 99.812%	Eval:  acc@head: 0.000	acc@med: 0.000	acc@tail: 1.821	acc@aveclass: 0.188	r_acc: 0.000		Runtime: 646.327	lr: 0.1	Epoch_time: 641.117
+* Train Acc@best: 3.144% Error@best: 96.856%	Train:  acc@head: nan	acc@med: nan	acc@tail: 3.016	acc@aveclass: nan	r_acc: nan	Runtime: 1143.503	lr: 0.1
+* Train Acc@best: 3.012% Error@best: 96.988%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.981	acc@aveclass: nan	r_acc: nan	Runtime: 1143.511	lr: 0.1
+* Train Acc@best: 3.196% Error@best: 96.804%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.961	acc@aveclass: nan	r_acc: nan	Runtime: 1143.253	lr: 0.1
+* Train Acc@best: 3.125% Error@best: 96.875%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.985	acc@aveclass: nan	r_acc: nan	Runtime: 1143.541	lr: 0.1
+* Train Acc@best: 3.249% Error@best: 96.751%	Train:  acc@head: nan	acc@med: nan	acc@tail: 3.054	acc@aveclass: nan	r_acc: nan	Runtime: 1143.504	lr: 0.1
+* Train Acc@best: 3.301% Error@best: 96.699%	Train:  acc@head: nan	acc@med: nan	acc@tail: 3.154	acc@aveclass: nan	r_acc: nan	Runtime: 1143.440	lr: 0.1
+* Train Acc@best: 3.048% Error@best: 96.952%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.923	acc@aveclass: nan	r_acc: nan	Runtime: 1143.523	lr: 0.1
+Train epoch: [1][  0/569]	Batch_time 59.189 (59.189)	Data_time 59.102 (59.102)	Loss 6.802 (6.802)	Acc@1  1.562 ( 1.562)	Acc@5  6.250 ( 6.250)
+Train epoch: [1][ 40/569]	Batch_time  4.778 ( 2.122)	Data_time  4.693 ( 1.929)	Loss 6.982 (7.185)	Acc@1  1.562 ( 1.410)	Acc@5  6.250 ( 6.784)
+Train epoch: [1][ 80/569]	Batch_time  3.550 ( 1.389)	Data_time  3.465 ( 1.189)	Loss 7.341 (7.132)	Acc@1  0.000 ( 1.640)	Acc@5  6.250 ( 7.272)
+Train epoch: [1][120/569]	Batch_time  5.105 ( 1.168)	Data_time  5.020 ( 0.925)	Loss 7.306 (7.128)	Acc@1  1.562 ( 1.808)	Acc@5  1.562 ( 7.206)
+Train epoch: [1][160/569]	Batch_time  0.503 ( 1.050)	Data_time  0.445 ( 0.786)	Loss 7.071 (7.099)	Acc@1  0.000 ( 1.990)	Acc@5  4.688 ( 7.288)
+Train epoch: [1][200/569]	Batch_time  0.195 ( 1.002)	Data_time  0.000 ( 0.740)	Loss 6.624 (7.081)	Acc@1  6.250 ( 2.060)	Acc@5 12.500 ( 7.564)
+Train epoch: [1][240/569]	Batch_time  0.202 ( 0.948)	Data_time  0.000 ( 0.701)	Loss 6.888 (7.068)	Acc@1  3.125 ( 2.140)	Acc@5  7.812 ( 7.787)
+Train epoch: [1][280/569]	Batch_time  0.204 ( 0.942)	Data_time  0.000 ( 0.704)	Loss 7.213 (7.047)	Acc@1  0.000 ( 2.219)	Acc@5  4.688 ( 7.924)
+Train epoch: [1][320/569]	Batch_time  0.196 ( 0.920)	Data_time  0.000 ( 0.690)	Loss 7.066 (7.019)	Acc@1  3.125 ( 2.473)	Acc@5  4.688 ( 8.207)
+Train epoch: [1][360/569]	Batch_time  0.203 ( 0.900)	Data_time  0.000 ( 0.676)	Loss 6.688 (6.998)	Acc@1  4.688 ( 2.601)	Acc@5  9.375 ( 8.423)
+Train epoch: [1][400/569]	Batch_time  0.211 ( 0.884)	Data_time  0.000 ( 0.661)	Loss 6.876 (6.974)	Acc@1  7.812 ( 2.747)	Acc@5 14.062 ( 8.681)
+Train epoch: [1][440/569]	Batch_time  1.927 ( 0.889)	Data_time  0.000 ( 0.663)	Loss 6.681 (6.949)	Acc@1  4.688 ( 2.842)	Acc@5 12.500 ( 8.960)
+Train epoch: [1][480/569]	Batch_time  0.201 ( 0.885)	Data_time  0.000 ( 0.621)	Loss 7.244 (6.935)	Acc@1  4.688 ( 2.937)	Acc@5  7.812 ( 9.125)
+Train epoch: [1][520/569]	Batch_time  0.194 ( 0.886)	Data_time  0.000 ( 0.583)	Loss 6.998 (6.915)	Acc@1  0.000 ( 3.029)	Acc@5  1.562 ( 9.357)
+Train epoch: [1][560/569]	Batch_time  0.198 ( 0.877)	Data_time  0.000 ( 0.542)	Loss 6.156 (6.892)	Acc@1 10.938 ( 3.153)	Acc@5 20.312 ( 9.626)
+Train:  acc@head: nan	acc@med: nan	acc@tail: 3.100	acc@aveclass: nan	r_acc: nan	
+* Train Acc@best: 3.169% Error@best: 96.831%	Train:  acc@head: nan	acc@med: nan	acc@tail: 3.100	acc@aveclass: nan	r_acc: nan	Runtime: 1143.536	lr: 0.1
+* Train Acc@best: 3.114% Error@best: 96.886%	Train:  acc@head: nan	acc@med: nan	acc@tail: 3.118	acc@aveclass: nan	r_acc: nan	Runtime: 1143.308	lr: 0.1
+* Train Acc@best: 3.166% Error@best: 96.834%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.974	acc@aveclass: nan	r_acc: nan	Runtime: 1143.304	lr: 0.1
+* Train Acc@best: 3.015% Error@best: 96.985%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.985	acc@aveclass: nan	r_acc: nan	Runtime: 1143.590	lr: 0.1
+* Train Acc@best: 3.007% Error@best: 96.993%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.898	acc@aveclass: nan	r_acc: nan	Runtime: 1143.600	lr: 0.1
+Eval: [  0/382]	Batch_time 59.982 (59.982)	Data_time 59.948 (59.948)	Loss 8.299 (8.299)	Acc@1  0.000 ( 0.000)	Acc@5  3.125 ( 3.125)
+Eval: [ 40/382]	Batch_time  2.298 ( 1.816)	Data_time  2.264 ( 1.784)	Loss 9.756 (9.242)	Acc@1  0.000 ( 0.343)	Acc@5  0.000 ( 1.677)
+Eval: [ 80/382]	Batch_time  1.458 ( 1.058)	Data_time  1.432 ( 1.027)	Loss 8.078 (9.087)	Acc@1  0.000 ( 0.405)	Acc@5  1.562 ( 1.678)
+Eval: [120/382]	Batch_time  1.845 ( 0.819)	Data_time  1.820 ( 0.788)	Loss 15.176 (9.269)	Acc@1  0.000 ( 0.387)	Acc@5  1.562 ( 1.562)
+Eval: [160/382]	Batch_time  2.274 ( 0.707)	Data_time  2.238 ( 0.676)	Loss 8.262 (9.210)	Acc@1  1.562 ( 0.388)	Acc@5  1.562 ( 1.611)
+Eval: [200/382]	Batch_time  0.816 ( 0.645)	Data_time  0.786 ( 0.614)	Loss 9.396 (9.201)	Acc@1  0.000 ( 0.396)	Acc@5  1.562 ( 1.586)
+Eval: [240/382]	Batch_time  0.876 ( 0.598)	Data_time  0.846 ( 0.568)	Loss 8.269 (9.172)	Acc@1  0.000 ( 0.389)	Acc@5  6.250 ( 1.530)
+Eval: [280/382]	Batch_time  0.168 ( 0.566)	Data_time  0.142 ( 0.535)	Loss 8.197 (9.115)	Acc@1  0.000 ( 0.395)	Acc@5  0.000 ( 1.624)
+Eval: [320/382]	Batch_time  0.025 ( 0.542)	Data_time  0.000 ( 0.512)	Loss 9.756 (9.128)	Acc@1  0.000 ( 0.385)	Acc@5  1.562 ( 1.592)
+Eval: [360/382]	Batch_time  0.034 ( 0.514)	Data_time  0.000 ( 0.484)	Loss 8.297 (9.169)	Acc@1  1.562 ( 0.394)	Acc@5  1.562 ( 1.584)
+Eval:  acc@head: 0.009	acc@med: 0.063	acc@tail: 3.563	acc@aveclass: 0.401	r_acc: 0.003	
+* Eval Acc@best: 0.401% Error@best: 99.599%	Eval:  acc@head: 0.009	acc@med: 0.063	acc@tail: 3.563	acc@aveclass: 0.401	r_acc: 0.003		Runtime: 1336.312	lr: 0.1	Epoch_time: 689.225
+training completed, time: 1338s
+=====================12 GPUs 20 workers 64 batch size\n
+trainer:
+	name: Res50_iNaturalist2018_0_batch64
+	print_freq: 40
+	resume: False
+	mode: test
+	seed: 0
+	num_epochs: 2
+dataset:
+	name: iNaturalist2018
+	args:
+		num_workers: 20
+		batch_size: 64
+model:
+	name: resnet50
+	args:
+optimizer:
+	name: SGD
+	args:
+		lr: 0.1
+		weight_decay: 0.0001
+		momentum: 0.9
+lr_scheduler:
+	name: cosine
+	args:
+		warmup: False
+ddp:
+	world_size: 12
+	node_rank: 0
+	num_nodes: 4
+	num_gpus_per_node: 3
+	dist_url: tcp://10.1.34.231:12322
+	dist_backend: nccl
+	on: True
+
+Node 0: 3 GPUs
+Node 3: 3 GPUs
+Node 2: 3 GPUs
+Node 1: 3 GPUs
+Initializing distributed package for GPU 0 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 0
+Data prepared.
+total_class_num: 8142, total_data: 437513, sample_per_class: 2-1000
+total_class_num: 8142, total_data: 24426, sample_per_class: 3-3
+====> training started	runtime: 5.246
+Initializing distributed package for GPU 1 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 1
+Initializing distributed package for GPU 3 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 3
+Initializing distributed package for GPU 6 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 6
+Initializing distributed package for GPU 9 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 9
+Initializing distributed package for GPU 10 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 10
+Initializing distributed package for GPU 7 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 7
+Initializing distributed package for GPU 2 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 2
+Initializing distributed package for GPU 4 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 4
+Initializing distributed package for GPU 5 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 5
+Initializing distributed package for GPU 8 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 8
+Initializing distributed package for GPU 11 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 11
+* Train Acc@best: 1.030% Error@best: 98.970%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.714	acc@aveclass: nan	r_acc: nan	Runtime: 404.282	lr: 0.1
+* Train Acc@best: 1.024% Error@best: 98.976%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.684	acc@aveclass: nan	r_acc: nan	Runtime: 404.277	lr: 0.1
+* Train Acc@best: 1.115% Error@best: 98.885%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.772	acc@aveclass: nan	r_acc: nan	Runtime: 404.139	lr: 0.1
+* Train Acc@best: 1.035% Error@best: 98.965%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.689	acc@aveclass: nan	r_acc: nan	Runtime: 404.135	lr: 0.1
+* Train Acc@best: 1.054% Error@best: 98.946%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.724	acc@aveclass: nan	r_acc: nan	Runtime: 404.335	lr: 0.1
+* Train Acc@best: 1.011% Error@best: 98.989%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.670	acc@aveclass: nan	r_acc: nan	Runtime: 404.221	lr: 0.1
+* Train Acc@best: 1.079% Error@best: 98.921%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.722	acc@aveclass: nan	r_acc: nan	Runtime: 404.153	lr: 0.1
+* Train Acc@best: 0.975% Error@best: 99.025%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.663	acc@aveclass: nan	r_acc: nan	Runtime: 404.259	lr: 0.1
+* Train Acc@best: 1.054% Error@best: 98.946%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.718	acc@aveclass: nan	r_acc: nan	Runtime: 404.292	lr: 0.1
+* Train Acc@best: 0.986% Error@best: 99.014%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.667	acc@aveclass: nan	r_acc: nan	Runtime: 404.862	lr: 0.1
+* Train Acc@best: 1.074% Error@best: 98.926%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.679	acc@aveclass: nan	r_acc: nan	Runtime: 404.877	lr: 0.1
+Train epoch: [0][  0/569]	Batch_time 72.392 (72.392)	Data_time 55.777 (55.777)	Loss 9.225 (9.225)	Acc@1  0.000 ( 0.000)	Acc@5  0.000 ( 0.000)
+Train epoch: [0][ 40/569]	Batch_time  0.122 ( 1.891)	Data_time  0.000 ( 1.365)	Loss 9.082 (8.756)	Acc@1  0.000 ( 0.305)	Acc@5  0.000 ( 1.181)
+Train epoch: [0][ 80/569]	Batch_time  0.125 ( 1.273)	Data_time  0.000 ( 0.874)	Loss 7.725 (8.467)	Acc@1  0.000 ( 0.328)	Acc@5  3.125 ( 1.370)
+Train epoch: [0][120/569]	Batch_time  0.124 ( 1.068)	Data_time  0.000 ( 0.682)	Loss 7.862 (8.302)	Acc@1  1.562 ( 0.413)	Acc@5  6.250 ( 1.821)
+Train epoch: [0][160/569]	Batch_time  1.620 ( 0.974)	Data_time  0.000 ( 0.547)	Loss 7.684 (8.211)	Acc@1  1.562 ( 0.437)	Acc@5  4.688 ( 2.048)
+Train epoch: [0][200/569]	Batch_time  3.531 ( 0.921)	Data_time  0.000 ( 0.438)	Loss 8.168 (8.146)	Acc@1  0.000 ( 0.552)	Acc@5  3.125 ( 2.301)
+Train epoch: [0][240/569]	Batch_time  0.122 ( 0.848)	Data_time  0.000 ( 0.366)	Loss 7.641 (8.089)	Acc@1  3.125 ( 0.603)	Acc@5  3.125 ( 2.529)
+Train epoch: [0][280/569]	Batch_time  0.118 ( 0.808)	Data_time  0.000 ( 0.314)	Loss 7.667 (8.035)	Acc@1  4.688 ( 0.745)	Acc@5 12.500 ( 2.797)
+Train epoch: [0][320/569]	Batch_time  0.123 ( 0.798)	Data_time  0.000 ( 0.275)	Loss 7.505 (7.990)	Acc@1  3.125 ( 0.832)	Acc@5  9.375 ( 2.979)
+Train epoch: [0][360/569]	Batch_time  0.104 ( 0.779)	Data_time  0.000 ( 0.245)	Loss 7.540 (7.945)	Acc@1  0.000 ( 0.892)	Acc@5  0.000 ( 3.147)
+Train epoch: [0][400/569]	Batch_time  0.100 ( 0.753)	Data_time  0.000 ( 0.228)	Loss 7.695 (7.908)	Acc@1  0.000 ( 0.923)	Acc@5  3.125 ( 3.289)
+Train epoch: [0][440/569]	Batch_time  0.102 ( 0.737)	Data_time  0.000 ( 0.216)	Loss 7.552 (7.876)	Acc@1  1.562 ( 0.964)	Acc@5  4.688 ( 3.423)
+Train epoch: [0][480/569]	Batch_time  0.125 ( 0.730)	Data_time  0.000 ( 0.202)	Loss 7.568 (7.840)	Acc@1  1.562 ( 1.027)	Acc@5  4.688 ( 3.609)
+Train epoch: [0][520/569]	Batch_time  0.125 ( 0.713)	Data_time  0.000 ( 0.187)	Loss 7.769 (7.808)	Acc@1  0.000 ( 1.068)	Acc@5  1.562 ( 3.785)
+Train epoch: [0][560/569]	Batch_time  0.125 ( 0.702)	Data_time  0.000 ( 0.174)	Loss 7.342 (7.777)	Acc@1  0.000 ( 1.122)	Acc@5  1.562 ( 3.930)
+Train:  acc@head: nan	acc@med: nan	acc@tail: 0.751	acc@aveclass: nan	r_acc: nan	
+* Train Acc@best: 1.134% Error@best: 98.866%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.751	acc@aveclass: nan	r_acc: nan	Runtime: 404.878	lr: 0.1
+Eval: [  0/382]	Batch_time 79.944 (79.944)	Data_time 79.910 (79.910)	Loss 10.075 (10.075)	Acc@1  0.000 ( 0.000)	Acc@5  0.000 ( 0.000)
+Eval: [ 40/382]	Batch_time  4.258 ( 2.174)	Data_time  4.224 ( 2.146)	Loss 10.587 (10.502)	Acc@1  0.000 ( 0.038)	Acc@5  0.000 ( 0.343)
+Eval: [ 80/382]	Batch_time  3.191 ( 1.197)	Data_time  3.157 ( 1.169)	Loss 9.203 (10.422)	Acc@1  0.000 ( 0.077)	Acc@5  0.000 ( 0.405)
+Eval: [120/382]	Batch_time  3.271 ( 0.872)	Data_time  3.238 ( 0.844)	Loss 13.882 (10.346)	Acc@1  0.000 ( 0.052)	Acc@5  0.000 ( 0.400)
+Eval: [160/382]	Batch_time  4.003 ( 0.713)	Data_time  3.969 ( 0.685)	Loss 11.486 (10.422)	Acc@1  0.000 ( 0.087)	Acc@5  1.562 ( 0.427)
+Eval: [200/382]	Batch_time  5.726 ( 0.630)	Data_time  5.692 ( 0.601)	Loss 9.480 (10.380)	Acc@1  0.000 ( 0.101)	Acc@5  0.000 ( 0.459)
+Eval: [240/382]	Batch_time  5.828 ( 0.582)	Data_time  5.794 ( 0.554)	Loss 9.177 (10.502)	Acc@1  0.000 ( 0.123)	Acc@5  0.000 ( 0.460)
+Eval: [280/382]	Batch_time  6.746 ( 0.548)	Data_time  6.712 ( 0.520)	Loss 9.069 (10.519)	Acc@1  0.000 ( 0.128)	Acc@5  0.000 ( 0.500)
+Eval: [320/382]	Batch_time  5.011 ( 0.518)	Data_time  4.977 ( 0.490)	Loss 9.026 (10.491)	Acc@1  0.000 ( 0.131)	Acc@5  1.562 ( 0.526)
+Eval: [360/382]	Batch_time  6.054 ( 0.499)	Data_time  6.020 ( 0.471)	Loss 10.259 (10.484)	Acc@1  0.000 ( 0.121)	Acc@5  0.000 ( 0.506)
+Eval:  acc@head: 0.000	acc@med: 0.000	acc@tail: 1.188	acc@aveclass: 0.123	r_acc: 0.000	
+* Eval Acc@best: 0.123% Error@best: 99.877%	Eval:  acc@head: 0.000	acc@med: 0.000	acc@tail: 1.188	acc@aveclass: 0.123	r_acc: 0.000		Runtime: 590.106	lr: 0.1	Epoch_time: 584.860
+* Train Acc@best: 2.573% Error@best: 97.427%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.342	acc@aveclass: nan	r_acc: nan	Runtime: 1031.635	lr: 0.1
+* Train Acc@best: 2.603% Error@best: 97.397%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.495	acc@aveclass: nan	r_acc: nan	Runtime: 1031.604	lr: 0.1
+* Train Acc@best: 2.554% Error@best: 97.446%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.351	acc@aveclass: nan	r_acc: nan	Runtime: 1031.502	lr: 0.1
+* Train Acc@best: 2.647% Error@best: 97.353%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.389	acc@aveclass: nan	r_acc: nan	Runtime: 1031.502	lr: 0.1
+* Train Acc@best: 2.798% Error@best: 97.202%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.360	acc@aveclass: nan	r_acc: nan	Runtime: 1031.528	lr: 0.1
+* Train Acc@best: 2.746% Error@best: 97.254%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.458	acc@aveclass: nan	r_acc: nan	Runtime: 1031.632	lr: 0.1
+Train epoch: [1][  0/569]	Batch_time 86.721 (86.721)	Data_time 86.644 (86.644)	Loss 6.893 (6.893)	Acc@1  3.125 ( 3.125)	Acc@5  6.250 ( 6.250)
+Train epoch: [1][ 40/569]	Batch_time  6.485 ( 2.766)	Data_time  6.407 ( 2.570)	Loss 6.945 (7.290)	Acc@1  6.250 ( 1.715)	Acc@5 12.500 ( 6.059)
+Train epoch: [1][ 80/569]	Batch_time  5.332 ( 1.683)	Data_time  5.254 ( 1.484)	Loss 7.531 (7.249)	Acc@1  0.000 ( 1.640)	Acc@5  4.688 ( 6.211)
+Train epoch: [1][120/569]	Batch_time  6.116 ( 1.332)	Data_time  6.038 ( 1.117)	Loss 7.190 (7.241)	Acc@1  3.125 ( 1.756)	Acc@5  6.250 ( 6.353)
+Train epoch: [1][160/569]	Batch_time  4.449 ( 1.171)	Data_time  4.370 ( 0.962)	Loss 7.075 (7.216)	Acc@1  0.000 ( 1.873)	Acc@5  3.125 ( 6.454)
+Train epoch: [1][200/569]	Batch_time  6.006 ( 1.071)	Data_time  5.928 ( 0.867)	Loss 6.772 (7.200)	Acc@1  3.125 ( 1.881)	Acc@5 12.500 ( 6.709)
+Train epoch: [1][240/569]	Batch_time  6.288 ( 0.997)	Data_time  6.210 ( 0.793)	Loss 7.080 (7.181)	Acc@1  1.562 ( 1.887)	Acc@5  7.812 ( 6.872)
+Train epoch: [1][280/569]	Batch_time  7.465 ( 0.945)	Data_time  7.386 ( 0.743)	Loss 7.448 (7.164)	Acc@1  0.000 ( 1.974)	Acc@5  4.688 ( 7.129)
+Train epoch: [1][320/569]	Batch_time  8.190 ( 0.912)	Data_time  8.111 ( 0.705)	Loss 7.361 (7.139)	Acc@1  3.125 ( 2.093)	Acc@5  9.375 ( 7.423)
+Train epoch: [1][360/569]	Batch_time  1.128 ( 0.861)	Data_time  1.071 ( 0.633)	Loss 6.734 (7.121)	Acc@1  4.688 ( 2.186)	Acc@5  9.375 ( 7.652)
+Train epoch: [1][400/569]	Batch_time  0.097 ( 0.834)	Data_time  0.000 ( 0.581)	Loss 7.054 (7.100)	Acc@1  3.125 ( 2.322)	Acc@5 10.938 ( 7.890)
+Train epoch: [1][440/569]	Batch_time  0.099 ( 0.813)	Data_time  0.000 ( 0.547)	Loss 6.573 (7.078)	Acc@1  6.250 ( 2.438)	Acc@5 10.938 ( 8.085)
+Train epoch: [1][480/569]	Batch_time  0.123 ( 0.805)	Data_time  0.000 ( 0.538)	Loss 7.313 (7.062)	Acc@1  0.000 ( 2.508)	Acc@5  1.562 ( 8.238)
+Train epoch: [1][520/569]	Batch_time  0.099 ( 0.795)	Data_time  0.000 ( 0.520)	Loss 7.010 (7.043)	Acc@1  1.562 ( 2.564)	Acc@5  6.250 ( 8.400)
+Train epoch: [1][560/569]	Batch_time  0.134 ( 0.776)	Data_time  0.000 ( 0.492)	Loss 6.288 (7.021)	Acc@1 12.500 ( 2.663)	Acc@5 20.312 ( 8.623)
+Train:  acc@head: nan	acc@med: nan	acc@tail: 2.369	acc@aveclass: nan	r_acc: nan	
+* Train Acc@best: 2.672% Error@best: 97.328%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.369	acc@aveclass: nan	r_acc: nan	Runtime: 1031.636	lr: 0.1
+* Train Acc@best: 2.565% Error@best: 97.435%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.343	acc@aveclass: nan	r_acc: nan	Runtime: 1031.726	lr: 0.1
+* Train Acc@best: 2.828% Error@best: 97.172%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.523	acc@aveclass: nan	r_acc: nan	Runtime: 1031.744	lr: 0.1
+* Train Acc@best: 2.686% Error@best: 97.314%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.500	acc@aveclass: nan	r_acc: nan	Runtime: 1031.684	lr: 0.1
+* Train Acc@best: 2.774% Error@best: 97.226%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.474	acc@aveclass: nan	r_acc: nan	Runtime: 1031.657	lr: 0.1
+* Train Acc@best: 2.642% Error@best: 97.358%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.498	acc@aveclass: nan	r_acc: nan	Runtime: 1031.729	lr: 0.1
+Eval: [  0/382]	Batch_time 84.452 (84.452)	Data_time 84.417 (84.417)	Loss 8.232 (8.232)	Acc@1  1.562 ( 1.562)	Acc@5  4.688 ( 4.688)
+Eval: [ 40/382]	Batch_time  5.866 ( 2.584)	Data_time  5.832 ( 2.554)	Loss 8.649 (8.334)	Acc@1  0.000 ( 0.381)	Acc@5  0.000 ( 1.486)
+Eval: [ 80/382]	Batch_time  0.026 ( 1.494)	Data_time  0.000 ( 1.464)	Loss 8.111 (8.328)	Acc@1  0.000 ( 0.347)	Acc@5  1.562 ( 1.505)
+Eval: [120/382]	Batch_time  0.026 ( 1.125)	Data_time  0.000 ( 1.096)	Loss 8.605 (8.340)	Acc@1  0.000 ( 0.349)	Acc@5  1.562 ( 1.395)
+Eval: [160/382]	Batch_time  0.034 ( 0.957)	Data_time  0.000 ( 0.928)	Loss 8.290 (8.330)	Acc@1  0.000 ( 0.349)	Acc@5  0.000 ( 1.378)
+Eval: [200/382]	Batch_time  0.034 ( 0.838)	Data_time  0.000 ( 0.809)	Loss 8.391 (8.326)	Acc@1  0.000 ( 0.342)	Acc@5  0.000 ( 1.376)
+Eval: [240/382]	Batch_time  0.034 ( 0.770)	Data_time  0.000 ( 0.740)	Loss 8.172 (8.315)	Acc@1  0.000 ( 0.344)	Acc@5  4.688 ( 1.342)
+Eval: [280/382]	Batch_time  0.034 ( 0.712)	Data_time  0.000 ( 0.683)	Loss 8.229 (8.308)	Acc@1  0.000 ( 0.345)	Acc@5  1.562 ( 1.412)
+Eval: [320/382]	Batch_time  0.034 ( 0.673)	Data_time  0.000 ( 0.644)	Loss 8.114 (8.313)	Acc@1  0.000 ( 0.346)	Acc@5  1.562 ( 1.412)
+Eval: [360/382]	Batch_time  0.033 ( 0.622)	Data_time  0.000 ( 0.593)	Loss 8.056 (8.314)	Acc@1  0.000 ( 0.355)	Acc@5  3.125 ( 1.385)
+Eval:  acc@head: 0.000	acc@med: 0.063	acc@tail: 3.207	acc@aveclass: 0.360	r_acc: 0.000	
+* Eval Acc@best: 0.360% Error@best: 99.640%	Eval:  acc@head: 0.000	acc@med: 0.063	acc@tail: 3.207	acc@aveclass: 0.360	r_acc: 0.000		Runtime: 1261.292	lr: 0.1	Epoch_time: 670.188
+training completed, time: 1263s
+=====================12 GPUs 40 workers 64 batch size\n
+Node 2: 3 GPUs
+Node 1: 3 GPUs
+trainer:
+	name: Res50_iNaturalist2018_0_batch64
+	print_freq: 40
+	resume: False
+	mode: test
+	seed: 0
+	num_epochs: 2
+dataset:
+	name: iNaturalist2018
+	args:
+		num_workers: 40
+		batch_size: 64
+model:
+	name: resnet50
+	args:
+optimizer:
+	name: SGD
+	args:
+		lr: 0.1
+		weight_decay: 0.0001
+		momentum: 0.9
+lr_scheduler:
+	name: cosine
+	args:
+		warmup: False
+ddp:
+	world_size: 12
+	node_rank: 0
+	num_nodes: 4
+	num_gpus_per_node: 3
+	dist_url: tcp://10.1.34.231:12322
+	dist_backend: nccl
+	on: True
+
+Node 0: 3 GPUs
+Node 3: 3 GPUs
+Initializing distributed package for GPU 0 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 0
+Data prepared.
+total_class_num: 8142, total_data: 437513, sample_per_class: 2-1000
+total_class_num: 8142, total_data: 24426, sample_per_class: 3-3
+====> training started	runtime: 4.359
+Initializing distributed package for GPU 1 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 1
+Initializing distributed package for GPU 3 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 3
+Initializing distributed package for GPU 6 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 6
+Initializing distributed package for GPU 10 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 10
+Initializing distributed package for GPU 9 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 9
+Initializing distributed package for GPU 5 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 5
+Initializing distributed package for GPU 2 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 2
+Initializing distributed package for GPU 7 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 7
+Initializing distributed package for GPU 8 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 8
+Initializing distributed package for GPU 4 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 4
+Initializing distributed package for GPU 11 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 11
+* Train Acc@best: 1.016% Error@best: 98.984%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.685	acc@aveclass: nan	r_acc: nan	Runtime: 447.925	lr: 0.1
+* Train Acc@best: 1.027% Error@best: 98.973%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.686	acc@aveclass: nan	r_acc: nan	Runtime: 447.876	lr: 0.1
+* Train Acc@best: 0.980% Error@best: 99.020%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.685	acc@aveclass: nan	r_acc: nan	Runtime: 447.843	lr: 0.1
+* Train Acc@best: 1.000% Error@best: 99.000%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.695	acc@aveclass: nan	r_acc: nan	Runtime: 447.982	lr: 0.1
+* Train Acc@best: 1.112% Error@best: 98.888%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.775	acc@aveclass: nan	r_acc: nan	Runtime: 447.937	lr: 0.1
+* Train Acc@best: 1.093% Error@best: 98.907%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.744	acc@aveclass: nan	r_acc: nan	Runtime: 447.985	lr: 0.1
+* Train Acc@best: 0.989% Error@best: 99.011%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.681	acc@aveclass: nan	r_acc: nan	Runtime: 447.885	lr: 0.1
+* Train Acc@best: 1.096% Error@best: 98.904%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.750	acc@aveclass: nan	r_acc: nan	Runtime: 447.879	lr: 0.1
+* Train Acc@best: 1.118% Error@best: 98.882%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.779	acc@aveclass: nan	r_acc: nan	Runtime: 448.038	lr: 0.1
+* Train Acc@best: 1.011% Error@best: 98.989%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.682	acc@aveclass: nan	r_acc: nan	Runtime: 448.071	lr: 0.1
+Train epoch: [0][  0/569]	Batch_time 142.189 (142.189)	Data_time 117.545 (117.545)	Loss 9.274 (9.274)	Acc@1  0.000 ( 0.000)	Acc@5  0.000 ( 0.000)
+Train epoch: [0][ 40/569]	Batch_time  0.126 ( 3.594)	Data_time  0.000 ( 2.871)	Loss 8.870 (8.694)	Acc@1  1.562 ( 0.191)	Acc@5  4.688 ( 1.296)
+Train epoch: [0][ 80/569]	Batch_time  0.136 ( 1.884)	Data_time  0.000 ( 1.456)	Loss 7.694 (8.420)	Acc@1  0.000 ( 0.289)	Acc@5  1.562 ( 1.640)
+Train epoch: [0][120/569]	Batch_time  0.118 ( 1.428)	Data_time  0.000 ( 1.024)	Loss 7.886 (8.260)	Acc@1  1.562 ( 0.349)	Acc@5  3.125 ( 1.976)
+Train epoch: [0][160/569]	Batch_time  0.128 ( 1.238)	Data_time  0.000 ( 0.820)	Loss 7.519 (8.168)	Acc@1  3.125 ( 0.398)	Acc@5  6.250 ( 2.174)
+Train epoch: [0][200/569]	Batch_time  0.128 ( 1.118)	Data_time  0.000 ( 0.683)	Loss 8.114 (8.102)	Acc@1  0.000 ( 0.513)	Acc@5  1.562 ( 2.488)
+Train epoch: [0][240/569]	Batch_time  0.123 ( 1.030)	Data_time  0.000 ( 0.587)	Loss 7.539 (8.049)	Acc@1  0.000 ( 0.616)	Acc@5 12.500 ( 2.710)
+Train epoch: [0][280/569]	Batch_time  0.126 ( 0.977)	Data_time  0.000 ( 0.513)	Loss 7.736 (7.999)	Acc@1  3.125 ( 0.712)	Acc@5 10.938 ( 2.953)
+Train epoch: [0][320/569]	Batch_time  0.129 ( 0.944)	Data_time  0.000 ( 0.455)	Loss 7.485 (7.960)	Acc@1  3.125 ( 0.750)	Acc@5  9.375 ( 3.130)
+Train epoch: [0][360/569]	Batch_time  0.126 ( 0.899)	Data_time  0.000 ( 0.405)	Loss 7.470 (7.918)	Acc@1  0.000 ( 0.835)	Acc@5  4.688 ( 3.341)
+Train epoch: [0][400/569]	Batch_time  0.127 ( 0.863)	Data_time  0.000 ( 0.370)	Loss 7.681 (7.883)	Acc@1  0.000 ( 0.849)	Acc@5  1.562 ( 3.468)
+Train epoch: [0][440/569]	Batch_time  0.134 ( 0.840)	Data_time  0.000 ( 0.349)	Loss 7.476 (7.850)	Acc@1  1.562 ( 0.889)	Acc@5  7.812 ( 3.564)
+Train epoch: [0][480/569]	Batch_time  0.116 ( 0.822)	Data_time  0.000 ( 0.325)	Loss 7.503 (7.815)	Acc@1  1.562 ( 0.958)	Acc@5  4.688 ( 3.762)
+Train epoch: [0][520/569]	Batch_time  0.131 ( 0.808)	Data_time  0.000 ( 0.303)	Loss 7.491 (7.783)	Acc@1  0.000 ( 0.987)	Acc@5  3.125 ( 3.917)
+Train epoch: [0][560/569]	Batch_time  0.135 ( 0.782)	Data_time  0.000 ( 0.282)	Loss 7.335 (7.753)	Acc@1  0.000 ( 1.036)	Acc@5  4.688 ( 4.072)
+Train:  acc@head: nan	acc@med: nan	acc@tail: 0.695	acc@aveclass: nan	r_acc: nan	
+* Train Acc@best: 1.035% Error@best: 98.965%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.695	acc@aveclass: nan	r_acc: nan	Runtime: 448.098	lr: 0.1
+* Train Acc@best: 1.109% Error@best: 98.891%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.775	acc@aveclass: nan	r_acc: nan	Runtime: 448.055	lr: 0.1
+Eval: [  0/382]	Batch_time 125.965 (125.965)	Data_time 125.929 (125.929)	Loss 9.297 (9.297)	Acc@1  0.000 ( 0.000)	Acc@5  0.000 ( 0.000)
+Eval: [ 40/382]	Batch_time  6.059 ( 3.262)	Data_time  6.025 ( 3.235)	Loss 9.314 (9.201)	Acc@1  0.000 ( 0.038)	Acc@5  0.000 ( 0.229)
+Eval: [ 80/382]	Batch_time  3.727 ( 1.723)	Data_time  3.693 ( 1.696)	Loss 9.178 (9.194)	Acc@1  0.000 ( 0.077)	Acc@5  0.000 ( 0.405)
+Eval: [120/382]	Batch_time  2.370 ( 1.226)	Data_time  2.336 ( 1.199)	Loss 9.201 (9.192)	Acc@1  0.000 ( 0.103)	Acc@5  0.000 ( 0.413)
+Eval: [160/382]	Batch_time  2.077 ( 0.977)	Data_time  2.043 ( 0.950)	Loss 8.952 (9.198)	Acc@1  0.000 ( 0.146)	Acc@5  1.562 ( 0.466)
+Eval: [200/382]	Batch_time  2.771 ( 0.837)	Data_time  2.737 ( 0.810)	Loss 9.367 (9.190)	Acc@1  0.000 ( 0.163)	Acc@5  0.000 ( 0.529)
+Eval: [240/382]	Batch_time  2.801 ( 0.747)	Data_time  2.766 ( 0.720)	Loss 8.982 (9.190)	Acc@1  0.000 ( 0.175)	Acc@5  0.000 ( 0.519)
+Eval: [280/382]	Batch_time  2.296 ( 0.695)	Data_time  2.262 ( 0.667)	Loss 9.090 (9.184)	Acc@1  0.000 ( 0.167)	Acc@5  0.000 ( 0.562)
+Eval: [320/382]	Batch_time  1.340 ( 0.649)	Data_time  1.313 ( 0.622)	Loss 9.039 (9.185)	Acc@1  0.000 ( 0.185)	Acc@5  3.125 ( 0.579)
+Eval: [360/382]	Batch_time  0.026 ( 0.600)	Data_time  0.000 ( 0.573)	Loss 9.229 (9.189)	Acc@1  0.000 ( 0.169)	Acc@5  0.000 ( 0.567)
+Eval:  acc@head: 0.000	acc@med: 0.000	acc@tail: 1.702	acc@aveclass: 0.176	r_acc: 0.000	
+* Eval Acc@best: 0.176% Error@best: 99.824%	Eval:  acc@head: 0.000	acc@med: 0.000	acc@tail: 1.702	acc@aveclass: 0.176	r_acc: 0.000		Runtime: 671.103	lr: 0.1	Epoch_time: 666.744
+* Train Acc@best: 2.850% Error@best: 97.150%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.546	acc@aveclass: nan	r_acc: nan	Runtime: 1104.678	lr: 0.1
+* Train Acc@best: 2.861% Error@best: 97.139%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.654	acc@aveclass: nan	r_acc: nan	Runtime: 1104.671	lr: 0.1
+* Train Acc@best: 2.757% Error@best: 97.243%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.670	acc@aveclass: nan	r_acc: nan	Runtime: 1104.747	lr: 0.1
+* Train Acc@best: 2.870% Error@best: 97.130%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.691	acc@aveclass: nan	r_acc: nan	Runtime: 1104.769	lr: 0.1
+Train epoch: [1][  0/569]	Batch_time 135.573 (135.573)	Data_time 135.496 (135.496)	Loss 6.968 (6.968)	Acc@1  1.562 ( 1.562)	Acc@5  4.688 ( 4.688)
+Train epoch: [1][ 40/569]	Batch_time  0.102 ( 4.094)	Data_time  0.000 ( 3.931)	Loss 6.982 (7.280)	Acc@1  0.000 ( 1.829)	Acc@5  9.375 ( 6.288)
+Train epoch: [1][ 80/569]	Batch_time  0.100 ( 2.325)	Data_time  0.000 ( 2.061)	Loss 7.459 (7.247)	Acc@1  0.000 ( 1.678)	Acc@5  3.125 ( 6.327)
+Train epoch: [1][120/569]	Batch_time  0.101 ( 1.714)	Data_time  0.000 ( 1.439)	Loss 7.313 (7.235)	Acc@1  1.562 ( 1.717)	Acc@5  6.250 ( 6.612)
+Train epoch: [1][160/569]	Batch_time  0.101 ( 1.420)	Data_time  0.000 ( 1.124)	Loss 7.066 (7.213)	Acc@1  0.000 ( 1.747)	Acc@5  3.125 ( 6.561)
+Train epoch: [1][200/569]	Batch_time  0.109 ( 1.257)	Data_time  0.000 ( 0.954)	Loss 6.862 (7.190)	Acc@1  4.688 ( 1.889)	Acc@5 10.938 ( 6.957)
+Train epoch: [1][240/569]	Batch_time  0.102 ( 1.133)	Data_time  0.000 ( 0.850)	Loss 7.007 (7.176)	Acc@1  0.000 ( 1.945)	Acc@5  3.125 ( 7.099)
+Train epoch: [1][280/569]	Batch_time  0.099 ( 1.041)	Data_time  0.000 ( 0.778)	Loss 7.278 (7.154)	Acc@1  0.000 ( 2.035)	Acc@5 10.938 ( 7.362)
+Train epoch: [1][320/569]	Batch_time  0.099 ( 0.993)	Data_time  0.000 ( 0.734)	Loss 7.203 (7.123)	Acc@1  1.562 ( 2.210)	Acc@5  6.250 ( 7.764)
+Train epoch: [1][360/569]	Batch_time  0.101 ( 0.937)	Data_time  0.000 ( 0.685)	Loss 6.646 (7.103)	Acc@1  1.562 ( 2.311)	Acc@5 10.938 ( 7.973)
+Train epoch: [1][400/569]	Batch_time  0.099 ( 0.888)	Data_time  0.000 ( 0.644)	Loss 6.816 (7.084)	Acc@1  6.250 ( 2.424)	Acc@5  9.375 ( 8.190)
+Train epoch: [1][440/569]	Batch_time  0.104 ( 0.861)	Data_time  0.000 ( 0.617)	Loss 6.749 (7.058)	Acc@1  4.688 ( 2.519)	Acc@5 12.500 ( 8.397)
+Train epoch: [1][480/569]	Batch_time  0.103 ( 0.830)	Data_time  0.000 ( 0.591)	Loss 7.204 (7.043)	Acc@1  6.250 ( 2.638)	Acc@5 10.938 ( 8.579)
+Train epoch: [1][520/569]	Batch_time  0.101 ( 0.802)	Data_time  0.000 ( 0.571)	Loss 6.954 (7.023)	Acc@1  1.562 ( 2.723)	Acc@5  9.375 ( 8.760)
+Train epoch: [1][560/569]	Batch_time  0.119 ( 0.763)	Data_time  0.000 ( 0.540)	Loss 6.274 (7.000)	Acc@1  6.250 ( 2.816)	Acc@5 15.625 ( 8.985)
+Train:  acc@head: nan	acc@med: nan	acc@tail: 2.748	acc@aveclass: nan	r_acc: nan	
+* Train Acc@best: 2.831% Error@best: 97.169%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.748	acc@aveclass: nan	r_acc: nan	Runtime: 1104.812	lr: 0.1
+* Train Acc@best: 2.864% Error@best: 97.136%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.638	acc@aveclass: nan	r_acc: nan	Runtime: 1104.810	lr: 0.1
+* Train Acc@best: 2.782% Error@best: 97.218%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.697	acc@aveclass: nan	r_acc: nan	Runtime: 1104.789	lr: 0.1
+* Train Acc@best: 3.004% Error@best: 96.996%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.837	acc@aveclass: nan	r_acc: nan	Runtime: 1104.867	lr: 0.1
+* Train Acc@best: 2.765% Error@best: 97.235%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.587	acc@aveclass: nan	r_acc: nan	Runtime: 1104.787	lr: 0.1
+* Train Acc@best: 2.886% Error@best: 97.114%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.645	acc@aveclass: nan	r_acc: nan	Runtime: 1104.750	lr: 0.1
+* Train Acc@best: 2.774% Error@best: 97.226%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.727	acc@aveclass: nan	r_acc: nan	Runtime: 1104.770	lr: 0.1
+* Train Acc@best: 2.801% Error@best: 97.199%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.581	acc@aveclass: nan	r_acc: nan	Runtime: 1104.792	lr: 0.1
+Eval: [  0/382]	Batch_time 120.037 (120.037)	Data_time 120.003 (120.003)	Loss 8.352 (8.352)	Acc@1  1.562 ( 1.562)	Acc@5  3.125 ( 3.125)
+Eval: [ 40/382]	Batch_time  3.358 ( 3.074)	Data_time  3.325 ( 3.046)	Loss 8.650 (8.734)	Acc@1  0.000 ( 0.495)	Acc@5  0.000 ( 1.829)
+Eval: [ 80/382]	Batch_time  3.638 ( 1.626)	Data_time  3.604 ( 1.599)	Loss 8.282 (8.670)	Acc@1  0.000 ( 0.540)	Acc@5  1.562 ( 1.543)
+Eval: [120/382]	Batch_time  4.361 ( 1.162)	Data_time  4.327 ( 1.135)	Loss 8.656 (8.735)	Acc@1  0.000 ( 0.465)	Acc@5  0.000 ( 1.446)
+Eval: [160/382]	Batch_time  3.974 ( 0.939)	Data_time  3.940 ( 0.911)	Loss 8.399 (8.741)	Acc@1  0.000 ( 0.398)	Acc@5  0.000 ( 1.456)
+Eval: [200/382]	Batch_time  3.908 ( 0.800)	Data_time  3.874 ( 0.773)	Loss 8.430 (8.773)	Acc@1  0.000 ( 0.381)	Acc@5  0.000 ( 1.446)
+Eval: [240/382]	Batch_time  2.637 ( 0.703)	Data_time  2.603 ( 0.675)	Loss 8.303 (8.796)	Acc@1  0.000 ( 0.389)	Acc@5  4.688 ( 1.407)
+Eval: [280/382]	Batch_time  2.611 ( 0.636)	Data_time  2.577 ( 0.608)	Loss 8.377 (8.769)	Acc@1  0.000 ( 0.417)	Acc@5  0.000 ( 1.512)
+Eval: [320/382]	Batch_time  0.795 ( 0.591)	Data_time  0.769 ( 0.563)	Loss 8.212 (8.807)	Acc@1  0.000 ( 0.409)	Acc@5  1.562 ( 1.485)
+Eval: [360/382]	Batch_time  0.026 ( 0.546)	Data_time  0.000 ( 0.518)	Loss 8.267 (8.791)	Acc@1  3.125 ( 0.420)	Acc@5  3.125 ( 1.480)
+Eval:  acc@head: 0.000	acc@med: 0.090	acc@tail: 3.563	acc@aveclass: 0.409	r_acc: 0.000	
+* Eval Acc@best: 0.409% Error@best: 99.591%	Eval:  acc@head: 0.000	acc@med: 0.090	acc@tail: 3.563	acc@aveclass: 0.409	r_acc: 0.000		Runtime: 1306.504	lr: 0.1	Epoch_time: 634.346
+training completed, time: 1308s
+=====================12 GPUs 10 workers 32 batch size\n
+trainer:
+	name: Res50_iNaturalist2018_0_batch32
+	print_freq: 40
+	resume: False
+	mode: test
+	seed: 0
+	num_epochs: 2
+dataset:
+	name: iNaturalist2018
+	args:
+		num_workers: 10
+		batch_size: 32
+model:
+	name: resnet50
+	args:
+optimizer:
+	name: SGD
+	args:
+		lr: 0.1
+		weight_decay: 0.0001
+		momentum: 0.9
+lr_scheduler:
+	name: cosine
+	args:
+		warmup: False
+ddp:
+	world_size: 12
+	node_rank: 0
+	num_nodes: 4
+	num_gpus_per_node: 3
+	dist_url: tcp://10.1.34.231:12322
+	dist_backend: nccl
+	on: True
+
+Node 0: 3 GPUs
+Node 3: 3 GPUs
+Node 1: 3 GPUs
+Node 2: 3 GPUs
+Initializing distributed package for GPU 0 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 0
+Data prepared.
+total_class_num: 8142, total_data: 437513, sample_per_class: 2-1000
+total_class_num: 8142, total_data: 24426, sample_per_class: 3-3
+====> training started	runtime: 5.162
+Initializing distributed package for GPU 1 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 1
+Initializing distributed package for GPU 3 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 3
+Initializing distributed package for GPU 6 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 6
+Initializing distributed package for GPU 9 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 9
+Initializing distributed package for GPU 10 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 10
+Initializing distributed package for GPU 2 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 2
+Initializing distributed package for GPU 7 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 7
+Initializing distributed package for GPU 8 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 8
+Initializing distributed package for GPU 5 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 5
+Initializing distributed package for GPU 4 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 4
+Initializing distributed package for GPU 11 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 11
+* Train Acc@best: 1.108% Error@best: 98.892%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.773	acc@aveclass: nan	r_acc: nan	Runtime: 462.499	lr: 0.1
+* Train Acc@best: 1.010% Error@best: 98.990%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.667	acc@aveclass: nan	r_acc: nan	Runtime: 462.384	lr: 0.1
+* Train Acc@best: 1.092% Error@best: 98.908%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.752	acc@aveclass: nan	r_acc: nan	Runtime: 462.400	lr: 0.1
+* Train Acc@best: 1.029% Error@best: 98.971%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.690	acc@aveclass: nan	r_acc: nan	Runtime: 462.524	lr: 0.1
+* Train Acc@best: 0.988% Error@best: 99.012%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.736	acc@aveclass: nan	r_acc: nan	Runtime: 462.374	lr: 0.1
+* Train Acc@best: 1.097% Error@best: 98.903%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.744	acc@aveclass: nan	r_acc: nan	Runtime: 462.522	lr: 0.1
+* Train Acc@best: 1.026% Error@best: 98.974%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.716	acc@aveclass: nan	r_acc: nan	Runtime: 462.435	lr: 0.1
+* Train Acc@best: 1.078% Error@best: 98.922%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.729	acc@aveclass: nan	r_acc: nan	Runtime: 462.403	lr: 0.1
+* Train Acc@best: 1.092% Error@best: 98.908%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.742	acc@aveclass: nan	r_acc: nan	Runtime: 462.470	lr: 0.1
+* Train Acc@best: 0.963% Error@best: 99.037%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.685	acc@aveclass: nan	r_acc: nan	Runtime: 462.425	lr: 0.1
+Train epoch: [0][   0/1139]	Batch_time 38.553 (38.553)	Data_time 26.944 (26.944)	Loss 9.179 (9.179)	Acc@1  0.000 ( 0.000)	Acc@5  0.000 ( 0.000)
+Train epoch: [0][  40/1139]	Batch_time  0.074 ( 1.199)	Data_time  0.000 ( 0.785)	Loss 8.322 (8.760)	Acc@1  0.000 ( 0.381)	Acc@5  0.000 ( 1.067)
+Train epoch: [0][  80/1139]	Batch_time  0.099 ( 0.813)	Data_time  0.000 ( 0.449)	Loss 8.430 (8.511)	Acc@1  0.000 ( 0.424)	Acc@5  3.125 ( 1.505)
+Train epoch: [0][ 120/1139]	Batch_time  0.076 ( 0.668)	Data_time  0.000 ( 0.312)	Loss 7.803 (8.368)	Acc@1  0.000 ( 0.413)	Acc@5  6.250 ( 1.730)
+Train epoch: [0][ 160/1139]	Batch_time  0.093 ( 0.597)	Data_time  0.000 ( 0.278)	Loss 7.968 (8.280)	Acc@1  0.000 ( 0.485)	Acc@5  3.125 ( 1.825)
+Train epoch: [0][ 200/1139]	Batch_time  0.087 ( 0.549)	Data_time  0.000 ( 0.240)	Loss 8.211 (8.204)	Acc@1  3.125 ( 0.466)	Acc@5  6.250 ( 1.803)
+Train epoch: [0][ 240/1139]	Batch_time  0.098 ( 0.531)	Data_time  0.000 ( 0.203)	Loss 7.695 (8.157)	Acc@1  6.250 ( 0.441)	Acc@5  6.250 ( 1.958)
+Train epoch: [0][ 280/1139]	Batch_time  0.109 ( 0.524)	Data_time  0.000 ( 0.174)	Loss 7.552 (8.131)	Acc@1  0.000 ( 0.389)	Acc@5  6.250 ( 1.968)
+Train epoch: [0][ 320/1139]	Batch_time  0.084 ( 0.501)	Data_time  0.000 ( 0.153)	Loss 7.527 (8.102)	Acc@1  0.000 ( 0.399)	Acc@5  3.125 ( 2.054)
+Train epoch: [0][ 360/1139]	Batch_time  1.537 ( 0.480)	Data_time  0.108 ( 0.138)	Loss 7.692 (8.075)	Acc@1  3.125 ( 0.441)	Acc@5  3.125 ( 2.190)
+Train epoch: [0][ 400/1139]	Batch_time  0.430 ( 0.472)	Data_time  0.000 ( 0.149)	Loss 8.087 (8.046)	Acc@1  3.125 ( 0.483)	Acc@5  3.125 ( 2.260)
+Train epoch: [0][ 440/1139]	Batch_time  0.074 ( 0.466)	Data_time  0.000 ( 0.162)	Loss 7.843 (8.027)	Acc@1  0.000 ( 0.524)	Acc@5  3.125 ( 2.438)
+Train epoch: [0][ 480/1139]	Batch_time  0.074 ( 0.456)	Data_time  0.000 ( 0.171)	Loss 7.401 (8.004)	Acc@1  3.125 ( 0.552)	Acc@5  6.250 ( 2.462)
+Train epoch: [0][ 520/1139]	Batch_time  0.093 ( 0.453)	Data_time  0.000 ( 0.166)	Loss 7.515 (7.979)	Acc@1  0.000 ( 0.630)	Acc@5  3.125 ( 2.615)
+Train epoch: [0][ 560/1139]	Batch_time  0.091 ( 0.444)	Data_time  0.000 ( 0.167)	Loss 7.891 (7.958)	Acc@1  0.000 ( 0.635)	Acc@5  6.250 ( 2.735)
+Train epoch: [0][ 600/1139]	Batch_time  0.093 ( 0.442)	Data_time  0.000 ( 0.172)	Loss 7.765 (7.941)	Acc@1  3.125 ( 0.645)	Acc@5  9.375 ( 2.875)
+Train epoch: [0][ 640/1139]	Batch_time  2.142 ( 0.443)	Data_time  2.070 ( 0.172)	Loss 8.069 (7.918)	Acc@1  3.125 ( 0.683)	Acc@5  6.250 ( 2.979)
+Train epoch: [0][ 680/1139]	Batch_time  2.789 ( 0.443)	Data_time  2.717 ( 0.176)	Loss 7.535 (7.901)	Acc@1  3.125 ( 0.716)	Acc@5  6.250 ( 3.097)
+Train epoch: [0][ 720/1139]	Batch_time  0.099 ( 0.438)	Data_time  0.000 ( 0.172)	Loss 7.734 (7.879)	Acc@1  0.000 ( 0.763)	Acc@5  3.125 ( 3.242)
+Train epoch: [0][ 760/1139]	Batch_time  0.387 ( 0.435)	Data_time  0.326 ( 0.167)	Loss 7.289 (7.863)	Acc@1  3.125 ( 0.764)	Acc@5  6.250 ( 3.285)
+Train epoch: [0][ 800/1139]	Batch_time  0.097 ( 0.437)	Data_time  0.000 ( 0.158)	Loss 7.350 (7.847)	Acc@1  0.000 ( 0.776)	Acc@5  3.125 ( 3.336)
+Train epoch: [0][ 840/1139]	Batch_time  0.100 ( 0.432)	Data_time  0.000 ( 0.151)	Loss 7.197 (7.832)	Acc@1  3.125 ( 0.799)	Acc@5 12.500 ( 3.433)
+Train epoch: [0][ 880/1139]	Batch_time  0.097 ( 0.428)	Data_time  0.000 ( 0.144)	Loss 7.270 (7.817)	Acc@1  0.000 ( 0.823)	Acc@5  3.125 ( 3.487)
+Train epoch: [0][ 920/1139]	Batch_time  0.097 ( 0.423)	Data_time  0.000 ( 0.138)	Loss 7.551 (7.799)	Acc@1  0.000 ( 0.865)	Acc@5  3.125 ( 3.634)
+Train epoch: [0][ 960/1139]	Batch_time  0.096 ( 0.418)	Data_time  0.000 ( 0.132)	Loss 7.601 (7.782)	Acc@1  0.000 ( 0.901)	Acc@5  9.375 ( 3.753)
+Train epoch: [0][1000/1139]	Batch_time  0.093 ( 0.412)	Data_time  0.000 ( 0.129)	Loss 7.025 (7.769)	Acc@1  3.125 ( 0.952)	Acc@5  9.375 ( 3.871)
+Train epoch: [0][1040/1139]	Batch_time  0.093 ( 0.408)	Data_time  0.000 ( 0.125)	Loss 7.409 (7.752)	Acc@1  0.000 ( 0.988)	Acc@5  9.375 ( 3.945)
+Train epoch: [0][1080/1139]	Batch_time  0.440 ( 0.406)	Data_time  0.000 ( 0.121)	Loss 7.130 (7.736)	Acc@1  6.250 ( 1.020)	Acc@5  6.250 ( 4.030)
+Train epoch: [0][1120/1139]	Batch_time  1.277 ( 0.404)	Data_time  0.000 ( 0.117)	Loss 7.369 (7.722)	Acc@1  3.125 ( 1.048)	Acc@5  3.125 ( 4.098)
+Train:  acc@head: nan	acc@med: nan	acc@tail: 0.734	acc@aveclass: nan	r_acc: nan	
+* Train Acc@best: 1.054% Error@best: 98.946%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.734	acc@aveclass: nan	r_acc: nan	Runtime: 462.458	lr: 0.1
+* Train Acc@best: 1.114% Error@best: 98.886%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.795	acc@aveclass: nan	r_acc: nan	Runtime: 462.480	lr: 0.1
+Eval: [  0/764]	Batch_time 52.993 (52.993)	Data_time 52.972 (52.972)	Loss 9.110 (9.110)	Acc@1  0.000 ( 0.000)	Acc@5  0.000 ( 0.000)
+Eval: [ 40/764]	Batch_time  1.642 ( 1.561)	Data_time  1.627 ( 1.543)	Loss 9.053 (9.450)	Acc@1  0.000 ( 0.229)	Acc@5  0.000 ( 0.534)
+Eval: [ 80/764]	Batch_time  2.440 ( 0.889)	Data_time  2.421 ( 0.871)	Loss 9.200 (9.284)	Acc@1  0.000 ( 0.116)	Acc@5  0.000 ( 0.463)
+Eval: [120/764]	Batch_time  0.077 ( 0.650)	Data_time  0.061 ( 0.632)	Loss 9.116 (9.308)	Acc@1  0.000 ( 0.077)	Acc@5  0.000 ( 0.517)
+Eval: [160/764]	Batch_time  0.013 ( 0.527)	Data_time  0.000 ( 0.510)	Loss 8.900 (9.350)	Acc@1  0.000 ( 0.097)	Acc@5  0.000 ( 0.543)
+Eval: [200/764]	Batch_time  0.014 ( 0.455)	Data_time  0.000 ( 0.439)	Loss 9.178 (9.376)	Acc@1  0.000 ( 0.078)	Acc@5  0.000 ( 0.529)
+Eval: [240/764]	Batch_time  0.014 ( 0.405)	Data_time  0.000 ( 0.389)	Loss 9.138 (9.419)	Acc@1  0.000 ( 0.104)	Acc@5  0.000 ( 0.558)
+Eval: [280/764]	Batch_time  0.014 ( 0.370)	Data_time  0.000 ( 0.355)	Loss 9.407 (9.402)	Acc@1  0.000 ( 0.111)	Acc@5  0.000 ( 0.612)
+Eval: [320/764]	Batch_time  0.019 ( 0.348)	Data_time  0.000 ( 0.332)	Loss 8.775 (9.374)	Acc@1  0.000 ( 0.127)	Acc@5  3.125 ( 0.604)
+Eval: [360/764]	Batch_time  0.014 ( 0.330)	Data_time  0.000 ( 0.314)	Loss 9.085 (9.356)	Acc@1  0.000 ( 0.156)	Acc@5  3.125 ( 0.632)
+Eval: [400/764]	Batch_time  0.019 ( 0.311)	Data_time  0.000 ( 0.295)	Loss 9.223 (9.349)	Acc@1  0.000 ( 0.164)	Acc@5  0.000 ( 0.662)
+Eval: [440/764]	Batch_time  0.014 ( 0.301)	Data_time  0.000 ( 0.285)	Loss 9.170 (9.340)	Acc@1  0.000 ( 0.163)	Acc@5  0.000 ( 0.652)
+Eval: [480/764]	Batch_time  0.014 ( 0.290)	Data_time  0.000 ( 0.274)	Loss 13.992 (9.358)	Acc@1  0.000 ( 0.175)	Acc@5  3.125 ( 0.643)
+Eval: [520/764]	Batch_time  0.019 ( 0.282)	Data_time  0.000 ( 0.266)	Loss 8.568 (9.359)	Acc@1  0.000 ( 0.174)	Acc@5  0.000 ( 0.636)
+Eval: [560/764]	Batch_time  0.019 ( 0.276)	Data_time  0.000 ( 0.260)	Loss 8.668 (9.345)	Acc@1  3.125 ( 0.184)	Acc@5  3.125 ( 0.707)
+Eval: [600/764]	Batch_time  0.014 ( 0.269)	Data_time  0.000 ( 0.253)	Loss 9.079 (9.350)	Acc@1  3.125 ( 0.203)	Acc@5  3.125 ( 0.723)
+Eval: [640/764]	Batch_time  0.019 ( 0.265)	Data_time  0.000 ( 0.249)	Loss 8.868 (9.345)	Acc@1  0.000 ( 0.195)	Acc@5  3.125 ( 0.707)
+Eval: [680/764]	Batch_time  0.019 ( 0.262)	Data_time  0.000 ( 0.246)	Loss 12.436 (9.363)	Acc@1  0.000 ( 0.188)	Acc@5  0.000 ( 0.688)
+Eval: [720/764]	Batch_time  0.014 ( 0.257)	Data_time  0.000 ( 0.240)	Loss 9.156 (9.367)	Acc@1  0.000 ( 0.186)	Acc@5  0.000 ( 0.676)
+Eval: [760/764]	Batch_time  0.454 ( 0.254)	Data_time  0.440 ( 0.238)	Loss 9.070 (9.382)	Acc@1  0.000 ( 0.189)	Acc@5  3.125 ( 0.682)
+Eval:  acc@head: 0.000	acc@med: 0.000	acc@tail: 1.821	acc@aveclass: 0.188	r_acc: 0.000	
+* Eval Acc@best: 0.188% Error@best: 99.812%	Eval:  acc@head: 0.000	acc@med: 0.000	acc@tail: 1.821	acc@aveclass: 0.188	r_acc: 0.000		Runtime: 656.824	lr: 0.1	Epoch_time: 651.662
+* Train Acc@best: 3.045% Error@best: 96.955%	Train:  acc@head: nan	acc@med: nan	acc@tail: 3.046	acc@aveclass: nan	r_acc: nan	Runtime: 1132.573	lr: 0.1
+* Train Acc@best: 3.130% Error@best: 96.870%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.860	acc@aveclass: nan	r_acc: nan	Runtime: 1132.548	lr: 0.1
+* Train Acc@best: 2.930% Error@best: 97.070%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.754	acc@aveclass: nan	r_acc: nan	Runtime: 1132.575	lr: 0.1
+* Train Acc@best: 2.889% Error@best: 97.111%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.975	acc@aveclass: nan	r_acc: nan	Runtime: 1132.460	lr: 0.1
+* Train Acc@best: 3.015% Error@best: 96.985%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.873	acc@aveclass: nan	r_acc: nan	Runtime: 1132.429	lr: 0.1
+Train epoch: [1][   0/1139]	Batch_time 55.203 (55.203)	Data_time 55.156 (55.156)	Loss 7.389 (7.389)	Acc@1  0.000 ( 0.000)	Acc@5  6.250 ( 6.250)
+Train epoch: [1][  40/1139]	Batch_time  0.074 ( 1.692)	Data_time  0.000 ( 1.431)	Loss 7.508 (7.303)	Acc@1  0.000 ( 1.372)	Acc@5  3.125 ( 6.479)
+Train epoch: [1][  80/1139]	Batch_time  0.075 ( 1.042)	Data_time  0.000 ( 0.754)	Loss 7.033 (7.239)	Acc@1  0.000 ( 1.929)	Acc@5  6.250 ( 6.867)
+Train epoch: [1][ 120/1139]	Batch_time  0.075 ( 0.811)	Data_time  0.000 ( 0.517)	Loss 6.518 (7.227)	Acc@1  3.125 ( 1.782)	Acc@5 12.500 ( 6.663)
+Train epoch: [1][ 160/1139]	Batch_time  0.073 ( 0.707)	Data_time  0.000 ( 0.398)	Loss 7.323 (7.192)	Acc@1  0.000 ( 1.883)	Acc@5  6.250 ( 6.891)
+Train epoch: [1][ 200/1139]	Batch_time  0.077 ( 0.646)	Data_time  0.000 ( 0.320)	Loss 6.845 (7.172)	Acc@1  0.000 ( 2.006)	Acc@5  6.250 ( 7.027)
+Train epoch: [1][ 240/1139]	Batch_time  0.092 ( 0.624)	Data_time  0.000 ( 0.272)	Loss 7.579 (7.183)	Acc@1  0.000 ( 1.919)	Acc@5  6.250 ( 6.937)
+Train epoch: [1][ 280/1139]	Batch_time  2.114 ( 0.594)	Data_time  0.000 ( 0.233)	Loss 7.053 (7.167)	Acc@1  0.000 ( 1.913)	Acc@5  6.250 ( 6.940)
+Train epoch: [1][ 320/1139]	Batch_time  3.011 ( 0.576)	Data_time  0.000 ( 0.205)	Loss 6.983 (7.152)	Acc@1  0.000 ( 1.976)	Acc@5  0.000 ( 6.961)
+Train epoch: [1][ 360/1139]	Batch_time  2.311 ( 0.555)	Data_time  0.000 ( 0.182)	Loss 6.715 (7.138)	Acc@1  3.125 ( 2.086)	Acc@5 12.500 ( 7.176)
+Train epoch: [1][ 400/1139]	Batch_time  0.862 ( 0.529)	Data_time  0.000 ( 0.164)	Loss 6.742 (7.135)	Acc@1  9.375 ( 2.112)	Acc@5 15.625 ( 7.396)
+Train epoch: [1][ 440/1139]	Batch_time  0.093 ( 0.513)	Data_time  0.000 ( 0.150)	Loss 6.797 (7.128)	Acc@1  3.125 ( 2.098)	Acc@5 18.750 ( 7.462)
+Train epoch: [1][ 480/1139]	Batch_time  0.096 ( 0.497)	Data_time  0.000 ( 0.143)	Loss 7.445 (7.123)	Acc@1  0.000 ( 2.085)	Acc@5  3.125 ( 7.452)
+Train epoch: [1][ 520/1139]	Batch_time  0.097 ( 0.487)	Data_time  0.000 ( 0.134)	Loss 6.971 (7.107)	Acc@1  3.125 ( 2.129)	Acc@5  9.375 ( 7.606)
+Train epoch: [1][ 560/1139]	Batch_time  0.098 ( 0.481)	Data_time  0.000 ( 0.125)	Loss 7.416 (7.099)	Acc@1  3.125 ( 2.189)	Acc@5  9.375 ( 7.715)
+Train epoch: [1][ 600/1139]	Batch_time  0.096 ( 0.472)	Data_time  0.000 ( 0.117)	Loss 6.317 (7.084)	Acc@1  0.000 ( 2.251)	Acc@5  6.250 ( 7.825)
+Train epoch: [1][ 640/1139]	Batch_time  0.092 ( 0.463)	Data_time  0.000 ( 0.111)	Loss 6.651 (7.067)	Acc@1  3.125 ( 2.311)	Acc@5 12.500 ( 7.990)
+Train epoch: [1][ 680/1139]	Batch_time  0.090 ( 0.459)	Data_time  0.000 ( 0.117)	Loss 7.086 (7.059)	Acc@1  0.000 ( 2.331)	Acc@5  6.250 ( 8.040)
+Train epoch: [1][ 720/1139]	Batch_time  0.096 ( 0.452)	Data_time  0.000 ( 0.125)	Loss 6.370 (7.044)	Acc@1  6.250 ( 2.423)	Acc@5 12.500 ( 8.226)
+Train epoch: [1][ 760/1139]	Batch_time  0.077 ( 0.445)	Data_time  0.000 ( 0.125)	Loss 6.700 (7.035)	Acc@1  3.125 ( 2.472)	Acc@5  3.125 ( 8.270)
+Train epoch: [1][ 800/1139]	Batch_time  0.096 ( 0.439)	Data_time  0.000 ( 0.122)	Loss 6.855 (7.021)	Acc@1  0.000 ( 2.536)	Acc@5 12.500 ( 8.404)
+Train epoch: [1][ 840/1139]	Batch_time  0.160 ( 0.432)	Data_time  0.000 ( 0.121)	Loss 6.502 (7.010)	Acc@1  3.125 ( 2.553)	Acc@5 12.500 ( 8.494)
+Train epoch: [1][ 880/1139]	Batch_time  1.604 ( 0.428)	Data_time  0.000 ( 0.116)	Loss 6.408 (6.998)	Acc@1  6.250 ( 2.589)	Acc@5 12.500 ( 8.552)
+Train epoch: [1][ 920/1139]	Batch_time  0.956 ( 0.426)	Data_time  0.000 ( 0.111)	Loss 7.470 (6.991)	Acc@1  3.125 ( 2.657)	Acc@5  9.375 ( 8.608)
+Train epoch: [1][ 960/1139]	Batch_time  0.094 ( 0.427)	Data_time  0.000 ( 0.109)	Loss 7.315 (6.982)	Acc@1  3.125 ( 2.715)	Acc@5  6.250 ( 8.734)
+Train epoch: [1][1000/1139]	Batch_time  0.117 ( 0.423)	Data_time  0.000 ( 0.105)	Loss 5.621 (6.969)	Acc@1 15.625 ( 2.772)	Acc@5 18.750 ( 8.872)
+Train epoch: [1][1040/1139]	Batch_time  0.109 ( 0.421)	Data_time  0.000 ( 0.102)	Loss 6.216 (6.958)	Acc@1  3.125 ( 2.816)	Acc@5 25.000 ( 9.012)
+Train epoch: [1][1080/1139]	Batch_time  1.113 ( 0.421)	Data_time  0.000 ( 0.100)	Loss 6.661 (6.948)	Acc@1  6.250 ( 2.850)	Acc@5  9.375 ( 9.086)
+Train epoch: [1][1120/1139]	Batch_time  0.206 ( 0.419)	Data_time  0.000 ( 0.097)	Loss 5.855 (6.935)	Acc@1 12.500 ( 2.930)	Acc@5 25.000 ( 9.238)
+Train:  acc@head: nan	acc@med: nan	acc@tail: 2.893	acc@aveclass: nan	r_acc: nan	
+* Train Acc@best: 2.944% Error@best: 97.056%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.893	acc@aveclass: nan	r_acc: nan	Runtime: 1132.459	lr: 0.1
+* Train Acc@best: 2.960% Error@best: 97.040%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.866	acc@aveclass: nan	r_acc: nan	Runtime: 1132.466	lr: 0.1
+* Train Acc@best: 2.790% Error@best: 97.210%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.742	acc@aveclass: nan	r_acc: nan	Runtime: 1132.463	lr: 0.1
+* Train Acc@best: 3.029% Error@best: 96.971%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.831	acc@aveclass: nan	r_acc: nan	Runtime: 1132.444	lr: 0.1
+* Train Acc@best: 3.034% Error@best: 96.966%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.837	acc@aveclass: nan	r_acc: nan	Runtime: 1132.496	lr: 0.1
+* Train Acc@best: 3.144% Error@best: 96.856%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.997	acc@aveclass: nan	r_acc: nan	Runtime: 1132.495	lr: 0.1
+* Train Acc@best: 2.936% Error@best: 97.064%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.941	acc@aveclass: nan	r_acc: nan	Runtime: 1132.516	lr: 0.1
+Eval: [  0/764]	Batch_time 57.283 (57.283)	Data_time 57.262 (57.262)	Loss 7.990 (7.990)	Acc@1  3.125 ( 3.125)	Acc@5  6.250 ( 6.250)
+Eval: [ 40/764]	Batch_time  0.688 ( 1.635)	Data_time  0.669 ( 1.617)	Loss 7.949 (9.403)	Acc@1  0.000 ( 0.381)	Acc@5  3.125 ( 1.753)
+Eval: [ 80/764]	Batch_time  0.018 ( 0.966)	Data_time  0.000 ( 0.948)	Loss 8.749 (9.129)	Acc@1  0.000 ( 0.424)	Acc@5  0.000 ( 1.890)
+Eval: [120/764]	Batch_time  0.017 ( 0.704)	Data_time  0.000 ( 0.686)	Loss 8.212 (9.472)	Acc@1  0.000 ( 0.362)	Acc@5  3.125 ( 1.911)
+Eval: [160/764]	Batch_time  0.017 ( 0.574)	Data_time  0.000 ( 0.557)	Loss 7.862 (9.461)	Acc@1  0.000 ( 0.543)	Acc@5  3.125 ( 2.155)
+Eval: [200/764]	Batch_time  0.014 ( 0.491)	Data_time  0.000 ( 0.474)	Loss 8.992 (9.510)	Acc@1  0.000 ( 0.513)	Acc@5  0.000 ( 2.037)
+Eval: [240/764]	Batch_time  0.017 ( 0.443)	Data_time  0.000 ( 0.426)	Loss 8.463 (9.426)	Acc@1  0.000 ( 0.558)	Acc@5  0.000 ( 1.958)
+Eval: [280/764]	Batch_time  0.015 ( 0.406)	Data_time  0.000 ( 0.389)	Loss 21.721 (9.529)	Acc@1  0.000 ( 0.512)	Acc@5  6.250 ( 1.891)
+Eval: [320/764]	Batch_time  0.016 ( 0.382)	Data_time  0.000 ( 0.364)	Loss 8.239 (9.449)	Acc@1  0.000 ( 0.535)	Acc@5  6.250 ( 1.898)
+Eval: [360/764]	Batch_time  0.014 ( 0.359)	Data_time  0.000 ( 0.342)	Loss 8.445 (9.410)	Acc@1  0.000 ( 0.580)	Acc@5  0.000 ( 1.974)
+Eval: [400/764]	Batch_time  0.335 ( 0.344)	Data_time  0.321 ( 0.326)	Loss 8.237 (9.398)	Acc@1  0.000 ( 0.553)	Acc@5  0.000 ( 1.948)
+Eval: [440/764]	Batch_time  0.205 ( 0.328)	Data_time  0.192 ( 0.311)	Loss 17.284 (9.382)	Acc@1  0.000 ( 0.517)	Acc@5  0.000 ( 1.920)
+Eval: [480/764]	Batch_time  0.321 ( 0.315)	Data_time  0.307 ( 0.298)	Loss 9.638 (9.324)	Acc@1  3.125 ( 0.520)	Acc@5  3.125 ( 1.871)
+Eval: [520/764]	Batch_time  0.014 ( 0.301)	Data_time  0.000 ( 0.285)	Loss 7.905 (9.373)	Acc@1  0.000 ( 0.522)	Acc@5  0.000 ( 1.853)
+Eval: [560/764]	Batch_time  0.019 ( 0.292)	Data_time  0.000 ( 0.275)	Loss 16.063 (9.389)	Acc@1  0.000 ( 0.540)	Acc@5  0.000 ( 1.894)
+Eval: [600/764]	Batch_time  0.597 ( 0.283)	Data_time  0.583 ( 0.267)	Loss 8.250 (9.377)	Acc@1  0.000 ( 0.556)	Acc@5  3.125 ( 1.903)
+Eval: [640/764]	Batch_time  0.019 ( 0.275)	Data_time  0.000 ( 0.258)	Loss 7.617 (9.375)	Acc@1  0.000 ( 0.541)	Acc@5  3.125 ( 1.877)
+Eval: [680/764]	Batch_time  0.015 ( 0.270)	Data_time  0.000 ( 0.254)	Loss 8.478 (9.395)	Acc@1  0.000 ( 0.551)	Acc@5  0.000 ( 1.895)
+Eval: [720/764]	Batch_time  0.013 ( 0.264)	Data_time  0.000 ( 0.248)	Loss 11.010 (9.371)	Acc@1  0.000 ( 0.550)	Acc@5  6.250 ( 1.907)
+Eval: [760/764]	Batch_time  0.013 ( 0.257)	Data_time  0.000 ( 0.241)	Loss 9.185 (9.382)	Acc@1  0.000 ( 0.558)	Acc@5  0.000 ( 1.930)
+Eval:  acc@head: 0.009	acc@med: 0.108	acc@tail: 4.869	acc@aveclass: 0.557	r_acc: 0.002	
+* Eval Acc@best: 0.557% Error@best: 99.443%	Eval:  acc@head: 0.009	acc@med: 0.108	acc@tail: 4.869	acc@aveclass: 0.557	r_acc: 0.002		Runtime: 1330.324	lr: 0.1	Epoch_time: 672.641
+training completed, time: 1332s
+=====================12 GPUs 10 workers 128 batch size\n
+Node 1: 3 GPUs
+trainer:
+	name: Res50_iNaturalist2018_0_batch128
+	print_freq: 40
+	resume: False
+	mode: test
+	seed: 0
+	num_epochs: 2
+dataset:
+	name: iNaturalist2018
+	args:
+		num_workers: 10
+		batch_size: 128
+model:
+	name: resnet50
+	args:
+optimizer:
+	name: SGD
+	args:
+		lr: 0.1
+		weight_decay: 0.0001
+		momentum: 0.9
+lr_scheduler:
+	name: cosine
+	args:
+		warmup: False
+ddp:
+	world_size: 12
+	node_rank: 0
+	num_nodes: 4
+	num_gpus_per_node: 3
+	dist_url: tcp://10.1.34.231:12322
+	dist_backend: nccl
+	on: True
+
+Node 0: 3 GPUs
+Node 2: 3 GPUs
+Node 3: 3 GPUs
+Initializing distributed package for GPU 0 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 0
+Data prepared.
+total_class_num: 8142, total_data: 437513, sample_per_class: 2-1000
+total_class_num: 8142, total_data: 24426, sample_per_class: 3-3
+====> training started	runtime: 4.935
+Initializing distributed package for GPU 1 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 1
+Initializing distributed package for GPU 3 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 3
+Initializing distributed package for GPU 6 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 6
+Initializing distributed package for GPU 9 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 9
+Initializing distributed package for GPU 10 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 10
+Initializing distributed package for GPU 2 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 2
+Initializing distributed package for GPU 5 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 5
+Initializing distributed package for GPU 8 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 8
+Initializing distributed package for GPU 7 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 7
+Initializing distributed package for GPU 11 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 11
+Initializing distributed package for GPU 4 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 4
+* Train Acc@best: 0.911% Error@best: 99.089%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.581	acc@aveclass: nan	r_acc: nan	Runtime: 445.838	lr: 0.1
+* Train Acc@best: 0.908% Error@best: 99.092%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.603	acc@aveclass: nan	r_acc: nan	Runtime: 445.738	lr: 0.1
+* Train Acc@best: 0.842% Error@best: 99.158%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.549	acc@aveclass: nan	r_acc: nan	Runtime: 445.739	lr: 0.1
+* Train Acc@best: 0.905% Error@best: 99.095%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.597	acc@aveclass: nan	r_acc: nan	Runtime: 445.987	lr: 0.1
+* Train Acc@best: 0.889% Error@best: 99.111%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.604	acc@aveclass: nan	r_acc: nan	Runtime: 445.850	lr: 0.1
+* Train Acc@best: 0.960% Error@best: 99.040%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.661	acc@aveclass: nan	r_acc: nan	Runtime: 445.920	lr: 0.1
+* Train Acc@best: 0.856% Error@best: 99.144%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.598	acc@aveclass: nan	r_acc: nan	Runtime: 445.941	lr: 0.1
+* Train Acc@best: 0.883% Error@best: 99.117%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.598	acc@aveclass: nan	r_acc: nan	Runtime: 445.752	lr: 0.1
+* Train Acc@best: 0.886% Error@best: 99.114%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.578	acc@aveclass: nan	r_acc: nan	Runtime: 445.805	lr: 0.1
+* Train Acc@best: 0.880% Error@best: 99.120%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.582	acc@aveclass: nan	r_acc: nan	Runtime: 445.797	lr: 0.1
+Train epoch: [0][  0/284]	Batch_time 55.771 (55.771)	Data_time 37.289 (37.289)	Loss 9.232 (9.232)	Acc@1  0.000 ( 0.000)	Acc@5  0.000 ( 0.000)
+Train epoch: [0][ 40/284]	Batch_time  0.166 ( 2.237)	Data_time  0.000 ( 1.423)	Loss 8.044 (8.428)	Acc@1  0.000 ( 0.229)	Acc@5  1.562 ( 1.124)
+Train epoch: [0][ 80/284]	Batch_time  0.164 ( 1.766)	Data_time  0.000 ( 0.821)	Loss 7.711 (8.211)	Acc@1  0.781 ( 0.328)	Acc@5  2.344 ( 1.852)
+Train epoch: [0][120/284]	Batch_time  0.165 ( 1.702)	Data_time  0.000 ( 0.601)	Loss 7.684 (8.103)	Acc@1  1.562 ( 0.491)	Acc@5  7.812 ( 2.247)
+Train epoch: [0][160/284]	Batch_time  0.191 ( 1.647)	Data_time  0.000 ( 0.461)	Loss 7.506 (8.015)	Acc@1  0.000 ( 0.631)	Acc@5  7.031 ( 2.640)
+Train epoch: [0][200/284]	Batch_time  0.201 ( 1.563)	Data_time  0.000 ( 0.370)	Loss 7.629 (7.941)	Acc@1  0.000 ( 0.723)	Acc@5  5.469 ( 2.942)
+Train epoch: [0][240/284]	Batch_time  0.196 ( 1.542)	Data_time  0.000 ( 0.309)	Loss 7.632 (7.876)	Acc@1  0.000 ( 0.827)	Acc@5  4.688 ( 3.238)
+Train epoch: [0][280/284]	Batch_time  0.193 ( 1.539)	Data_time  0.000 ( 0.265)	Loss 7.613 (7.821)	Acc@1  1.562 ( 0.940)	Acc@5  5.469 ( 3.550)
+Train:  acc@head: nan	acc@med: nan	acc@tail: 0.620	acc@aveclass: nan	r_acc: nan	
+* Train Acc@best: 0.946% Error@best: 99.054%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.620	acc@aveclass: nan	r_acc: nan	Runtime: 445.926	lr: 0.1
+* Train Acc@best: 0.935% Error@best: 99.065%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.608	acc@aveclass: nan	r_acc: nan	Runtime: 445.784	lr: 0.1
+Eval: [  0/191]	Batch_time 57.381 (57.381)	Data_time 57.316 (57.316)	Loss 8.975 (8.975)	Acc@1  0.781 ( 0.781)	Acc@5  2.344 ( 2.344)
+Eval: [ 40/191]	Batch_time  5.306 ( 1.966)	Data_time  5.243 ( 1.912)	Loss 9.053 (9.119)	Acc@1  0.000 ( 0.095)	Acc@5  0.000 ( 0.457)
+Eval: [ 80/191]	Batch_time  5.267 ( 1.328)	Data_time  5.203 ( 1.275)	Loss 9.115 (9.112)	Acc@1  0.000 ( 0.087)	Acc@5  0.781 ( 0.434)
+Eval: [120/191]	Batch_time  3.000 ( 1.062)	Data_time  2.936 ( 1.008)	Loss 9.088 (9.107)	Acc@1  0.000 ( 0.116)	Acc@5  0.781 ( 0.426)
+Eval: [160/191]	Batch_time  2.676 ( 0.938)	Data_time  2.613 ( 0.884)	Loss 9.087 (9.108)	Acc@1  0.000 ( 0.097)	Acc@5  0.781 ( 0.451)
+Eval:  acc@head: 0.000	acc@med: 0.000	acc@tail: 0.990	acc@aveclass: 0.102	r_acc: 0.000	
+* Eval Acc@best: 0.102% Error@best: 99.898%	Eval:  acc@head: 0.000	acc@med: 0.000	acc@tail: 0.990	acc@aveclass: 0.102	r_acc: 0.000		Runtime: 616.401	lr: 0.1	Epoch_time: 611.466
+* Train Acc@best: 2.198% Error@best: 97.802%	Train:  acc@head: nan	acc@med: nan	acc@tail: 1.909	acc@aveclass: nan	r_acc: nan	Runtime: 1009.340	lr: 0.1
+* Train Acc@best: 2.344% Error@best: 97.656%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.076	acc@aveclass: nan	r_acc: nan	Runtime: 1009.500	lr: 0.1
+* Train Acc@best: 2.363% Error@best: 97.637%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.117	acc@aveclass: nan	r_acc: nan	Runtime: 1009.307	lr: 0.1
+* Train Acc@best: 2.363% Error@best: 97.637%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.183	acc@aveclass: nan	r_acc: nan	Runtime: 1009.276	lr: 0.1
+* Train Acc@best: 2.283% Error@best: 97.717%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.115	acc@aveclass: nan	r_acc: nan	Runtime: 1009.435	lr: 0.1
+* Train Acc@best: 2.269% Error@best: 97.731%	Train:  acc@head: nan	acc@med: nan	acc@tail: 1.919	acc@aveclass: nan	r_acc: nan	Runtime: 1009.299	lr: 0.1
+* Train Acc@best: 2.181% Error@best: 97.819%	Train:  acc@head: nan	acc@med: nan	acc@tail: 1.970	acc@aveclass: nan	r_acc: nan	Runtime: 1009.425	lr: 0.1
+Train epoch: [1][  0/284]	Batch_time 59.395 (59.395)	Data_time 59.258 (59.258)	Loss 7.267 (7.267)	Acc@1  0.781 ( 0.781)	Acc@5  4.688 ( 4.688)
+Train epoch: [1][ 40/284]	Batch_time  8.335 ( 2.754)	Data_time  8.196 ( 2.254)	Loss 7.486 (7.337)	Acc@1  0.000 ( 1.696)	Acc@5  4.688 ( 5.831)
+Train epoch: [1][ 80/284]	Batch_time  0.162 ( 1.999)	Data_time  0.000 ( 1.359)	Loss 7.164 (7.312)	Acc@1  0.000 ( 1.485)	Acc@5  4.688 ( 5.575)
+Train epoch: [1][120/284]	Batch_time  4.528 ( 1.794)	Data_time  4.390 ( 1.070)	Loss 7.074 (7.289)	Acc@1  1.562 ( 1.608)	Acc@5  7.812 ( 5.921)
+Train epoch: [1][160/284]	Batch_time  3.183 ( 1.607)	Data_time  3.041 ( 0.891)	Loss 7.233 (7.245)	Acc@1  2.344 ( 1.834)	Acc@5  5.469 ( 6.400)
+Train epoch: [1][200/284]	Batch_time  5.458 ( 1.529)	Data_time  5.317 ( 0.810)	Loss 6.955 (7.209)	Acc@1  7.031 ( 2.064)	Acc@5 10.938 ( 6.833)
+Train epoch: [1][240/284]	Batch_time  4.346 ( 1.448)	Data_time  4.240 ( 0.763)	Loss 7.237 (7.180)	Acc@1  0.781 ( 2.152)	Acc@5  5.469 ( 7.099)
+Train epoch: [1][280/284]	Batch_time  0.956 ( 1.381)	Data_time  0.851 ( 0.696)	Loss 6.432 (7.145)	Acc@1  7.031 ( 2.316)	Acc@5 13.281 ( 7.395)
+Train:  acc@head: nan	acc@med: nan	acc@tail: 2.144	acc@aveclass: nan	r_acc: nan	
+* Train Acc@best: 2.324% Error@best: 97.676%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.144	acc@aveclass: nan	r_acc: nan	Runtime: 1009.524	lr: 0.1
+* Train Acc@best: 2.165% Error@best: 97.835%	Train:  acc@head: nan	acc@med: nan	acc@tail: 1.955	acc@aveclass: nan	r_acc: nan	Runtime: 1009.447	lr: 0.1
+* Train Acc@best: 2.272% Error@best: 97.728%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.012	acc@aveclass: nan	r_acc: nan	Runtime: 1009.320	lr: 0.1
+* Train Acc@best: 2.399% Error@best: 97.601%	Train:  acc@head: nan	acc@med: nan	acc@tail: 2.114	acc@aveclass: nan	r_acc: nan	Runtime: 1009.329	lr: 0.1
+* Train Acc@best: 2.184% Error@best: 97.816%	Train:  acc@head: nan	acc@med: nan	acc@tail: 1.922	acc@aveclass: nan	r_acc: nan	Runtime: 1009.325	lr: 0.1
+Eval: [  0/191]	Batch_time 56.963 (56.963)	Data_time 56.898 (56.898)	Loss 8.427 (8.427)	Acc@1  0.781 ( 0.781)	Acc@5  3.125 ( 3.125)
+Eval: [ 40/191]	Batch_time  3.631 ( 1.933)	Data_time  3.567 ( 1.879)	Loss 8.493 (8.588)	Acc@1  0.000 ( 0.248)	Acc@5  0.781 ( 1.258)
+Eval: [ 80/191]	Batch_time  2.733 ( 1.256)	Data_time  2.669 ( 1.201)	Loss 8.510 (8.589)	Acc@1  0.000 ( 0.280)	Acc@5  0.781 ( 1.215)
+Eval: [120/191]	Batch_time  2.880 ( 1.009)	Data_time  2.815 ( 0.954)	Loss 8.485 (8.581)	Acc@1  0.000 ( 0.265)	Acc@5  1.562 ( 1.188)
+Eval: [160/191]	Batch_time  1.960 ( 0.888)	Data_time  1.895 ( 0.833)	Loss 8.703 (8.578)	Acc@1  0.000 ( 0.291)	Acc@5  2.344 ( 1.218)
+Eval:  acc@head: 0.019	acc@med: 0.063	acc@tail: 2.415	acc@aveclass: 0.287	r_acc: 0.008	
+* Eval Acc@best: 0.287% Error@best: 99.713%	Eval:  acc@head: 0.019	acc@med: 0.063	acc@tail: 2.415	acc@aveclass: 0.287	r_acc: 0.008		Runtime: 1168.930	lr: 0.1	Epoch_time: 551.612
+training completed, time: 1170s
+=====================8 GPUs 10 workers 64 batch size\n
+Node 1: 3 GPUs
+trainer:
+	name: Res50_iNaturalist2018_0_batch64
+	print_freq: 40
+	resume: False
+	mode: test
+	seed: 0
+	num_epochs: 2
+dataset:
+	name: iNaturalist2018
+	args:
+		num_workers: 10
+		batch_size: 64
+model:
+	name: resnet50
+	args:
+optimizer:
+	name: SGD
+	args:
+		lr: 0.1
+		weight_decay: 0.0001
+		momentum: 0.9
+lr_scheduler:
+	name: cosine
+	args:
+		warmup: False
+ddp:
+	world_size: 8
+	node_rank: 0
+	num_nodes: 4
+	num_gpus_per_node: 2
+	dist_url: tcp://10.1.34.231:12322
+	dist_backend: nccl
+	on: True
+
+Node 0: 3 GPUs
+Node 2: 3 GPUs
+Node 3: 3 GPUs
+Initializing distributed package for GPU 0 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 0
+Data prepared.
+total_class_num: 8142, total_data: 437513, sample_per_class: 2-1000
+total_class_num: 8142, total_data: 24426, sample_per_class: 3-3
+====> training started	runtime: 4.681
+Initializing distributed package for GPU 2 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 2
+Initializing distributed package for GPU 4 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 4
+Initializing distributed package for GPU 6 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 6
+Initializing distributed package for GPU 5 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 5
+Initializing distributed package for GPU 7 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 7
+Initializing distributed package for GPU 1 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 1
+Initializing distributed package for GPU 3 with tcp://10.1.34.231:12322.....
+Distributed package is initialize for GPU 3
+* Train Acc@best: 1.092% Error@best: 98.908%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.807	acc@aveclass: nan	r_acc: nan	Runtime: 427.289	lr: 0.1
+* Train Acc@best: 1.169% Error@best: 98.831%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.854	acc@aveclass: nan	r_acc: nan	Runtime: 427.318	lr: 0.1
+* Train Acc@best: 1.195% Error@best: 98.805%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.838	acc@aveclass: nan	r_acc: nan	Runtime: 427.355	lr: 0.1
+* Train Acc@best: 1.112% Error@best: 98.888%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.785	acc@aveclass: nan	r_acc: nan	Runtime: 427.498	lr: 0.1
+* Train Acc@best: 1.153% Error@best: 98.847%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.835	acc@aveclass: nan	r_acc: nan	Runtime: 427.487	lr: 0.1
+* Train Acc@best: 1.087% Error@best: 98.913%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.800	acc@aveclass: nan	r_acc: nan	Runtime: 427.422	lr: 0.1
+Train epoch: [0][  0/854]	Batch_time 29.209 (29.209)	Data_time 26.207 (26.207)	Loss 9.171 (9.171)	Acc@1  0.000 ( 0.000)	Acc@5  0.000 ( 0.000)
+Train epoch: [0][ 40/854]	Batch_time  0.225 ( 1.133)	Data_time  0.000 ( 0.776)	Loss 8.063 (8.741)	Acc@1  0.000 ( 0.267)	Acc@5  1.562 ( 1.105)
+Train epoch: [0][ 80/854]	Batch_time  0.221 ( 0.792)	Data_time  0.000 ( 0.406)	Loss 7.987 (8.444)	Acc@1  0.000 ( 0.251)	Acc@5  0.000 ( 1.312)
+Train epoch: [0][120/854]	Batch_time  0.239 ( 0.704)	Data_time  0.000 ( 0.281)	Loss 8.072 (8.314)	Acc@1  3.125 ( 0.310)	Acc@5  4.688 ( 1.705)
+Train epoch: [0][160/854]	Batch_time  0.196 ( 0.661)	Data_time  0.000 ( 0.213)	Loss 8.266 (8.216)	Acc@1  0.000 ( 0.388)	Acc@5  0.000 ( 1.951)
+Train epoch: [0][200/854]	Batch_time  0.221 ( 0.636)	Data_time  0.000 ( 0.171)	Loss 7.952 (8.152)	Acc@1  0.000 ( 0.443)	Acc@5  1.562 ( 2.037)
+Train epoch: [0][240/854]	Batch_time  0.229 ( 0.603)	Data_time  0.000 ( 0.143)	Loss 7.706 (8.102)	Acc@1  1.562 ( 0.454)	Acc@5  1.562 ( 2.114)
+Train epoch: [0][280/854]	Batch_time  0.211 ( 0.584)	Data_time  0.000 ( 0.124)	Loss 7.541 (8.057)	Acc@1  0.000 ( 0.495)	Acc@5  0.000 ( 2.269)
+Train epoch: [0][320/854]	Batch_time  0.214 ( 0.570)	Data_time  0.000 ( 0.109)	Loss 7.874 (8.015)	Acc@1  0.000 ( 0.540)	Acc@5  1.562 ( 2.380)
+Train epoch: [0][360/854]	Batch_time  0.211 ( 0.565)	Data_time  0.000 ( 0.099)	Loss 7.770 (7.983)	Acc@1  1.562 ( 0.593)	Acc@5  6.250 ( 2.493)
+Train epoch: [0][400/854]	Batch_time  0.229 ( 0.551)	Data_time  0.000 ( 0.090)	Loss 7.506 (7.953)	Acc@1  3.125 ( 0.670)	Acc@5  7.812 ( 2.669)
+Train epoch: [0][440/854]	Batch_time  0.286 ( 0.535)	Data_time  0.000 ( 0.082)	Loss 7.698 (7.928)	Acc@1  1.562 ( 0.712)	Acc@5  6.250 ( 2.749)
+Train epoch: [0][480/854]	Batch_time  0.727 ( 0.527)	Data_time  0.000 ( 0.076)	Loss 7.443 (7.899)	Acc@1  1.562 ( 0.754)	Acc@5 14.062 ( 2.917)
+Train epoch: [0][520/854]	Batch_time  1.037 ( 0.519)	Data_time  0.000 ( 0.071)	Loss 7.702 (7.876)	Acc@1  6.250 ( 0.780)	Acc@5  7.812 ( 3.011)
+Train epoch: [0][560/854]	Batch_time  1.810 ( 0.515)	Data_time  0.000 ( 0.069)	Loss 7.338 (7.851)	Acc@1  0.000 ( 0.833)	Acc@5  6.250 ( 3.172)
+Train epoch: [0][600/854]	Batch_time  0.440 ( 0.507)	Data_time  0.000 ( 0.064)	Loss 7.231 (7.828)	Acc@1  0.000 ( 0.855)	Acc@5  3.125 ( 3.229)
+Train epoch: [0][640/854]	Batch_time  1.093 ( 0.508)	Data_time  0.000 ( 0.063)	Loss 7.376 (7.807)	Acc@1  1.562 ( 0.890)	Acc@5  7.812 ( 3.381)
+Train epoch: [0][680/854]	Batch_time  0.640 ( 0.507)	Data_time  0.000 ( 0.060)	Loss 7.453 (7.788)	Acc@1  1.562 ( 0.943)	Acc@5  7.812 ( 3.520)
+Train epoch: [0][720/854]	Batch_time  0.212 ( 0.501)	Data_time  0.000 ( 0.057)	Loss 8.194 (7.766)	Acc@1  1.562 ( 0.980)	Acc@5  4.688 ( 3.649)
+Train epoch: [0][760/854]	Batch_time  0.202 ( 0.494)	Data_time  0.000 ( 0.054)	Loss 7.149 (7.744)	Acc@1  3.125 ( 1.045)	Acc@5  4.688 ( 3.801)
+Train epoch: [0][800/854]	Batch_time  0.235 ( 0.498)	Data_time  0.000 ( 0.052)	Loss 7.538 (7.723)	Acc@1  1.562 ( 1.081)	Acc@5 10.938 ( 3.915)
+Train epoch: [0][840/854]	Batch_time  0.208 ( 0.497)	Data_time  0.000 ( 0.049)	Loss 7.226 (7.702)	Acc@1  6.250 ( 1.118)	Acc@5  6.250 ( 4.056)
+Train:  acc@head: nan	acc@med: nan	acc@tail: 0.790	acc@aveclass: nan	r_acc: nan	
+* Train Acc@best: 1.118% Error@best: 98.882%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.790	acc@aveclass: nan	r_acc: nan	Runtime: 427.413	lr: 0.1
+* Train Acc@best: 1.125% Error@best: 98.875%	Train:  acc@head: nan	acc@med: nan	acc@tail: 0.809	acc@aveclass: nan	r_acc: nan	Runtime: 427.402	lr: 0.1
+Eval: [  0/382]	Batch_time 47.800 (47.800)	Data_time 47.765 (47.765)	Loss 9.036 (9.036)	Acc@1  0.000 ( 0.000)	Acc@5  0.000 ( 0.000)
+Eval: [ 40/382]	Batch_time  1.274 ( 1.401)	Data_time  1.240 ( 1.371)	Loss 9.179 (8.986)	Acc@1  0.000 ( 0.152)	Acc@5  0.000 ( 0.648)
+Eval: [ 80/382]	Batch_time  1.084 ( 0.823)	Data_time  1.053 ( 0.793)	Loss 8.871 (8.991)	Acc@1  0.000 ( 0.116)	Acc@5  0.000 ( 0.540)
+Eval: [120/382]	Batch_time  0.476 ( 0.631)	Data_time  0.451 ( 0.601)	Loss 8.932 (8.990)	Acc@1  0.000 ( 0.142)	Acc@5  1.562 ( 0.529)
+Eval: [160/382]	Batch_time  1.296 ( 0.544)	Data_time  1.270 ( 0.514)	Loss 8.971 (8.983)	Acc@1  1.562 ( 0.165)	Acc@5  1.562 ( 0.582)
+Eval: [200/382]	Batch_time  0.495 ( 0.515)	Data_time  0.469 ( 0.485)	Loss 9.213 (8.978)	Acc@1  0.000 ( 0.194)	Acc@5  0.000 ( 0.637)
+Eval: [240/382]	Batch_time  2.025 ( 0.483)	Data_time  1.991 ( 0.452)	Loss 8.904 (8.975)	Acc@1  0.000 ( 0.175)	Acc@5  0.000 ( 0.603)
+Eval: [280/382]	Batch_time  2.235 ( 0.458)	Data_time  2.200 ( 0.428)	Loss 8.982 (8.969)	Acc@1  0.000 ( 0.161)	Acc@5  0.000 ( 0.639)
+Eval: [320/382]	Batch_time  0.776 ( 0.435)	Data_time  0.750 ( 0.404)	Loss 8.812 (8.975)	Acc@1  0.000 ( 0.161)	Acc@5  3.125 ( 0.657)
+Eval: [360/382]	Batch_time  1.196 ( 0.420)	Data_time  1.170 ( 0.389)	Loss 8.829 (8.976)	Acc@1  0.000 ( 0.151)	Acc@5  0.000 ( 0.632)
+Eval:  acc@head: 0.000	acc@med: 0.000	acc@tail: 1.504	acc@aveclass: 0.156	r_acc: 0.000	
+* Eval Acc@best: 0.156% Error@best: 99.844%	Eval:  acc@head: 0.000	acc@med: 0.000	acc@tail: 1.504	acc@aveclass: 0.156	r_acc: 0.000		Runtime: 584.736	lr: 0.1	Epoch_time: 580.055
+* Train Acc@best: 3.387% Error@best: 96.613%	Train:  acc@head: nan	acc@med: nan	acc@tail: 3.377	acc@aveclass: nan	r_acc: nan	Runtime: 1049.480	lr: 0.1
+* Train Acc@best: 3.403% Error@best: 96.597%	Train:  acc@head: nan	acc@med: nan	acc@tail: 3.336	acc@aveclass: nan	r_acc: nan	Runtime: 1049.389	lr: 0.1
+* Train Acc@best: 3.507% Error@best: 96.493%	Train:  acc@head: nan	acc@med: nan	acc@tail: 3.453	acc@aveclass: nan	r_acc: nan	Runtime: 1049.403	lr: 0.1
+Train epoch: [1][  0/854]	Batch_time 50.464 (50.464)	Data_time 50.386 (50.386)	Loss 6.642 (6.642)	Acc@1  1.562 ( 1.562)	Acc@5 12.500 (12.500)
+Train epoch: [1][ 40/854]	Batch_time  0.230 ( 1.650)	Data_time  0.000 ( 1.311)	Loss 7.047 (7.200)	Acc@1  0.000 ( 1.677)	Acc@5  3.125 ( 6.212)
+Train epoch: [1][ 80/854]	Batch_time  0.220 ( 1.073)	Data_time  0.000 ( 0.719)	Loss 7.457 (7.157)	Acc@1  1.562 ( 1.620)	Acc@5  7.812 ( 6.424)
+Train epoch: [1][120/854]	Batch_time  0.226 ( 0.852)	Data_time  0.000 ( 0.504)	Loss 7.093 (7.143)	Acc@1  0.000 ( 1.872)	Acc@5 10.938 ( 7.128)
+Train epoch: [1][160/854]	Batch_time  0.205 ( 0.754)	Data_time  0.000 ( 0.423)	Loss 7.534 (7.123)	Acc@1  0.000 ( 2.087)	Acc@5  3.125 ( 7.318)
+Train epoch: [1][200/854]	Batch_time  0.242 ( 0.683)	Data_time  0.000 ( 0.370)	Loss 7.230 (7.106)	Acc@1  4.688 ( 2.122)	Acc@5 12.500 ( 7.572)
+Train epoch: [1][240/854]	Batch_time  0.217 ( 0.638)	Data_time  0.000 ( 0.344)	Loss 6.843 (7.084)	Acc@1  0.000 ( 2.211)	Acc@5 10.938 ( 7.800)
+Train epoch: [1][280/854]	Batch_time  0.221 ( 0.604)	Data_time  0.000 ( 0.322)	Loss 7.125 (7.070)	Acc@1  1.562 ( 2.302)	Acc@5 10.938 ( 7.974)
+Train epoch: [1][320/854]	Batch_time  0.238 ( 0.581)	Data_time  0.000 ( 0.310)	Loss 7.029 (7.053)	Acc@1  1.562 ( 2.434)	Acc@5  4.688 ( 8.236)
+Train epoch: [1][360/854]	Batch_time  0.212 ( 0.571)	Data_time  0.000 ( 0.309)	Loss 6.700 (7.032)	Acc@1  0.000 ( 2.510)	Acc@5  6.250 ( 8.349)
+Train epoch: [1][400/854]	Batch_time  0.226 ( 0.562)	Data_time  0.000 ( 0.305)	Loss 6.900 (7.022)	Acc@1  1.562 ( 2.552)	Acc@5 15.625 ( 8.452)
+Train epoch: [1][440/854]	Batch_time  0.238 ( 0.550)	Data_time  0.000 ( 0.298)	Loss 6.973 (7.005)	Acc@1  1.562 ( 2.640)	Acc@5 10.938 ( 8.677)
+Train epoch: [1][480/854]	Batch_time  0.232 ( 0.550)	Data_time  0.000 ( 0.291)	Loss 6.882 (6.988)	Acc@1  3.125 ( 2.654)	Acc@5 12.500 ( 8.820)
+Train epoch: [1][520/854]	Batch_time  0.232 ( 0.544)	Data_time  0.000 ( 0.279)	Loss 6.943 (6.974)	Acc@1  1.562 ( 2.714)	Acc@5  6.250 ( 9.006)
+Train epoch: [1][560/854]	Batch_time  0.192 ( 0.533)	Data_time  0.000 ( 0.264)	Loss 6.696 (6.957)	Acc@1  4.688 ( 2.838)	Acc@5  9.375 ( 9.205)
+Train epoch: [1][600/854]	Batch_time  0.217 ( 0.524)	Data_time  0.000 ( 0.258)	Loss 6.726 (6.938)	Acc@1  4.688 ( 2.982)	Acc@5 14.062 ( 9.419)
+Train epoch: [1][640/854]	Batch_time  0.199 ( 0.519)	Data_time  0.000 ( 0.253)	Loss 7.009 (6.922)	Acc@1  0.000 ( 3.013)	Acc@5  3.125 ( 9.529)
+Train epoch: [1][680/854]	Batch_time  0.209 ( 0.518)	Data_time  0.000 ( 0.255)	Loss 6.543 (6.904)	Acc@1  3.125 ( 3.061)	Acc@5  6.250 ( 9.689)
+Train epoch: [1][720/854]	Batch_time  0.220 ( 0.533)	Data_time  0.000 ( 0.258)	Loss 6.551 (6.889)	Acc@1  6.250 ( 3.127)	Acc@5 17.188 ( 9.858)
+Train epoch: [1][760/854]	Batch_time  0.208 ( 0.541)	Data_time  0.000 ( 0.244)	Loss 6.783 (6.874)	Acc@1  3.125 ( 3.172)	Acc@5 10.938 ( 9.989)
+Train epoch: [1][800/854]	Batch_time  0.169 ( 0.545)	Data_time  0.000 ( 0.232)	Loss 6.536 (6.855)	Acc@1  7.812 ( 3.252)	Acc@5 14.062 (10.167)
+Train epoch: [1][840/854]	Batch_time  0.191 ( 0.546)	Data_time  0.000 ( 0.221)	Loss 5.956 (6.839)	Acc@1  4.688 ( 3.305)	Acc@5 18.750 (10.298)
+Train:  acc@head: nan	acc@med: nan	acc@tail: 3.286	acc@aveclass: nan	r_acc: nan	
+* Train Acc@best: 3.324% Error@best: 96.676%	Train:  acc@head: nan	acc@med: nan	acc@tail: 3.286	acc@aveclass: nan	r_acc: nan	Runtime: 1049.413	lr: 0.1
+* Train Acc@best: 3.374% Error@best: 96.626%	Train:  acc@head: nan	acc@med: nan	acc@tail: 3.355	acc@aveclass: nan	r_acc: nan	Runtime: 1049.529	lr: 0.1
+* Train Acc@best: 3.528% Error@best: 96.472%	Train:  acc@head: nan	acc@med: nan	acc@tail: 3.458	acc@aveclass: nan	r_acc: nan	Runtime: 1049.435	lr: 0.1
+* Train Acc@best: 3.356% Error@best: 96.644%	Train:  acc@head: nan	acc@med: nan	acc@tail: 3.356	acc@aveclass: nan	r_acc: nan	Runtime: 1049.496	lr: 0.1
+* Train Acc@best: 3.414% Error@best: 96.586%	Train:  acc@head: nan	acc@med: nan	acc@tail: 3.526	acc@aveclass: nan	r_acc: nan	Runtime: 1049.493	lr: 0.1
+Eval: [  0/382]	Batch_time 52.723 (52.723)	Data_time 52.688 (52.688)	Loss 8.166 (8.166)	Acc@1  1.562 ( 1.562)	Acc@5  4.688 ( 4.688)
+Eval: [ 40/382]	Batch_time  3.132 ( 1.583)	Data_time  3.098 ( 1.552)	Loss 8.465 (8.237)	Acc@1  0.000 ( 0.572)	Acc@5  0.000 ( 2.172)
+Eval: [ 80/382]	Batch_time  2.604 ( 0.929)	Data_time  2.569 ( 0.898)	Loss 7.994 (8.206)	Acc@1  0.000 ( 0.694)	Acc@5  3.125 ( 2.315)
+Eval: [120/382]	Batch_time  1.341 ( 0.718)	Data_time  1.313 ( 0.688)	Loss 8.189 (8.220)	Acc@1  0.000 ( 0.671)	Acc@5  1.562 ( 2.221)
+Eval: [160/382]	Batch_time  0.034 ( 0.610)	Data_time  0.000 ( 0.580)	Loss 7.942 (8.206)	Acc@1  0.000 ( 0.611)	Acc@5  3.125 ( 2.193)
+Eval: [200/382]	Batch_time  0.025 ( 0.550)	Data_time  0.000 ( 0.520)	Loss 8.128 (8.205)	Acc@1  0.000 ( 0.606)	Acc@5  1.562 ( 2.208)
+Eval: [240/382]	Batch_time  0.025 ( 0.504)	Data_time  0.000 ( 0.475)	Loss 8.097 (8.197)	Acc@1  0.000 ( 0.648)	Acc@5  3.125 ( 2.191)
+Eval: [280/382]	Batch_time  0.025 ( 0.470)	Data_time  0.000 ( 0.441)	Loss 8.023 (8.190)	Acc@1  0.000 ( 0.656)	Acc@5  3.125 ( 2.235)
+Eval: [320/382]	Batch_time  0.026 ( 0.441)	Data_time  0.000 ( 0.412)	Loss 7.916 (8.198)	Acc@1  1.562 ( 0.657)	Acc@5  4.688 ( 2.224)
+Eval: [360/382]	Batch_time  0.025 ( 0.418)	Data_time  0.000 ( 0.389)	Loss 7.869 (8.199)	Acc@1  3.125 ( 0.654)	Acc@5  3.125 ( 2.220)
+Eval:  acc@head: 0.009	acc@med: 0.189	acc@tail: 5.424	acc@aveclass: 0.651	r_acc: 0.002	
+* Eval Acc@best: 0.651% Error@best: 99.349%	Eval:  acc@head: 0.009	acc@med: 0.189	acc@tail: 5.424	acc@aveclass: 0.651	r_acc: 0.002		Runtime: 1205.713	lr: 0.1	Epoch_time: 620.229
+training completed, time: 1207s
+=====================4 GPUs 10 workers 64 batch size\n
+trainer:
+	name: Res50_iNaturalist2018_0_batch64
+	print_freq: 40
+	resume: False
+	mode: test
+	seed: 0
+	num_epochs: 2
+dataset:
+	name: iNaturalist2018
+	args:
+		num_workers: 10
+		batch_size: 64
+model:
+	name: resnet50
+	args:
+optimizer:
+	name: SGD
+	args:
+		lr: 0.1
+		weight_decay: 0.0001
+		momentum: 0.9
+lr_scheduler:
+	name: cosine
+	args:
+		warmup: False
+ddp:
+	world_size: 4
+	node_rank: 0
+	num_nodes: 4
+	num_gpus_per_node: 1
+	dist_url: tcp://10.1.34.231:12322
+	dist_backend: nccl
+	on: True
+
+Node 0: 3 GPUs
+Node 3: 3 GPUs
+Node 1: 3 GPUs
+Node 2: 3 GPUs
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/ic/train.py", line 353, in <module>
+    main()
+  File "/gpfs/home/y/yz681/code/ic/train.py", line 23, in main
+    main_worker(None, config)
+  File "/gpfs/home/y/yz681/code/ic/train.py", line 39, in main_worker
+    data_loader_func, device, gpu_rank = config.init_ddp(gpu_id)
+  File "/gpfs/home/y/yz681/code/ic/utils/configurate.py", line 167, in init_ddp
+    gpu_rank = ddp['node_rank'] * ddp['num_gpus_per_node'] + gpu_id
+TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/ic/train.py", line 353, in <module>
+    main()
+  File "/gpfs/home/y/yz681/code/ic/train.py", line 23, in main
+    main_worker(None, config)
+  File "/gpfs/home/y/yz681/code/ic/train.py", line 39, in main_worker
+    data_loader_func, device, gpu_rank = config.init_ddp(gpu_id)
+  File "/gpfs/home/y/yz681/code/ic/utils/configurate.py", line 167, in init_ddp
+    gpu_rank = ddp['node_rank'] * ddp['num_gpus_per_node'] + gpu_id
+TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/ic/train.py", line 353, in <module>
+Traceback (most recent call last):
+  File "/gpfs/home/y/yz681/code/ic/train.py", line 353, in <module>
+    main()
+  File "/gpfs/home/y/yz681/code/ic/train.py", line 23, in main
+    main_worker(None, config)
+  File "/gpfs/home/y/yz681/code/ic/train.py", line 39, in main_worker
+    main()
+    data_loader_func, device, gpu_rank = config.init_ddp(gpu_id)
+  File "/gpfs/home/y/yz681/code/ic/train.py", line 23, in main
+  File "/gpfs/home/y/yz681/code/ic/utils/configurate.py", line 167, in init_ddp
+    main_worker(None, config)
+    gpu_rank = ddp['node_rank'] * ddp['num_gpus_per_node'] + gpu_id
+  File "/gpfs/home/y/yz681/code/ic/train.py", line 39, in main_worker
+TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'
+    data_loader_func, device, gpu_rank = config.init_ddp(gpu_id)
+  File "/gpfs/home/y/yz681/code/ic/utils/configurate.py", line 167, in init_ddp
+    gpu_rank = ddp['node_rank'] * ddp['num_gpus_per_node'] + gpu_id
+TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'
+srun: error: gpu026: task 1: Exited with exit code 1
+srun: launch/slurm: _step_signal: Terminating StepId=2422322.6
+srun: error: gpu028: task 3: Exited with exit code 1
+srun: error: gpu011: task 0: Exited with exit code 1
+srun: error: gpu027: task 2: Exited with exit code 1
